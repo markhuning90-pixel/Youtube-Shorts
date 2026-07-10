@@ -2,3 +2,4 @@
 **pycache**/
 output/
 logs/
+client_secret.json
