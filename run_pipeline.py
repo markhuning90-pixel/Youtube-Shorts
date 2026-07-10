@@ -36,7 +36,13 @@ def run():
     print("\nScript:")
     print(script)
 
-    saved_file = save_script(topic, script)
+    saved_file = save_script(
+        topic=topic,
+        script=script,
+        title=title,
+        description=description,
+        hashtags=hashtags,
+    )
     print("\nScript erfolgreich gespeichert.")
     print("Gespeichert unter:")
     print(saved_file.resolve())
