@@ -30,6 +30,15 @@ def get_audio_duration(voice_file):
         return None
 
 
+def has_nvenc():
+    result = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-encoders"],
+        capture_output=True,
+        text=True,
+    )
+    return "h264_nvenc" in f"{result.stdout}\n{result.stderr}"
+
+
 def get_motion_filter(motion, frames_per_image, zoom_increment):
     center_x = "iw/2-(iw/zoom/2)"
     center_y = "ih/2-(ih/zoom/2)"
@@ -146,8 +155,6 @@ def generate_video(generation):
             "[video_out]",
             "-map",
             "[audio_out]" if music_input_index is not None else f"{voice_input_index}:a:0",
-            "-c:v",
-            "libx264",
             "-pix_fmt",
             "yuv420p",
             "-c:a",
@@ -155,10 +162,45 @@ def generate_video(generation):
             "-t",
             str(audio_duration),
             "-shortest",
-            str(video_file),
         ]
     )
-    result = subprocess.run(command, capture_output=True, text=True)
+    cpu_options = ["-c:v", "libx264", "-preset", "veryfast", "-crf", "23"]
+
+    if has_nvenc():
+        print("NVIDIA GPU-Encoding wird verwendet.")
+        gpu_options = [
+            "-c:v",
+            "h264_nvenc",
+            "-preset",
+            "p4",
+            "-rc",
+            "vbr",
+            "-cq",
+            "23",
+            "-b:v",
+            "0",
+        ]
+        result = subprocess.run(
+            command + gpu_options + [str(video_file)],
+            capture_output=True,
+            text=True,
+        )
+
+        if result.returncode != 0:
+            print("GPU-Encoding fehlgeschlagen. Neuer Versuch mit CPU-Encoding.")
+            print(result.stderr)
+            result = subprocess.run(
+                command + cpu_options + [str(video_file)],
+                capture_output=True,
+                text=True,
+            )
+    else:
+        print("NVIDIA-Encoding nicht verfügbar. CPU-Encoding wird verwendet.")
+        result = subprocess.run(
+            command + cpu_options + [str(video_file)],
+            capture_output=True,
+            text=True,
+        )
 
     if result.returncode != 0:
         print("Das Video konnte nicht erstellt werden.")
