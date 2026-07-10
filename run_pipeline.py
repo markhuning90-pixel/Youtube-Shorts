@@ -3,6 +3,7 @@ from generators.content_generator import generate_content, validate_content
 from generators.file_writer import save_script
 from generators.status_manager import update_status
 from generators.topic_picker import get_all_topics
+from models.generation import Generation
 
 
 def run():
@@ -16,38 +17,42 @@ def run():
         content = generate_content(topic)
 
         if validate_content(content):
-            title = content["title"]
-            description = content["description"]
-            hashtags = content["hashtags"]
-            script = content["script"]
+            generation = Generation(
+                topic=topic,
+                title=content["title"],
+                description=content["description"],
+                hashtags=content["hashtags"],
+                script=content["script"],
+                status="generated",
+            )
 
             print("Thema:")
-            print(topic)
+            print(generation.topic)
 
             print("\nTitel:")
-            print(title)
+            print(generation.title)
 
             print("\nBeschreibung:")
-            print(description)
+            print(generation.description)
 
             print("\nHashtags:")
-            print(hashtags)
+            print(generation.hashtags)
 
             print("\nScript:")
-            print(script)
+            print(generation.script)
 
             saved_file = save_script(
-                topic=topic,
-                script=script,
-                title=title,
-                description=description,
-                hashtags=hashtags,
+                topic=generation.topic,
+                script=generation.script,
+                title=generation.title,
+                description=generation.description,
+                hashtags=generation.hashtags,
             )
             metadata_file = saved_file.parent / "metadata.json"
             update_status(metadata_file, "generated")
 
             print("\nStatus:")
-            print("generated")
+            print(generation.status)
 
             print("\nScript erfolgreich gespeichert.")
             print("Gespeichert unter:")
