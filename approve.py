@@ -2,8 +2,8 @@ from pathlib import Path
 from shutil import move
 
 
-def approve_script():
-    source_file = Path("output/script.txt")
+def approve_script(script_file):
+    source_file = Path(script_file)
 
     if not source_file.exists():
         print("Kein Script zum Freigeben gefunden.")

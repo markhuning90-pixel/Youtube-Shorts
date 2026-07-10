@@ -3,7 +3,7 @@ from datetime import datetime
 from pathlib import Path
 
 
-def save_script(topic, script, title=None, description=None, hashtags=None):
+def save_script(generation):
     output_folder = Path("output")
     output_folder.mkdir(exist_ok=True)
 
@@ -14,16 +14,16 @@ def save_script(topic, script, title=None, description=None, hashtags=None):
 
     output_file = generation_folder / "script.txt"
     output_file.write_text(
-        f"Thema:\n{topic}\n\nScript:\n{script}",
+        f"Thema:\n{generation.topic}\n\nScript:\n{generation.script}",
         encoding="utf-8",
     )
 
     metadata = {
-        "topic": topic,
-        "title": title,
-        "description": description,
-        "hashtags": hashtags,
-        "script": script,
+        "topic": generation.topic,
+        "title": generation.title,
+        "description": generation.description,
+        "hashtags": generation.hashtags,
+        "script": generation.script,
         "created_at": created_at.isoformat(),
         "status": "pending",
     }

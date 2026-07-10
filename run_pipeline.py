@@ -41,13 +41,7 @@ def run():
             print("\nScript:")
             print(generation.script)
 
-            saved_file = save_script(
-                topic=generation.topic,
-                script=generation.script,
-                title=generation.title,
-                description=generation.description,
-                hashtags=generation.hashtags,
-            )
+            saved_file = save_script(generation)
             metadata_file = saved_file.parent / "metadata.json"
             update_status(metadata_file, "generated")
 
@@ -58,7 +52,7 @@ def run():
             print("Gespeichert unter:")
             print(saved_file.resolve())
 
-            approve_script()
+            approve_script(saved_file)
 
         if index < len(topics) - 1:
             while True:
