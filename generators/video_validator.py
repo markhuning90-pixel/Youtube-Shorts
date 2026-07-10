@@ -7,7 +7,7 @@ def validate_video_assets(generation):
         return False
 
     output_folder = Path(generation.output_folder)
-    required_files = ["voice.mp3", "subtitles.srt", "scenes.txt"]
+    required_files = ["voice.mp3", "subtitles.ass", "scenes.txt"]
     missing_files = [
         file_name
         for file_name in required_files

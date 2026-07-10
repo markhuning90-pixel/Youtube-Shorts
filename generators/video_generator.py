@@ -83,6 +83,7 @@ def generate_video(generation):
     voice_file = output_folder / "voice.mp3"
     subtitles_file = output_folder / "subtitles.ass"
     video_file = output_folder / "final_video.mp4"
+    music_file = Path("assets/music/background.mp3")
     audio_duration = get_audio_duration(voice_file)
 
     if audio_duration is None:
@@ -108,6 +109,15 @@ def generate_video(generation):
 
     command.extend(["-i", str(voice_file)])
 
+    voice_input_index = len(image_files)
+    music_input_index = None
+
+    if music_file.exists():
+        music_input_index = voice_input_index + 1
+        command.extend(["-stream_loop", "-1", "-i", str(music_file)])
+    else:
+        print("Keine Hintergrundmusik gefunden. Video wird ohne Musik erstellt.")
+
     filter_parts = []
 
     for index in range(len(image_files)):
@@ -121,6 +131,13 @@ def generate_video(generation):
         f"setsar=1,ass='{subtitles_path}'[video_out]"
     )
 
+    if music_input_index is not None:
+        filter_parts.append(
+            f"[{music_input_index}:a]volume=0.08[background_music];"
+            f"[{voice_input_index}:a][background_music]"
+            "amix=inputs=2:duration=first:dropout_transition=0[audio_out]"
+        )
+
     command.extend(
         [
             "-filter_complex",
@@ -128,7 +145,7 @@ def generate_video(generation):
             "-map",
             "[video_out]",
             "-map",
-            f"{len(image_files)}:a:0",
+            "[audio_out]" if music_input_index is not None else f"{voice_input_index}:a:0",
             "-c:v",
             "libx264",
             "-pix_fmt",
