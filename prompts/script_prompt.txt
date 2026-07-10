@@ -1,0 +1,10 @@
+Schreibe ein spannendes YouTube-Shorts-Skript (maximal 120 Wörter) zum Thema:
+
+{topic}
+
+Regeln:
+- Starte mit einem starken Hook.
+- Kurze Sätze.
+- Einfach verständlich.
+- Kein Emoji.
+- Nur den fertigen Sprechertext ausgeben.
