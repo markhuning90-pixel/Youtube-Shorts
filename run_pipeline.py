@@ -3,6 +3,7 @@ from console import show_generation
 from generators.content_generator import generate_content, validate_content
 from generators.file_writer import save_script
 from generators.image_generator import generate_images
+from generators.image_prompt_generator import generate_image_prompts
 from generators.scene_generator import generate_scenes
 from generators.status_manager import update_status
 from generators.subtitle_generator import generate_subtitles
@@ -52,17 +53,24 @@ def run():
                         update_status(metadata_file, "scenes_created")
                         generation.status = "scenes_created"
 
-                        images_folder = generate_images(generation)
+                        images_folder = None
+                        image_prompt_file = generate_image_prompts(generation)
 
-                        if images_folder is not None:
-                            update_status(metadata_file, "images_created")
-                            generation.status = "images_created"
+                        if image_prompt_file is not None:
+                            update_status(metadata_file, "image_prompts_created")
+                            generation.status = "image_prompts_created"
 
-                            video_file = generate_video(generation)
+                            images_folder = generate_images(generation)
 
-                            if video_file is not None:
-                                update_status(metadata_file, "video_created")
-                                generation.status = "video_created"
+                            if images_folder is not None:
+                                update_status(metadata_file, "images_created")
+                                generation.status = "images_created"
+
+                                video_file = generate_video(generation)
+
+                                if video_file is not None:
+                                    update_status(metadata_file, "video_created")
+                                    generation.status = "video_created"
 
                 print("\nSprachdatei erstellt.")
                 print("Gespeichert unter:")
@@ -78,15 +86,20 @@ def run():
                         print("Gespeichert unter:")
                         print(scene_file.resolve())
 
-                        if images_folder is not None:
-                            print("\nBilder erstellt.")
+                        if image_prompt_file is not None:
+                            print("\nBildprompts erstellt.")
                             print("Gespeichert unter:")
-                            print(images_folder.resolve())
+                            print(image_prompt_file.resolve())
 
-                            if video_file is not None:
-                                print("\nVideo erstellt.")
+                            if images_folder is not None:
+                                print("\nBilder erstellt.")
                                 print("Gespeichert unter:")
-                                print(video_file.resolve())
+                                print(images_folder.resolve())
+
+                                if video_file is not None:
+                                    print("\nVideo erstellt.")
+                                    print("Gespeichert unter:")
+                                    print(video_file.resolve())
 
             show_generation(generation)
 

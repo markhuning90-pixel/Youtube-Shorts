@@ -1,0 +1,20 @@
+Erstelle aus der folgenden Szene einen professionellen Bildprompt für eine KI-Bildgenerierung.
+
+Ergänze automatisch diese Eigenschaften:
+- ultra realistic
+- cinematic
+- DSLR photography
+- natural lighting
+- highly detailed
+- 9:16 vertical composition
+- no text
+- no watermark
+
+Antworte ausschließlich in diesem Format:
+
+IMAGE PROMPT:
+...
+
+SZENE:
+
+{scene}
