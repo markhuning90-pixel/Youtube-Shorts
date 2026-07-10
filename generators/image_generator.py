@@ -1,5 +1,6 @@
 import base64
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from openai import OpenAI
@@ -17,6 +18,17 @@ def get_image_prompts(prompts_text):
         )
         if prompt.strip()
     ]
+
+
+def generate_single_image(client, image_prompt, image_file):
+    response = client.images.generate(
+        model="gpt-image-1",
+        prompt=image_prompt,
+        size="1024x1024",
+    )
+    image_file.write_bytes(base64.b64decode(response.data[0].b64_json))
+
+    return image_file
 
 
 def generate_images(generation):
@@ -42,13 +54,29 @@ def generate_images(generation):
     client = OpenAI(api_key=api_key)
     image_prompts = get_image_prompts(prompts_file.read_text(encoding="utf-8"))
 
-    for number, image_prompt in enumerate(image_prompts, start=1):
-        response = client.images.generate(
-            model="gpt-image-1",
-            prompt=image_prompt,
-            size="1024x1024",
-        )
-        image_file = images_folder / f"scene_{number:02d}.png"
-        image_file.write_bytes(base64.b64decode(response.data[0].b64_json))
+    with ThreadPoolExecutor(max_workers=3) as executor:
+        futures = {
+            executor.submit(
+                generate_single_image,
+                client,
+                image_prompt,
+                images_folder / f"scene_{number:02d}.png",
+            ): number
+            for number, image_prompt in enumerate(image_prompts, start=1)
+        }
+
+        failed = False
+
+        for future in as_completed(futures):
+            number = futures[future]
+
+            try:
+                future.result()
+            except Exception as error:
+                print(f"Bild {number} konnte nicht erstellt werden: {error}")
+                failed = True
+
+    if failed:
+        return None
 
     return images_folder

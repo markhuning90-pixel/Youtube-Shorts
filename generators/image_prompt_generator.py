@@ -1,7 +1,8 @@
 import re
+import time
 from pathlib import Path
 
-from openai import OpenAI
+from openai import APIConnectionError, APITimeoutError, OpenAI
 
 from config import load_api_key
 
@@ -23,6 +24,25 @@ def extract_image_prompt(response_text):
         return response_text.split("IMAGE PROMPT:", 1)[1].strip()
 
     return response_text.strip()
+
+
+def create_image_prompt(client, model, input_text, scene_number):
+    for attempt in range(1, 4):
+        try:
+            return client.responses.create(model=model, input=input_text)
+        except (APIConnectionError, APITimeoutError):
+            if attempt == 3:
+                print(
+                    f"Bildprompt {scene_number} konnte nach 3 Versuchen nicht erstellt werden."
+                )
+                return None
+
+            next_attempt = attempt + 1
+            print(
+                f"Verbindungsfehler bei Bildprompt {scene_number}. "
+                f"Neuer Versuch {next_attempt} von 3."
+            )
+            time.sleep(attempt * 2)
 
 
 def generate_image_prompts(generation):
@@ -64,16 +84,23 @@ def generate_image_prompts(generation):
     image_prompts = []
 
     for number, scene in enumerate(scenes, start=1):
-        response = client.responses.create(
-            model="gpt-5",
-            input=prompt_template.format(
-                scene=(
-                    "Use exactly the same main character in every image.\n\n"
-                    f"CHARACTER:\n{character}\n\n"
-                    f"SCENE:\n{scene}"
-                )
-            ),
+        input_text = prompt_template.format(
+            scene=(
+                "Use exactly the same main character in every image.\n\n"
+                f"CHARACTER:\n{character}\n\n"
+                f"SCENE:\n{scene}"
+            )
         )
+        response = create_image_prompt(
+            client,
+            "gpt-5",
+            input_text,
+            number,
+        )
+
+        if response is None:
+            return None
+
         image_prompts.append(
             f"PROMPT {number}:\n{extract_image_prompt(response.output_text)}"
         )
