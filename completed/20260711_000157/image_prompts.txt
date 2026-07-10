@@ -1,0 +1,67 @@
+PROMPT 1:
+Ultra realistic, cinematic, DSLR photography, natural lighting, highly detailed, 9:16 vertical composition, no text, no watermark. Hauptfigur: weibliche Hauskatze, 3 Jahre, kurzhaarig, grau-getigertes Fell; mandelförmige bernsteinfarbene Augen; feine Schnauze; wache Ohren; rotes Halsband mit kleiner Glocke; ruhige, dämmerungsaktive Jägerin, sucht Komfort und Sicherheit — nutze exakt dieselbe Hauptfigur in jedem Bild. Szene: Die Katze schläft eingerollt in einem warmen Sonnenstrahl auf einem gemütlichen Sofa im Wohnzimmer zur goldenen Stunde; warmes, weiches Licht fällt durch das Fenster, Staubpartikel im Lichtkegel; Fellstruktur und einzelne Schnurrhaare im Gegenlicht sichtbar; gleichmäßige Atembewegung, Pfoten entspannt, Schwanz locker um den Körper gelegt; die kleine Glocke am roten Halsband liegt ruhig auf. Umgebung: texturiertes Stoffsofa mit sanften Falten, dezente Kissen im unscharfen Hintergrund; Holzfußboden mit zarten Reflexionen; Fensterrahmen als Bokeh; dezente Spielmaus im Vordergrund als subtile Anspielung auf ihren Jagdinstinkt. Bildgestaltung: niedrige Perspektive auf Augenhöhe, intimer enger Ausschnitt; geringe Schärfentiefe, butterweiches Bokeh, gestochen scharfer Fokus auf Gesicht und Fell; warme, natürliche Farbpalette. Kamera: Vollformat-DSLR, 50mm Festbrennweite, f/1.8, ISO 200, 1/250s, Weißabgleich Tageslicht. Postprocessing: feine Kontrastkurve, natürliche Haut- und Felltöne, keine Übersättigung.
+
+SZENE:
+Eine schlafende Katze liegt in einem warmen Sonnenstrahl auf dem Sofa. Sie kann bis zu 16 Stunden am Tag schlafen und ist von Natur aus ein Jäger.
+
+PROMPT 2:
+Ultrarealistische, kinoreife DSLR-Fotografie einer 3-jährigen weiblichen, kurzfelligen grau-getigerten Katze mit mandelförmigen, bernsteinfarbenen Augen, feiner Schnauze und wachen Ohren; rotes Halsband mit kleiner Glocke. Morgendämmerung in einer gemütlichen Wohnung: Die Katze erwacht auf einem weichen Plaid am Fenster, streckt den Rücken lang und sinkt direkt in eine verspielte Pirschhaltung; im unscharfen Vordergrund liegt ein kleines Feder-Spielzeug, das sie fokussiert. Schnurrhaare nach vorn, Pfote halb angehoben, Schwanzspitze zuckt; Blick intensiv, Catchlights in den Augen. Natürliches, sanftes goldenes Fensterlicht mit weichem Rimlight und zarten Schatten; feine Fellstruktur, sichtbare Texturen, Staubpartikel im Gegenlicht. Kamera auf Augenhöhe, niedriger Winkel; 85mm, f/2.0, 1/250s, ISO 200, Nikon D850; Katze tack-scharf, Hintergrund mit cremigem Bokeh; filmischer Farblook mit warmen Highlights und kühlen Schatten. Umgebung vermittelt Komfort und Sicherheit: warmes Holz, Kissen, Decke. Hochdetailliert, authentische Pose, natürliche Farben. 9:16 vertikale Komposition. Keine Schrift, kein Wasserzeichen. ultra realistic, cinematic, DSLR photography, natural lighting, highly detailed, 9:16 vertical composition, no text, no watermark
+
+SZENE:
+
+Use exactly the same main character in every image.
+
+CHARACTER:
+MAIN CHARACTER
+
+Gender: Weiblich
+Age: 3 Jahre
+Hair: Kurz, grau-getigertes Fell
+Face: Mandelförmige, bernsteinfarbene Augen; feine Schnauze; wache Ohren
+Clothes: Rotes Halsband mit kleiner Glocke
+Style: Ruhige, dämmerungsaktive Jägerin; sucht Komfort und Sicherheit
+
+SCENE:
+Die Katze wacht auf, streckt sich und pirscht spielerisch nach einem Spielzeug.  
+Schlaf spart Energie für die Jagd; viele Katzen sind dämmerungsaktiv und morgens sowie abends am aktivsten.
+
+PROMPT 3:
+Hauptcharakter (identisch in jeder Darstellung): weibliche Hauskatze, 3 Jahre alt, kurzhaarig, grau-getigertes Fell; mandelförmige, bernsteinfarbene Augen; feine Schnauze; wache Ohren; rotes Halsband mit kleiner Glocke; ruhige, dämmerungsaktive Jägerin, sucht Komfort und Sicherheit
+Motiv: Die Hauptkatze als die ältere im Vergleich liegt tief und lang schlafend eingerollt neben einem winzigen Kätzchen; beide kuscheln eng aneinander auf einer weichen, warmen Decke auf einem Fensterbrett; sanftes Dämmerlicht (früher Morgen oder Abend) fällt durch das Fenster, streift Fell und Schnurrhaare; zarter Lichtstaub im Gegenlicht; sichtbare, feine Fellstruktur, glänzende Glocke am Halsband; Atmosphäre von Geborgenheit, Erholung und stiller Regeneration
+Komposition/Kamera: 9:16 vertical composition, cinematic close-up mit leicht erhöhter Perspektive, DSLR photography, 50mm lens, f/1.8, shallow depth of field, weiches Bokeh im Hintergrund, Fokus auf Gesichter und Glocke, natürliche Farbtöne und sanfte Schatten
+Look/Qualität: ultra realistic, cinematic, natural lighting, highly detailed, photorealistische Texturen (Fell, Stoff, Fensterbank), hohe Dynamik im Licht, dezente Reflexe im Auge der älteren Katze trotz geschlossener Lider angedeutet
+Umgebung: gemütlicher Innenraum, minimalistische Requisiten, neutral-warme Farbpalette, kein sichtbarer Mensch
+Negativ: no text, no watermark, keine Logos, keine übertriebene Sättigung, keine stilisierten Cartoon-Elemente
+
+SZENE:
+Schnitt auf ein Jungtier und eine ältere Katze (Hauptcharakter), beide tief und lang schlafend, eng aneinandergeschmiegt im sanften Dämmerlicht, visuelle Erzählung von Ruhe und Kraftsammeln.
+
+PROMPT 4:
+Ultra realistic, cinematic, DSLR photography, natural lighting, highly detailed, 9:16 vertical composition, no text, no watermark. Nahaufnahme der Hauptfigur: eine 3 Jahre alte weibliche Katze mit kurzhaarigem, grau-getigertem Fell, mandelförmigen bernsteinfarbenen Augen, feiner Schnauze und wachen Ohren; rotes Halsband mit kleiner Glocke. Sie ruht sicher und geborgen in einem gemütlichen, gewebten Körbchen mit weicher Strickdecke, eingefangen im Übergang zwischen Leicht- und Tiefschlaf: geschlossene Lider, feines Zucken der Schnurrhaare und einer Pfote, sanftes Heben und Senken des Brustkorbs, ein Ohr leicht zuckt. Natürliches Dämmerlicht durch ein nahes Fenster erzeugt warme-kühle Zwielichttöne, zarte Kantenlichter an Ohren und Fell, weicher Lichtabfall und sanfte Schatten für eine beruhigende, sichere Atmosphäre. Extrem detailreiche Fellstruktur mit klaren Tabby-Markierungen und einzelnen Haaren; knackscharfer Fokus auf Gesicht und Glocke am Halsband; sehr geringe Tiefenschärfe mit cremigem Bokeh, das Korbrand und Hintergrund weich ausblendet. Aufgenommen wie mit Vollformat-DSLR, 85mm f/1.8, ISO 400, 1/125s; dezente filmische Farbgestaltung ohne harte Highlights; aufgeräumter, cleaner Hintergrund ohne Ablenkungen. No text, no watermark.
+
+SZENE:
+
+Use exactly the same main character in every image.
+
+CHARACTER:
+MAIN CHARACTER
+
+Gender: Weiblich
+Age: 3 Jahre
+Hair: Kurz, grau-getigertes Fell
+Face: Mandelförmige, bernsteinfarbene Augen; feine Schnauze; wache Ohren
+Clothes: Rotes Halsband mit kleiner Glocke
+Style: Ruhige, dämmerungsaktive Jägerin; sucht Komfort und Sicherheit
+
+SCENE:
+Nahaufnahme einer Katze, die zwischen leichten Schlafbewegungen und tiefem Ruhen wechselt, in einem sicheren, gemütlichen Körbchen.  
+Sicherheit und Komfort beeinflussen das Schlafverhalten; Katzen wechseln zwischen Leicht- und Tiefschlaf.
+
+PROMPT 5:
+Serie von zwei 9:16 vertical composition Aufnahmen, exakt dieselbe Hauptfigur in beiden Bildern: eine weibliche, 3 Jahre alte Hauskatze mit kurzhaarigem, grau-getigertem Fell, mandelförmigen bernsteinfarbenen Augen, feiner Schnauze und wachen Ohren; trägt ein rotes Halsband mit kleiner Glocke. Schauplatz: gemütliches Wohnzimmer in der Dämmerung, natürliches Fensterlicht mit warmen, goldenen Tönen, weiche Schatten, ruhige, sichere Atmosphäre, dezente Wohnaccessoires im Hintergrund (Topfpflanze, Bücherregal, Vorhänge), alles unscharf im Bokeh.
+
+Bild 1 (Tiefschlaf/Traum): Katze zusammengerollt auf einer weichen, gestrickten Decke auf dem Sofa; Pfoten und Schnurrhaare zucken im REM-Schlaf, minimale Bewegungsunschärfe an den Pfoten; ruhiger Atem, Ohren zucken leicht; enger Bildausschnitt, Fokus auf Gesicht und Fellstruktur; cremiges Bokeh, Staubpartikel im Lichtstrahl; Fellzeichnung hochdetailliert, natürliche Farbe und Glanz.
+
+Bild 2 (Aufwachen/Spiel): Genau dieselbe Katze, gleiche Umgebung und Lichtstimmung; frisch erwacht und aktiv spielend, mandelförmige Augen weit geöffnet, Ohren nach vorn; Vorderpfoten energisch ausgestreckt nach einem dezenten Feder-Spielzeug (ohne Person im Bild); Glocke am roten Halsband schwingt; dynamische Pose mit leichter Bewegungsunschärfe an den Pfoten, restliche Details knackscharf.
+
+Stil und Technik: ultra realistic, cinematic, DSLR photography, natural lighting, highly detailed, true-to-life fur texture, micro-expressions, soft shadows, fein abgestuftes filmisches Color Grading, 50mm prime lens, f/1.8, ISO 200, 1/250s, shallow depth of field, 9:16 vertical composition, no text, no watermark.

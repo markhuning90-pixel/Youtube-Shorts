@@ -1,0 +1,31 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,34,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,3,0,2,10,10,160,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.55,Shorts,,0,0,0,,Wusstest du,
+Dialogue: 0,0:00:01.55,0:00:03.11,Shorts,,0,0,0,,dass Katzen bis zu 16
+Dialogue: 0,0:00:03.11,0:00:04.66,Shorts,,0,0,0,,Stunden am Tag schlafen?
+Dialogue: 0,0:00:04.66,0:00:06.22,Shorts,,0,0,0,,Sie sind von Natur aus
+Dialogue: 0,0:00:06.22,0:00:07.77,Shorts,,0,0,0,,Jäger. Schlaf spart Energie für
+Dialogue: 0,0:00:07.77,0:00:09.32,Shorts,,0,0,0,,die Jagd.
+Dialogue: 0,0:00:09.32,0:00:10.88,Shorts,,0,0,0,,Viele Katzen sind dämmerungsaktiv.
+Dialogue: 0,0:00:10.88,0:00:12.43,Shorts,,0,0,0,,Das heißt:
+Dialogue: 0,0:00:12.43,0:00:13.99,Shorts,,0,0,0,,Sie sind morgens und abends
+Dialogue: 0,0:00:13.99,0:00:15.54,Shorts,,0,0,0,,am aktivsten.
+Dialogue: 0,0:00:15.54,0:00:17.09,Shorts,,0,0,0,,Im Schlaf sammeln sie Kraft.
+Dialogue: 0,0:00:17.09,0:00:18.65,Shorts,,0,0,0,,Junge und alte Katzen brauchen
+Dialogue: 0,0:00:18.65,0:00:20.20,Shorts,,0,0,0,,noch mehr Schlaf.
+Dialogue: 0,0:00:20.20,0:00:21.76,Shorts,,0,0,0,,Auch Sicherheit und Komfort beeinflussen
+Dialogue: 0,0:00:21.76,0:00:23.31,Shorts,,0,0,0,,das Schlafverhalten.
+Dialogue: 0,0:00:23.31,0:00:24.86,Shorts,,0,0,0,,Katzen wechseln Leicht- und Tiefschlaf.
+Dialogue: 0,0:00:24.86,0:00:26.42,Shorts,,0,0,0,,In der Tiefschlafphase träumen sie
+Dialogue: 0,0:00:26.42,0:00:27.97,Shorts,,0,0,0,,sogar. Kurz gesagt:
+Dialogue: 0,0:00:27.97,0:00:29.53,Shorts,,0,0,0,,Viel Schlaf ist normal und
+Dialogue: 0,0:00:29.53,0:00:31.08,Shorts,,0,0,0,,wichtig für eine gesunde Katze.

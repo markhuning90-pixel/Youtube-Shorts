@@ -1,4 +1,5 @@
 import base64
+import json
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -6,6 +7,30 @@ from pathlib import Path
 from openai import OpenAI
 
 from config import load_api_key
+
+
+QUALITY_LIMITS = {
+    "low": 4,
+    "normal": 5,
+    "high": 8,
+}
+
+
+def get_max_images():
+    settings_file = Path("config/settings.json")
+
+    if not settings_file.exists():
+        return QUALITY_LIMITS["normal"]
+
+    try:
+        settings = json.loads(settings_file.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return QUALITY_LIMITS["normal"]
+
+    return QUALITY_LIMITS.get(
+        settings.get("quality_mode"),
+        QUALITY_LIMITS["normal"],
+    )
 
 
 def get_image_prompts(prompts_text):
@@ -24,7 +49,7 @@ def generate_single_image(client, image_prompt, image_file):
     response = client.images.generate(
         model="gpt-image-1",
         prompt=image_prompt,
-        size="1024x1024",
+        size="1024x1536",
     )
     image_file.write_bytes(base64.b64decode(response.data[0].b64_json))
 
@@ -52,7 +77,9 @@ def generate_images(generation):
     images_folder.mkdir(exist_ok=True)
 
     client = OpenAI(api_key=api_key)
-    image_prompts = get_image_prompts(prompts_file.read_text(encoding="utf-8"))
+    image_prompts = get_image_prompts(
+        prompts_file.read_text(encoding="utf-8")
+    )[:get_max_images()]
 
     with ThreadPoolExecutor(max_workers=3) as executor:
         futures = {
