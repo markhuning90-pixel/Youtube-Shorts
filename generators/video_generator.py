@@ -1,3 +1,4 @@
+import random
 import shutil
 import subprocess
 from pathlib import Path
@@ -29,6 +30,45 @@ def get_audio_duration(voice_file):
         return None
 
 
+def get_motion_filter(motion, frames_per_image, zoom_increment):
+    center_x = "iw/2-(iw/zoom/2)"
+    center_y = "ih/2-(ih/zoom/2)"
+    frame_range = max(1, frames_per_image - 1)
+    progress = f"(1-cos(PI*on/{frame_range}))/2"
+
+    if motion == "zoom_in":
+        zoom = f"min(zoom+{zoom_increment},1.1)"
+        x_position = center_x
+        y_position = center_y
+    elif motion == "zoom_out":
+        zoom = f"if(eq(on,0),1.1,max(zoom-{zoom_increment},1))"
+        x_position = center_x
+        y_position = center_y
+    elif motion == "pan_left":
+        zoom = "1.05"
+        x_position = f"(iw-iw/zoom)*(1-{progress})"
+        y_position = center_y
+    elif motion == "pan_right":
+        zoom = "1.05"
+        x_position = f"(iw-iw/zoom)*{progress}"
+        y_position = center_y
+    elif motion == "pan_up":
+        zoom = "1.05"
+        x_position = center_x
+        y_position = f"(ih-ih/zoom)*(1-{progress})"
+    else:
+        zoom = "1.05"
+        x_position = center_x
+        y_position = f"(ih-ih/zoom)*{progress}"
+
+    return (
+        "scale=2160:3840:force_original_aspect_ratio=increase,"
+        "crop=2160:3840,"
+        f"zoompan=z='{zoom}':x='{x_position}':y='{y_position}':"
+        f"d={frames_per_image}:s=1080x1920:fps=30"
+    )
+
+
 def generate_video(generation):
     if not validate_video_assets(generation):
         return None
@@ -43,47 +83,52 @@ def generate_video(generation):
     voice_file = output_folder / "voice.mp3"
     subtitles_file = output_folder / "subtitles.ass"
     video_file = output_folder / "final_video.mp4"
-    concat_file = output_folder / "images.txt"
     audio_duration = get_audio_duration(voice_file)
 
     if audio_duration is None:
         return None
 
     image_duration = audio_duration / len(image_files)
+    frames_per_image = max(1, round(image_duration * 30))
+    zoom_increment = 0.1 / frames_per_image
     subtitles_path = subtitles_file.resolve().as_posix().replace(":", "\\:")
-    video_filter = (
-        "scale=1080:1920:force_original_aspect_ratio=increase,"
-        "crop=1080:1920,setsar=1,fps=30,"
-        f"ass='{subtitles_path}'"
+    movements = [
+        "zoom_in",
+        "zoom_out",
+        "pan_left",
+        "pan_right",
+        "pan_up",
+        "pan_down",
+    ]
+
+    command = ["ffmpeg", "-y"]
+
+    for image_file in image_files:
+        command.extend(["-i", str(image_file)])
+
+    command.extend(["-i", str(voice_file)])
+
+    filter_parts = []
+
+    for index in range(len(image_files)):
+        motion = random.choice(movements)
+        motion_filter = get_motion_filter(motion, frames_per_image, zoom_increment)
+        filter_parts.append(f"[{index}:v]{motion_filter}[video_{index}]")
+
+    video_inputs = "".join(f"[video_{index}]" for index in range(len(image_files)))
+    filter_parts.append(
+        f"{video_inputs}concat=n={len(image_files)}:v=1:a=0,"
+        f"setsar=1,ass='{subtitles_path}'[video_out]"
     )
 
-    try:
-        concat_lines = []
-
-        for image_file in image_files:
-            concat_lines.append(f"file '{image_file.resolve().as_posix()}'\n")
-            concat_lines.append(f"duration {image_duration}\n")
-
-        concat_lines.append(f"file '{image_files[-1].resolve().as_posix()}'\n")
-        concat_file.write_text("".join(concat_lines), encoding="utf-8")
-
-        command = [
-            "ffmpeg",
-            "-y",
-            "-f",
-            "concat",
-            "-safe",
-            "0",
-            "-i",
-            str(concat_file),
-            "-i",
-            str(voice_file),
+    command.extend(
+        [
+            "-filter_complex",
+            ";".join(filter_parts),
             "-map",
-            "0:v:0",
+            "[video_out]",
             "-map",
-            "1:a:0",
-            "-vf",
-            video_filter,
+            f"{len(image_files)}:a:0",
             "-c:v",
             "libx264",
             "-pix_fmt",
@@ -95,14 +140,12 @@ def generate_video(generation):
             "-shortest",
             str(video_file),
         ]
-        result = subprocess.run(command, capture_output=True, text=True)
+    )
+    result = subprocess.run(command, capture_output=True, text=True)
 
-        if result.returncode != 0:
-            print("Das Video konnte nicht erstellt werden.")
-            print(result.stderr)
-            return None
-    finally:
-        if concat_file.exists():
-            concat_file.unlink()
+    if result.returncode != 0:
+        print("Das Video konnte nicht erstellt werden.")
+        print(result.stderr)
+        return None
 
     return video_file
