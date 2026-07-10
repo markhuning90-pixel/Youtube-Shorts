@@ -2,7 +2,9 @@ from approve import approve_script
 from console import show_generation
 from generators.content_generator import generate_content, validate_content
 from generators.file_writer import save_script
+from generators.scene_generator import generate_scenes
 from generators.status_manager import update_status
+from generators.subtitle_generator import generate_subtitles
 from generators.topic_picker import get_all_topics
 from generators.voice_generator import generate_voice
 from models.generation import Generation
@@ -36,9 +38,31 @@ def run():
                 update_status(metadata_file, "voice_created")
                 generation.status = "voice_created"
 
+                subtitle_file = generate_subtitles(generation)
+
+                if subtitle_file is not None:
+                    update_status(metadata_file, "subtitles_created")
+                    generation.status = "subtitles_created"
+
+                    scene_file = generate_scenes(generation)
+
+                    if scene_file is not None:
+                        update_status(metadata_file, "scenes_created")
+                        generation.status = "scenes_created"
+
                 print("\nSprachdatei erstellt.")
                 print("Gespeichert unter:")
                 print(voice_file.resolve())
+
+                if subtitle_file is not None:
+                    print("\nUntertitel erstellt.")
+                    print("Gespeichert unter:")
+                    print(subtitle_file.resolve())
+
+                    if scene_file is not None:
+                        print("\nSzenenplan erstellt.")
+                        print("Gespeichert unter:")
+                        print(scene_file.resolve())
 
             show_generation(generation)
 
