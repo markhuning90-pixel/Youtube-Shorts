@@ -10,7 +10,7 @@ def approve_script():
         return
 
     while True:
-        choice = input("Skript freigeben? (j/n):").strip().lower()
+        choice = input("Skript freigeben? (j/n/s):").strip().lower()
 
         if choice == "j":
             target_folder = Path("completed")
@@ -22,7 +22,11 @@ def approve_script():
             message = "Skript abgelehnt."
             break
 
-        print("Bitte nur j oder n eingeben.")
+        if choice == "s":
+            print("Freigabe übersprungen.")
+            return
+
+        print("Bitte nur j, n oder s eingeben.")
 
     target_folder.mkdir(exist_ok=True)
     move(str(source_file), str(target_folder / "script.txt"))
