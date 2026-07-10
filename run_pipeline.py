@@ -7,6 +7,7 @@ from generators.scene_generator import generate_scenes
 from generators.status_manager import update_status
 from generators.subtitle_generator import generate_subtitles
 from generators.topic_picker import get_all_topics
+from generators.video_generator import generate_video
 from generators.voice_generator import generate_voice
 from models.generation import Generation
 
@@ -57,6 +58,12 @@ def run():
                             update_status(metadata_file, "images_created")
                             generation.status = "images_created"
 
+                            video_file = generate_video(generation)
+
+                            if video_file is not None:
+                                update_status(metadata_file, "video_created")
+                                generation.status = "video_created"
+
                 print("\nSprachdatei erstellt.")
                 print("Gespeichert unter:")
                 print(voice_file.resolve())
@@ -75,6 +82,11 @@ def run():
                             print("\nBilder erstellt.")
                             print("Gespeichert unter:")
                             print(images_folder.resolve())
+
+                            if video_file is not None:
+                                print("\nVideo erstellt.")
+                                print("Gespeichert unter:")
+                                print(video_file.resolve())
 
             show_generation(generation)
 
