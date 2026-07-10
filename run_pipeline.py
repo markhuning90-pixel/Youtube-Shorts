@@ -1,6 +1,7 @@
 from approve import approve_script
 from generators.content_generator import generate_content, validate_content
 from generators.file_writer import save_script
+from generators.status_manager import update_status
 from generators.topic_picker import get_next_topic
 
 
@@ -43,6 +44,12 @@ def run():
         description=description,
         hashtags=hashtags,
     )
+    metadata_file = saved_file.parent / "metadata.json"
+    update_status(metadata_file, "generated")
+
+    print("\nStatus:")
+    print("generated")
+
     print("\nScript erfolgreich gespeichert.")
     print("Gespeichert unter:")
     print(saved_file.resolve())
