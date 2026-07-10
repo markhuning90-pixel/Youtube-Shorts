@@ -36,7 +36,9 @@ def run():
     print("\nScript:")
     print(script)
 
-    save_script(topic, script)
+    saved_file = save_script(topic, script)
     print("\nScript erfolgreich gespeichert.")
+    print("Gespeichert unter:")
+    print(saved_file.resolve())
 
     approve_script()
