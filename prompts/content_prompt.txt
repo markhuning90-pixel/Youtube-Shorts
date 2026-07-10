@@ -1,0 +1,24 @@
+Erstelle Content für ein kurzes YouTube-Shorts-Video zum Thema:
+
+{topic}
+
+Gib die Antwort exakt in diesem Format aus:
+
+TITLE:
+<kurzer neugierig machender Titel, maximal 60 Zeichen>
+
+DESCRIPTION:
+<kurze YouTube-Beschreibung, maximal 2 Sätze>
+
+HASHTAGS:
+<5 passende Hashtags in einer Zeile>
+
+SCRIPT:
+<spannendes Sprecher-Skript, maximal 120 Wörter>
+
+Regeln:
+- Kein Emoji
+- Kurze Sätze
+- Einfach verständlich
+- Starte das Script mit einem starken Hook
+- Gib keine Erklärungen außerhalb des Formats aus

@@ -1,0 +1,10 @@
+Schreibe einen kurzen, neugierig machenden YouTube-Shorts-Titel.
+
+Thema:
+
+{topic}
+
+Regeln:
+- Maximal 60 Zeichen
+- Kein Emoji
+- Nur den Titel ausgeben
