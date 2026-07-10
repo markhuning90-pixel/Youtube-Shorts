@@ -29,15 +29,16 @@ def run():
             )
 
             saved_file = save_script(generation)
+            metadata_file = saved_file.parent / "metadata.json"
             voice_file = generate_voice(generation)
 
             if voice_file is not None:
+                update_status(metadata_file, "voice_created")
+                generation.status = "voice_created"
+
                 print("\nSprachdatei erstellt.")
                 print("Gespeichert unter:")
                 print(voice_file.resolve())
-
-            metadata_file = saved_file.parent / "metadata.json"
-            update_status(metadata_file, "generated")
 
             show_generation(generation)
 
