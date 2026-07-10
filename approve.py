@@ -4,6 +4,7 @@ from shutil import move
 
 def approve_script(script_file):
     source_file = Path(script_file)
+    generation_folder = source_file.parent
 
     if not source_file.exists():
         print("Kein Script zum Freigeben gefunden.")
@@ -29,5 +30,5 @@ def approve_script(script_file):
         print("Bitte nur j, n oder s eingeben.")
 
     target_folder.mkdir(exist_ok=True)
-    move(str(source_file), str(target_folder / "script.txt"))
+    move(str(generation_folder), str(target_folder / generation_folder.name))
     print(message)
