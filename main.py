@@ -1,8 +1,9 @@
-from generators.topic_loader import load_topics
+from generators.topic_picker import get_next_topic
 
-topics = load_topics()
+topic = get_next_topic()
 
-print(f"{len(topics)} Themen gefunden:\n")
-
-for number, topic in enumerate(topics, start=1):
-    print(f"{number}. {topic}")
+if topic is None:
+    print("Keine Themen gefunden.")
+else:
+    print("Nächstes Thema:")
+    print(topic)
