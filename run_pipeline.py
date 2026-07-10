@@ -1,5 +1,6 @@
 from approve import approve_script
 from console import show_generation
+from generators.character_generator import generate_character
 from generators.content_generator import generate_content, validate_content
 from generators.file_writer import save_script
 from generators.image_generator import generate_images
@@ -54,7 +55,14 @@ def run():
                         generation.status = "scenes_created"
 
                         images_folder = None
-                        image_prompt_file = generate_image_prompts(generation)
+                        image_prompt_file = None
+                        character_file = generate_character(generation)
+
+                        if character_file is not None:
+                            update_status(metadata_file, "character_created")
+                            generation.status = "character_created"
+
+                            image_prompt_file = generate_image_prompts(generation)
 
                         if image_prompt_file is not None:
                             update_status(metadata_file, "image_prompts_created")
@@ -86,20 +94,25 @@ def run():
                         print("Gespeichert unter:")
                         print(scene_file.resolve())
 
-                        if image_prompt_file is not None:
-                            print("\nBildprompts erstellt.")
+                        if character_file is not None:
+                            print("\nHauptcharakter erstellt.")
                             print("Gespeichert unter:")
-                            print(image_prompt_file.resolve())
+                            print(character_file.resolve())
 
-                            if images_folder is not None:
-                                print("\nBilder erstellt.")
+                            if image_prompt_file is not None:
+                                print("\nBildprompts erstellt.")
                                 print("Gespeichert unter:")
-                                print(images_folder.resolve())
+                                print(image_prompt_file.resolve())
 
-                                if video_file is not None:
-                                    print("\nVideo erstellt.")
+                                if images_folder is not None:
+                                    print("\nBilder erstellt.")
                                     print("Gespeichert unter:")
-                                    print(video_file.resolve())
+                                    print(images_folder.resolve())
+
+                                    if video_file is not None:
+                                        print("\nVideo erstellt.")
+                                        print("Gespeichert unter:")
+                                        print(video_file.resolve())
 
             show_generation(generation)
 

@@ -32,10 +32,15 @@ def generate_image_prompts(generation):
 
     output_folder = Path(generation.output_folder)
     scenes_file = output_folder / "scenes.txt"
+    character_file = output_folder / "character.txt"
     prompt_file = Path("prompts/image_prompt.txt")
 
     if not scenes_file.exists():
         print("Die Datei scenes.txt wurde nicht gefunden.")
+        return None
+
+    if not character_file.exists():
+        print("Die Datei character.txt wurde nicht gefunden.")
         return None
 
     if not prompt_file.exists():
@@ -54,13 +59,20 @@ def generate_image_prompts(generation):
         return None
 
     prompt_template = prompt_file.read_text(encoding="utf-8")
+    character = character_file.read_text(encoding="utf-8").strip()
     client = OpenAI(api_key=api_key)
     image_prompts = []
 
     for number, scene in enumerate(scenes, start=1):
         response = client.responses.create(
             model="gpt-5",
-            input=prompt_template.format(scene=scene),
+            input=prompt_template.format(
+                scene=(
+                    "Use exactly the same main character in every image.\n\n"
+                    f"CHARACTER:\n{character}\n\n"
+                    f"SCENE:\n{scene}"
+                )
+            ),
         )
         image_prompts.append(
             f"PROMPT {number}:\n{extract_image_prompt(response.output_text)}"

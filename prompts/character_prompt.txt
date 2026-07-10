@@ -1,0 +1,19 @@
+Erstelle aus dem folgenden kompletten Script einen Hauptcharakter.
+
+Format:
+
+MAIN CHARACTER
+
+Gender:
+Age:
+Hair:
+Face:
+Clothes:
+Style:
+
+Nur diese Informationen.
+Keine Erklärungen.
+
+SCRIPT:
+
+{script}
