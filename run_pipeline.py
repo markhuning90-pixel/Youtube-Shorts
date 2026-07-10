@@ -2,6 +2,7 @@ from approve import approve_script
 from console import show_generation
 from generators.content_generator import generate_content, validate_content
 from generators.file_writer import save_script
+from generators.image_generator import generate_images
 from generators.scene_generator import generate_scenes
 from generators.status_manager import update_status
 from generators.subtitle_generator import generate_subtitles
@@ -50,6 +51,12 @@ def run():
                         update_status(metadata_file, "scenes_created")
                         generation.status = "scenes_created"
 
+                        images_folder = generate_images(generation)
+
+                        if images_folder is not None:
+                            update_status(metadata_file, "images_created")
+                            generation.status = "images_created"
+
                 print("\nSprachdatei erstellt.")
                 print("Gespeichert unter:")
                 print(voice_file.resolve())
@@ -63,6 +70,11 @@ def run():
                         print("\nSzenenplan erstellt.")
                         print("Gespeichert unter:")
                         print(scene_file.resolve())
+
+                        if images_folder is not None:
+                            print("\nBilder erstellt.")
+                            print("Gespeichert unter:")
+                            print(images_folder.resolve())
 
             show_generation(generation)
 
