@@ -1,3 +1,4 @@
+from approve import approve_script
 from generators.file_writer import save_script
 from generators.topic_picker import get_next_topic
 from generators.script_generator import generate_script
@@ -12,6 +13,7 @@ def run():
 
     script = generate_script(topic)
     save_script(topic, script)
+    approve_script()
 
     print("Thema:")
     print(topic)
