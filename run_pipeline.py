@@ -4,6 +4,7 @@ from generators.content_generator import generate_content, validate_content
 from generators.file_writer import save_script
 from generators.status_manager import update_status
 from generators.topic_picker import get_all_topics
+from generators.voice_generator import generate_voice
 from models.generation import Generation
 
 
@@ -28,6 +29,13 @@ def run():
             )
 
             saved_file = save_script(generation)
+            voice_file = generate_voice(generation)
+
+            if voice_file is not None:
+                print("\nSprachdatei erstellt.")
+                print("Gespeichert unter:")
+                print(voice_file.resolve())
+
             metadata_file = saved_file.parent / "metadata.json"
             update_status(metadata_file, "generated")
 
