@@ -11,6 +11,7 @@ def save_script(generation):
     folder_name = created_at.strftime("%Y%m%d_%H%M%S")
     generation_folder = output_folder / folder_name
     generation_folder.mkdir(exist_ok=True)
+    generation.output_folder = str(generation_folder)
 
     output_file = generation_folder / "script.txt"
     output_file.write_text(
@@ -18,6 +19,7 @@ def save_script(generation):
         encoding="utf-8",
     )
 
+    generation.status = "generated"
     metadata = {
         "topic": generation.topic,
         "title": generation.title,
@@ -25,7 +27,7 @@ def save_script(generation):
         "hashtags": generation.hashtags,
         "script": generation.script,
         "created_at": created_at.isoformat(),
-        "status": "pending",
+        "status": generation.status,
     }
     metadata_file = generation_folder / "metadata.json"
     metadata_file.write_text(
