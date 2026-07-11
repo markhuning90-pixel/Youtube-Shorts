@@ -12,6 +12,7 @@ from generators.topic_picker import get_all_topics
 from generators.video_generator import generate_video
 from generators.voice_generator import generate_voice
 from models.generation import Generation
+from youtube_uploader import upload_video
 
 
 def run():
@@ -79,6 +80,20 @@ def run():
                                 if video_file is not None:
                                     update_status(metadata_file, "video_created")
                                     generation.status = "video_created"
+
+                                    try:
+                                        upload_video(
+                                            str(video_file),
+                                            generation.title,
+                                            generation.description,
+                                            generation.hashtags,
+                                        )
+                                        print("\nVideo auf YouTube hochgeladen.")
+                                    except Exception as error:
+                                        print(
+                                            "\nYouTube-Upload fehlgeschlagen: "
+                                            f"{error}"
+                                        )
 
                 print("\nSprachdatei erstellt.")
                 print("Gespeichert unter:")

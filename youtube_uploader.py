@@ -20,25 +20,25 @@ def get_youtube():
     )
 
 
-def upload_video():
+def upload_video(video_path, title, description, hashtags):
     youtube = get_youtube()
 
     video = youtube.videos().insert(
         part="snippet,status",
         body={
             "snippet": {
-                "title": "Test Upload",
-                "description": "Automatischer Test Upload",
-                "categoryId": "22"
+                "title": title,
+                "description": f"{description}\n\n{hashtags}".strip(),
+                "categoryId": "22",
             },
             "status": {
-                "privacyStatus": "private"
-            }
+                "privacyStatus": "private",
+            },
         },
         media_body=MediaFileUpload(
-            "test.mp4",
-            mimetype="video/mp4"
-        )
+            video_path,
+            mimetype="video/mp4",
+        ),
     )
 
     response = video.execute()
@@ -48,4 +48,4 @@ def upload_video():
 
 
 if __name__ == "__main__":
-    upload_video()
+    print("Bitte upload_video(video_path, title, description, hashtags) verwenden.")
