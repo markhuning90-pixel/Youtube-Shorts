@@ -1,9 +1,9 @@
+import json
 import random
 import shutil
 import subprocess
 from pathlib import Path
 
-from generators.video_validator import validate_video_assets
 
 
 def get_audio_duration(voice_file):
@@ -37,6 +37,35 @@ def has_nvenc():
         text=True,
     )
     return "h264_nvenc" in f"{result.stdout}\n{result.stderr}"
+
+
+def get_scene_durations(scenes_file, audio_duration, image_count):
+    if not scenes_file.exists():
+        print("Die Datei scenes.json wurde nicht gefunden.")
+        return None
+
+    try:
+        scenes = json.loads(scenes_file.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        print("Die Datei scenes.json enthält kein gültiges JSON.")
+        return None
+
+    if not isinstance(scenes, list) or len(scenes) < image_count:
+        print("Szenendauern fehlen. Automatische Bilddauer wird verwendet.")
+        return [audio_duration / image_count] * image_count
+
+    try:
+        durations = [float(scene["duration"]) for scene in scenes[:image_count]]
+    except (KeyError, TypeError, ValueError):
+        print("Szenendauern fehlen. Automatische Bilddauer wird verwendet.")
+        return [audio_duration / image_count] * image_count
+
+    if any(duration <= 0 for duration in durations):
+        print("Szenendauern fehlen. Automatische Bilddauer wird verwendet.")
+        return [audio_duration / image_count] * image_count
+
+    total_duration = sum(durations)
+    return [duration / total_duration * audio_duration for duration in durations]
 
 
 def get_motion_filter(motion, frames_per_image, zoom_increment):
@@ -79,7 +108,8 @@ def get_motion_filter(motion, frames_per_image, zoom_increment):
 
 
 def generate_video(generation):
-    if not validate_video_assets(generation):
+    if not generation.output_folder:
+        print("Kein Output-Ordner für die Generierung gefunden.")
         return None
 
     if shutil.which("ffmpeg") is None or shutil.which("ffprobe") is None:
@@ -91,16 +121,35 @@ def generate_video(generation):
     image_files = sorted(images_folder.glob("*.png"))
     voice_file = output_folder / "voice.mp3"
     subtitles_file = output_folder / "subtitles.ass"
+    scenes_file = output_folder / "scenes.json"
     video_file = output_folder / "final_video.mp4"
     music_file = Path("assets/music/background.mp3")
+
+    if not voice_file.exists() or not subtitles_file.exists():
+        print("Voice-Datei oder ASS-Untertitel wurden nicht gefunden.")
+        return None
+
+    if not image_files:
+        print("Im Bilder-Ordner wurde keine PNG-Datei gefunden.")
+        return None
+
     audio_duration = get_audio_duration(voice_file)
 
     if audio_duration is None:
         return None
 
-    image_duration = audio_duration / len(image_files)
-    frames_per_image = max(1, round(image_duration * 30))
-    zoom_increment = 0.1 / frames_per_image
+    scene_durations = get_scene_durations(
+        scenes_file,
+        audio_duration,
+        len(image_files),
+    )
+
+    if scene_durations is None:
+        return None
+
+    frames_per_image = [
+        max(1, round(duration * 30)) for duration in scene_durations
+    ]
     subtitles_path = subtitles_file.resolve().as_posix().replace(":", "\\:")
     movements = [
         "zoom_in",
@@ -129,9 +178,10 @@ def generate_video(generation):
 
     filter_parts = []
 
-    for index in range(len(image_files)):
+    for index, frame_count in enumerate(frames_per_image):
         motion = random.choice(movements)
-        motion_filter = get_motion_filter(motion, frames_per_image, zoom_increment)
+        zoom_increment = 0.1 / frame_count
+        motion_filter = get_motion_filter(motion, frame_count, zoom_increment)
         filter_parts.append(f"[{index}:v]{motion_filter}[video_{index}]")
 
     video_inputs = "".join(f"[video_{index}]" for index in range(len(image_files)))

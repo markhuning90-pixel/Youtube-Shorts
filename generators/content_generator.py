@@ -3,6 +3,7 @@ from pathlib import Path
 from openai import OpenAI
 
 from config import load_api_key
+from utils.cost_tracker import record_gpt_cost
 
 
 def validate_content(content):
@@ -57,5 +58,6 @@ def generate_content(topic):
         model="gpt-5-mini",
         input=prompt,
     )
+    record_gpt_cost()
 
     return parse_content(response.output_text)

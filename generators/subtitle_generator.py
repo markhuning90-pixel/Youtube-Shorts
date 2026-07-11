@@ -77,6 +77,25 @@ def escape_ass_text(text):
     return text.replace("\\", "\\\\").replace("{", "\\{").replace("}", "\\}")
 
 
+def format_ass_caption(caption):
+    words = caption.split()
+    key_word_index = max(
+        range(len(words)),
+        key=lambda index: len(words[index].strip(".,!?;:")),
+    )
+    formatted_words = [escape_ass_text(word) for word in words]
+    formatted_words[key_word_index] = (
+        r"{\c&H0000FFFF&\b1\fscx110\fscy110}"
+        f"{formatted_words[key_word_index]}"
+        r"{\c&H00FFFFFF&\b1\fscx100\fscy100}"
+    )
+
+    return (
+        r"{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}"
+        + " ".join(formatted_words)
+    )
+
+
 def generate_subtitles(generation):
     if not generation.output_folder:
         print("Kein Output-Ordner für die Generierung gefunden.")
@@ -120,10 +139,11 @@ def generate_subtitles(generation):
 ScriptType: v4.00+
 PlayResX: 1080
 PlayResY: 1920
+WrapStyle: 2
 
 [V4+ Styles]
 Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
-Style: Shorts,Arial,34,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,3,0,2,10,10,160,1
+Style: Shorts,Arial,58,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,1,2,40,40,260,1
 
 [Events]
 Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
@@ -135,7 +155,7 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
         end_time = number * caption_duration
         ass_events.append(
             f"Dialogue: 0,{format_ass_time(start_time)},{format_ass_time(end_time)},"
-            f"Shorts,,0,0,0,,{escape_ass_text(caption)}"
+            f"Shorts,,0,0,0,,{format_ass_caption(caption)}"
         )
 
     ass_file = output_folder / "subtitles.ass"

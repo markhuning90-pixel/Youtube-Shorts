@@ -3,6 +3,7 @@ from pathlib import Path
 from openai import OpenAI
 
 from config import load_api_key
+from utils.cost_tracker import record_voice_cost
 
 
 def generate_voice(generation):
@@ -24,5 +25,7 @@ def generate_voice(generation):
         input=generation.script,
     ) as response:
         response.stream_to_file(output_file)
+
+    record_voice_cost(generation.output_folder, generation.script)
 
     return output_file

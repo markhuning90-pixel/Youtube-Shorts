@@ -1,12 +1,12 @@
 import base64
 import json
-import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from openai import OpenAI
 
 from config import load_api_key
+from utils.cost_tracker import record_image_cost
 
 
 QUALITY_LIMITS = {
@@ -33,16 +33,28 @@ def get_max_images():
     )
 
 
-def get_image_prompts(prompts_text):
-    return [
-        prompt.strip()
-        for prompt in re.findall(
-            r"^PROMPT\s+\d+:\s*(.*?)(?=^PROMPT\s+\d+:|\Z)",
-            prompts_text,
-            flags=re.MULTILINE | re.DOTALL,
-        )
-        if prompt.strip()
-    ]
+def load_scene_image_prompts(scenes_file):
+    try:
+        scenes = json.loads(scenes_file.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        print("Die Datei scenes.json enthält kein gültiges JSON.")
+        return None
+
+    if not isinstance(scenes, list):
+        print("Die Datei scenes.json enthält keine Szenenliste.")
+        return None
+
+    try:
+        image_prompts = [str(scene["image_prompt"]).strip() for scene in scenes]
+    except (KeyError, TypeError):
+        print("Die Datei scenes.json enthält ungültige Szenendaten.")
+        return None
+
+    if not image_prompts or any(not image_prompt for image_prompt in image_prompts):
+        print("Die Datei scenes.json enthält keine gültigen Bildprompts.")
+        return None
+
+    return image_prompts
 
 
 def generate_single_image(client, image_prompt, image_file):
@@ -62,10 +74,15 @@ def generate_images(generation):
         return None
 
     output_folder = Path(generation.output_folder)
-    prompts_file = output_folder / "image_prompts.txt"
+    scenes_file = output_folder / "scenes.json"
 
-    if not prompts_file.exists():
-        print("Die Datei image_prompts.txt wurde nicht gefunden.")
+    if not scenes_file.exists():
+        print("Die Datei scenes.json wurde nicht gefunden.")
+        return None
+
+    scene_image_prompts = load_scene_image_prompts(scenes_file)
+
+    if scene_image_prompts is None:
         return None
 
     api_key = load_api_key()
@@ -77,9 +94,7 @@ def generate_images(generation):
     images_folder.mkdir(exist_ok=True)
 
     client = OpenAI(api_key=api_key)
-    image_prompts = get_image_prompts(
-        prompts_file.read_text(encoding="utf-8")
-    )[:get_max_images()]
+    image_prompts = scene_image_prompts[:get_max_images()]
 
     with ThreadPoolExecutor(max_workers=3) as executor:
         futures = {
@@ -102,6 +117,8 @@ def generate_images(generation):
             except Exception as error:
                 print(f"Bild {number} konnte nicht erstellt werden: {error}")
                 failed = True
+
+    record_image_cost(output_folder, len(image_prompts))
 
     if failed:
         return None

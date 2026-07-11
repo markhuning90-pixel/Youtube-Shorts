@@ -1,4 +1,4 @@
-import re
+import json
 import time
 from pathlib import Path
 
@@ -7,16 +7,28 @@ from openai import APIConnectionError, APITimeoutError, OpenAI
 from config import load_api_key
 
 
-def get_scenes(scenes_text):
-    return [
-        scene.strip()
-        for scene in re.findall(
-            r"^SCENE\s+\d+:\s*(.*?)(?=^SCENE\s+\d+:|\Z)",
-            scenes_text,
-            flags=re.MULTILINE | re.DOTALL,
-        )
-        if scene.strip()
-    ]
+def load_scene_image_prompts(scenes_file):
+    try:
+        scenes = json.loads(scenes_file.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        print("Die Datei scenes.json enthält kein gültiges JSON.")
+        return None
+
+    if not isinstance(scenes, list):
+        print("Die Datei scenes.json enthält keine Szenenliste.")
+        return None
+
+    try:
+        image_prompts = [str(scene["image_prompt"]).strip() for scene in scenes]
+    except (KeyError, TypeError):
+        print("Die Datei scenes.json enthält ungültige Szenendaten.")
+        return None
+
+    if not image_prompts or any(not image_prompt for image_prompt in image_prompts):
+        print("Die Datei scenes.json enthält keine gültigen Bildprompts.")
+        return None
+
+    return image_prompts
 
 
 def extract_image_prompt(response_text):
@@ -51,12 +63,12 @@ def generate_image_prompts(generation):
         return None
 
     output_folder = Path(generation.output_folder)
-    scenes_file = output_folder / "scenes.txt"
+    scenes_file = output_folder / "scenes.json"
     character_file = output_folder / "character.txt"
     prompt_file = Path("prompts/image_prompt.txt")
 
     if not scenes_file.exists():
-        print("Die Datei scenes.txt wurde nicht gefunden.")
+        print("Die Datei scenes.json wurde nicht gefunden.")
         return None
 
     if not character_file.exists():
@@ -72,10 +84,9 @@ def generate_image_prompts(generation):
     if not api_key:
         raise RuntimeError("Kein API-Key gefunden.")
 
-    scenes = get_scenes(scenes_file.read_text(encoding="utf-8"))
+    scenes = load_scene_image_prompts(scenes_file)
 
-    if not scenes:
-        print("In scenes.txt wurden keine Szenen gefunden.")
+    if scenes is None:
         return None
 
     prompt_template = prompt_file.read_text(encoding="utf-8")
@@ -83,12 +94,12 @@ def generate_image_prompts(generation):
     client = OpenAI(api_key=api_key)
     image_prompts = []
 
-    for number, scene in enumerate(scenes, start=1):
+    for number, scene_prompt in enumerate(scenes, start=1):
         input_text = prompt_template.format(
             scene=(
                 "Use exactly the same main character in every image.\n\n"
                 f"CHARACTER:\n{character}\n\n"
-                f"SCENE:\n{scene}"
+                f"SCENE:\n{scene_prompt}"
             )
         )
         response = create_image_prompt(
