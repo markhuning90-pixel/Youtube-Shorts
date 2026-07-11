@@ -10,6 +10,7 @@ from generators.scene_generator import generate_scenes
 from generators.status_manager import update_status
 from generators.subtitle_generator import generate_subtitles
 from generators.topic_picker import get_all_topics
+from generators.topic_loader import remove_topic, save_used_topic
 from generators.video_generator import generate_video
 from generators.voice_generator import generate_voice
 from models.generation import Generation
@@ -67,6 +68,11 @@ def continue_approved_generation(generation):
     show_generation(generation)
     print("Video erstellt. Nutze review_videos.py und upload_ready.py.")
     print(video_file.resolve())
+
+    if remove_topic(generation.topic):
+        save_used_topic(generation.topic)
+        print("Thema aus topics.txt entfernt.")
+        print("Thema in used_topics.txt gespeichert.")
 
 
 def run():
