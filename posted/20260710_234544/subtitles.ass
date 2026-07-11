@@ -1,0 +1,27 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,34,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,3,0,2,10,10,160,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.66,Shorts,,0,0,0,,Mehr als 16 Stunden Schlaf?
+Dialogue: 0,0:00:01.66,0:00:03.33,Shorts,,0,0,0,,Katzen machen das täglich.
+Dialogue: 0,0:00:03.33,0:00:04.99,Shorts,,0,0,0,,Sie sind natürliche Jäger.
+Dialogue: 0,0:00:04.99,0:00:06.65,Shorts,,0,0,0,,Das kostet Energie.
+Dialogue: 0,0:00:06.65,0:00:08.32,Shorts,,0,0,0,,Schlaf spart Kraft für kurze,
+Dialogue: 0,0:00:08.32,0:00:09.98,Shorts,,0,0,0,,starke Einsätze.
+Dialogue: 0,0:00:09.98,0:00:11.64,Shorts,,0,0,0,,Katzen sind dämmerungsaktiv.
+Dialogue: 0,0:00:11.64,0:00:13.31,Shorts,,0,0,0,,Morgens und abends sind sie
+Dialogue: 0,0:00:13.31,0:00:14.97,Shorts,,0,0,0,,wach. Kätzchen und alte Samtpfoten
+Dialogue: 0,0:00:14.97,0:00:16.63,Shorts,,0,0,0,,brauchen noch mehr Ruhe.
+Dialogue: 0,0:00:16.63,0:00:18.30,Shorts,,0,0,0,,Im Schlaf erneuern sie Körper
+Dialogue: 0,0:00:18.30,0:00:19.96,Shorts,,0,0,0,,und Geist.
+Dialogue: 0,0:00:19.96,0:00:21.63,Shorts,,0,0,0,,Sie durchlaufen leichten Schlaf und
+Dialogue: 0,0:00:21.63,0:00:23.29,Shorts,,0,0,0,,REM. Oft träumen sie.
+Dialogue: 0,0:00:23.29,0:00:24.95,Shorts,,0,0,0,,Kurz: Schlaf ist für Katzen
+Dialogue: 0,0:00:24.95,0:00:26.62,Shorts,,0,0,0,,Überleben und Wohlbefinden.

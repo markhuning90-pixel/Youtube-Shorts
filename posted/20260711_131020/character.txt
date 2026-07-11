@@ -1,0 +1,8 @@
+MAIN CHARACTER
+
+Gender: Weiblich
+Age: 31
+Hair: Dunkelblond, lockig, zum Zopf gebunden
+Face: Freundlich, grüne Augen, Sommersprossen
+Clothes: Gemütlicher Cardigan, T-Shirt mit Katzenmotiv, Jeans, Sneaker
+Style: Warmherzig, sachkundig, ruhige Erzählerin, Katzenliebhaberin

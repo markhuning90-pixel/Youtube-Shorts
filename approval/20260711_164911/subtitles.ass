@@ -1,0 +1,30 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,58,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,1,2,40,40,260,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.56,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Schnee aus {\c&H0000FFFF&\b1\fscx110\fscy110}Trockeneis?{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:01.56,0:00:03.12,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Auf dem {\c&H0000FFFF&\b1\fscx110\fscy110}Mars!{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:03.12,0:00:04.68,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}An den Polen fällt {\c&H0000FFFF&\b1\fscx110\fscy110}CO2‑Schnee{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:04.68,0:00:06.24,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}— kein {\c&H0000FFFF&\b1\fscx110\fscy110}Wasser.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:06.24,0:00:07.80,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Olympus{\c&H00FFFFFF&\b1\fscx100\fscy100} Mons ist mehr als
+Dialogue: 0,0:00:07.80,0:00:09.36,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}doppelt{\c&H00FFFFFF&\b1\fscx100\fscy100} so hoch wie der
+Dialogue: 0,0:00:09.36,0:00:10.92,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Everest. Riesige {\c&H0000FFFF&\b1\fscx110\fscy110}Staubstürme{\c&H00FFFFFF&\b1\fscx100\fscy100} können den
+Dialogue: 0,0:00:10.92,0:00:12.48,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}ganzen Planeten {\c&H0000FFFF&\b1\fscx110\fscy110}monatelang{\c&H00FFFFFF&\b1\fscx100\fscy100} einhüllen.
+Dialogue: 0,0:00:12.48,0:00:14.04,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Phobos,{\c&H00FFFFFF&\b1\fscx100\fscy100} einer der Monde,
+Dialogue: 0,0:00:14.04,0:00:15.60,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}driftet{\c&H00FFFFFF&\b1\fscx100\fscy100} langsam ein und könnte
+Dialogue: 0,0:00:15.60,0:00:17.16,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}in Millionen Jahren {\c&H0000FFFF&\b1\fscx110\fscy110}zerbrechen.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:17.16,0:00:18.72,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Ein {\c&H0000FFFF&\b1\fscx110\fscy110}Marstag{\c&H00FFFFFF&\b1\fscx100\fscy100} dauert fast wie
+Dialogue: 0,0:00:18.72,0:00:20.28,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}ein {\c&H0000FFFF&\b1\fscx110\fscy110}Erdentag:{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:20.28,0:00:21.84,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}24,6 {\c&H0000FFFF&\b1\fscx110\fscy110}Stunden.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:21.84,0:00:23.40,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Überraschend,{\c&H00FFFFFF&\b1\fscx100\fscy100} oder?
+Dialogue: 0,0:00:23.40,0:00:24.96,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Der rote Planet ist {\c&H0000FFFF&\b1\fscx110\fscy110}unberechenbarer,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:24.96,0:00:26.52,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}als du {\c&H0000FFFF&\b1\fscx110\fscy110}denkst{\c&H00FFFFFF&\b1\fscx100\fscy100} —
+Dialogue: 0,0:00:26.52,0:00:28.08,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}nochmal{\c&H00FFFFFF&\b1\fscx100\fscy100} ansehen!

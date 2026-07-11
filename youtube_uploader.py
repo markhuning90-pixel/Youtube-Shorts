@@ -4,8 +4,11 @@ from pathlib import Path
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from google_auth_oauthlib.flow import InstalledAppFlow
+from google.oauth2.credentials import Credentials
+from google.auth.transport.requests import Request
 
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+TOKEN_FILE = Path("token.json")
 
 
 def get_youtube_privacy():
@@ -23,12 +26,21 @@ def get_youtube_privacy():
 
 
 def get_youtube():
-    flow = InstalledAppFlow.from_client_secrets_file(
-        "client_secret.json",
-        SCOPES
-    )
+    credentials = None
 
-    credentials = flow.run_local_server(port=0)
+    if TOKEN_FILE.exists():
+        credentials = Credentials.from_authorized_user_file(TOKEN_FILE, SCOPES)
+
+    if credentials and credentials.expired and credentials.refresh_token:
+        credentials.refresh(Request())
+
+    if not credentials or not credentials.valid:
+        flow = InstalledAppFlow.from_client_secrets_file(
+            "client_secret.json",
+            SCOPES,
+        )
+        credentials = flow.run_local_server(port=0)
+        TOKEN_FILE.write_text(credentials.to_json(), encoding="utf-8")
 
     return build(
         "youtube",

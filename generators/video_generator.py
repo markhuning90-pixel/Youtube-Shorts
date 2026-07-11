@@ -39,9 +39,17 @@ def has_nvenc():
     return "h264_nvenc" in f"{result.stdout}\n{result.stderr}"
 
 
-def get_scene_durations(scenes_file, audio_duration, image_count):
+def get_scene_durations(
+    scenes_file,
+    legacy_scenes_file,
+    audio_duration,
+    image_count,
+):
     if not scenes_file.exists():
-        print("Die Datei scenes.json wurde nicht gefunden.")
+        if legacy_scenes_file.exists():
+            return [audio_duration / image_count] * image_count
+
+        print("Weder scenes.json noch scenes.txt wurden gefunden.")
         return None
 
     try:
@@ -122,6 +130,7 @@ def generate_video(generation):
     voice_file = output_folder / "voice.mp3"
     subtitles_file = output_folder / "subtitles.ass"
     scenes_file = output_folder / "scenes.json"
+    legacy_scenes_file = output_folder / "scenes.txt"
     video_file = output_folder / "final_video.mp4"
     music_file = Path("assets/music/background.mp3")
 
@@ -140,6 +149,7 @@ def generate_video(generation):
 
     scene_durations = get_scene_durations(
         scenes_file,
+        legacy_scenes_file,
         audio_duration,
         len(image_files),
     )

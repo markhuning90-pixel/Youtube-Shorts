@@ -1,4 +1,18 @@
 {
   "quality_mode": "normal",
-  "youtube_privacy": "private"
+  "youtube_privacy": "private",
+  "test_mode": false,
+  "openai_model": "gpt-5-mini",
+  "voice_model": "tts-1",
+  "voice_name": "alloy",
+  "image_model": "gpt-image-1",
+  "image_size": "1024x1536",
+  "image_quality": "standard",
+  "image_style": "cinematic, vertical 9:16",
+  "max_topics": 1,
+  "max_images_per_run": 5,
+  "skip_existing_scripts": true,
+  "force_regenerate_scenes": false,
+  "force_regenerate_images": false,
+  "force_regenerate_video": false
 }
