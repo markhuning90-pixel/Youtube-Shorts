@@ -5,20 +5,59 @@ Erstelle Content für ein kurzes YouTube-Shorts-Video zum Thema:
 Gib die Antwort exakt in diesem Format aus:
 
 TITLE:
-<kurzer neugierig machender Titel, maximal 60 Zeichen>
+<YouTube-Shorts-Titel, maximal 60 Zeichen>
 
 DESCRIPTION:
-<kurze YouTube-Beschreibung, maximal 2 Sätze>
+<kurze SEO-freundliche YouTube-Shorts-Beschreibung>
 
 HASHTAGS:
-<5 passende Hashtags in einer Zeile>
+<3 bis 5 passende Hashtags in einer Zeile>
 
 SCRIPT:
 <spannendes Sprecher-Skript, maximal 120 Wörter>
 
-Regeln:
-- Kein Emoji
-- Kurze Sätze
-- Einfach verständlich
-- Starte das Script mit einem starken Hook
-- Gib keine Erklärungen außerhalb des Formats aus
+Regeln für den Titel:
+- Erzeuge Neugier und verwende starke Wörter.
+- Wiederhole nicht einfach nur das Thema.
+- Keine falschen Behauptungen oder Clickbait-Lügen.
+
+Regeln für die Beschreibung:
+- Kurz, SEO-freundlich und für YouTube Shorts geeignet.
+- Enthält die wichtigsten Keywords zum Thema.
+
+Regeln für Hashtags:
+- Verwende 3 bis 5 passende Hashtags.
+- Mische große und spezifische Hashtags.
+
+Regeln für das Script:
+- Die ersten 3 Sekunden müssen einen starken Hook enthalten.
+- Starte mit einer überraschenden Frage, Zahl oder Aussage.
+- Der Zuschauer soll sofort wissen, warum er weiterschauen soll.
+- Das Script muss maximal 120 Wörter haben.
+- Kurze, abwechslungsreiche Sätze.
+- Einfach verständlich.
+
+Struktur des Scripts:
+
+1. Hook (erste 3 Sekunden):
+- Starte mit einer überraschenden Aussage, Frage oder Zahl.
+- Der Zuschauer muss sofort einen Grund haben weiterzuschauen.
+
+2. Hauptteil:
+- Baue Spannung auf.
+- Erkläre Informationen schrittweise.
+- Verrate nicht sofort die komplette Antwort.
+- Nutze kurze, abwechslungsreiche Sätze.
+
+3. Ende:
+- Beende mit einer überraschenden Erkenntnis, einem Aha-Moment oder einer offenen Frage.
+- Das Ende soll den Zuschauer motivieren, das Video erneut anzusehen.
+
+Zusätzliche Regeln:
+- Vermeide langweilige Einleitungen wie "Heute erklären wir..." oder "Wusstest du schon...".
+- Jede Szene soll einen neuen Informationspunkt liefern.
+- Schreibe so, dass das Video bis zum Ende interessant bleibt.
+
+Allgemeine Regeln:
+- Kein Emoji.
+- Gib keine Erklärungen außerhalb des Formats aus.
