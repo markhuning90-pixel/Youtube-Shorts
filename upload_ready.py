@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from shutil import move
 
 from youtube_uploader import upload_video
 
@@ -25,11 +26,34 @@ def upload_ready_videos():
             print("Upload übersprungen.")
             continue
 
+        uploaded_folder = Path("uploaded") / video_file.parent.name
+
+        if uploaded_folder.exists():
+            print(
+                "Zielordner existiert bereits. Das Video wird nicht überschrieben oder hochgeladen."
+            )
+            continue
+
         try:
-            upload_video(str(video_file), metadata.get("title", ""), metadata.get("description", ""), metadata.get("hashtags", ""))
-            print("Video auf YouTube hochgeladen.")
+            video_id = upload_video(
+                str(video_file),
+                metadata.get("title", ""),
+                metadata.get("description", ""),
+                metadata.get("hashtags", ""),
+            )
         except Exception as error:
             print(f"YouTube-Upload fehlgeschlagen: {error}")
+            continue
+
+        metadata["status"] = "uploaded"
+        metadata["youtube_video_id"] = video_id
+        metadata_file.write_text(
+            json.dumps(metadata, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        uploaded_folder.parent.mkdir(exist_ok=True)
+        move(str(video_file.parent), str(uploaded_folder))
+        print("Video erfolgreich hochgeladen und nach uploaded verschoben.")
 
 
 if __name__ == "__main__":

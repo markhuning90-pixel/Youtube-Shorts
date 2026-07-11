@@ -1,0 +1,32 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,58,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,1,2,40,40,260,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.62,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Schnee,{\c&H00FFFFFF&\b1\fscx100\fscy100} Stürme und Berge,
+Dialogue: 0,0:00:01.62,0:00:03.24,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}die die Erde blass {\c&H0000FFFF&\b1\fscx110\fscy110}aussehen{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:03.24,0:00:04.86,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}lassen{\c&H00FFFFFF&\b1\fscx100\fscy100} — alles auf dem
+Dialogue: 0,0:00:04.86,0:00:06.48,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Mars!{\c&H00FFFFFF&\b1\fscx100\fscy100} 1.
+Dialogue: 0,0:00:06.48,0:00:08.09,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Am Pol fällt {\c&H0000FFFF&\b1\fscx110\fscy110}manchmal{\c&H00FFFFFF&\b1\fscx100\fscy100} Schnee
+Dialogue: 0,0:00:08.09,0:00:09.71,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}aus gefrorenem {\c&H0000FFFF&\b1\fscx110\fscy110}Kohlendioxid.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:09.71,0:00:11.33,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}2. {\c&H0000FFFF&\b1\fscx110\fscy110}Olympus{\c&H00FFFFFF&\b1\fscx100\fscy100} Mons ist knapp
+Dialogue: 0,0:00:11.33,0:00:12.95,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}dreimal{\c&H00FFFFFF&\b1\fscx100\fscy100} so hoch wie der
+Dialogue: 0,0:00:12.95,0:00:14.57,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Mount {\c&H0000FFFF&\b1\fscx110\fscy110}Everest.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:14.57,0:00:16.19,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}3. {\c&H0000FFFF&\b1\fscx110\fscy110}Staubstürme{\c&H00FFFFFF&\b1\fscx100\fscy100} können den ganzen
+Dialogue: 0,0:00:16.19,0:00:17.81,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Planeten {\c&H0000FFFF&\b1\fscx110\fscy110}monatelang{\c&H00FFFFFF&\b1\fscx100\fscy100} verdunkeln.
+Dialogue: 0,0:00:17.81,0:00:19.43,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}4. {\c&H0000FFFF&\b1\fscx110\fscy110}Saisonale{\c&H00FFFFFF&\b1\fscx100\fscy100} Linien deuten auf
+Dialogue: 0,0:00:19.43,0:00:21.04,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}sehr {\c&H0000FFFF&\b1\fscx110\fscy110}salzige,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:21.04,0:00:22.66,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}kurz auftretende {\c&H0000FFFF&\b1\fscx110\fscy110}Wasserflecken{\c&H00FFFFFF&\b1\fscx100\fscy100} hin.
+Dialogue: 0,0:00:22.66,0:00:24.28,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}5. {\c&H0000FFFF&\b1\fscx110\fscy110}Seismometer{\c&H00FFFFFF&\b1\fscx100\fscy100} messen Marsbeben —
+Dialogue: 0,0:00:24.28,0:00:25.90,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}der {\c&H0000FFFF&\b1\fscx110\fscy110}Planet{\c&H00FFFFFF&\b1\fscx100\fscy100} ist nicht völlig
+Dialogue: 0,0:00:25.90,0:00:27.52,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}ruhig. Klingt {\c&H0000FFFF&\b1\fscx110\fscy110}verrückt{\c&H00FFFFFF&\b1\fscx100\fscy100} — und
+Dialogue: 0,0:00:27.52,0:00:29.14,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}das war nur die {\c&H0000FFFF&\b1\fscx110\fscy110}Spitze.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:29.14,0:00:30.76,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Welcher{\c&H00FFFFFF&\b1\fscx100\fscy100} Fakt hat dich am
+Dialogue: 0,0:00:30.76,0:00:32.38,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}meisten {\c&H0000FFFF&\b1\fscx110\fscy110}überrascht?{\c&H00FFFFFF&\b1\fscx100\fscy100}

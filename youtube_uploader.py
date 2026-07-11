@@ -76,6 +76,8 @@ def upload_video(video_path, title, description, hashtags):
     print("Upload erfolgreich!")
     print("Video ID:", response["id"])
 
+    return response["id"]
+
 
 if __name__ == "__main__":
     print("Bitte upload_video(video_path, title, description, hashtags) verwenden.")
