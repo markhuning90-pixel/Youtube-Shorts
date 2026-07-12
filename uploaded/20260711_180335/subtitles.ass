@@ -1,0 +1,30 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,58,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,1,2,40,40,260,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.73,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Frierst du {\c&H0000FFFF&\b1\fscx110\fscy110}schneller{\c&H00FFFFFF&\b1\fscx100\fscy100} als andere?
+Dialogue: 0,0:00:01.73,0:00:03.46,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Drei {\c&H0000FFFF&\b1\fscx110\fscy110}überraschende{\c&H00FFFFFF&\b1\fscx100\fscy100} Gründe.
+Dialogue: 0,0:00:03.46,0:00:05.20,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Erstens: Ein langsamer {\c&H0000FFFF&\b1\fscx110\fscy110}Stoffwechsel{\c&H00FFFFFF&\b1\fscx100\fscy100} produziert
+Dialogue: 0,0:00:05.20,0:00:06.93,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}weniger{\c&H00FFFFFF&\b1\fscx100\fscy100} Wärme.
+Dialogue: 0,0:00:06.93,0:00:08.66,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Zweitens: Weniger {\c&H0000FFFF&\b1\fscx110\fscy110}Körperfett{\c&H00FFFFFF&\b1\fscx100\fscy100} heißt weniger
+Dialogue: 0,0:00:08.66,0:00:10.39,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Isolierung.{\c&H00FFFFFF&\b1\fscx100\fscy100} Drittens:
+Dialogue: 0,0:00:10.39,0:00:12.12,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Schlechte {\c&H0000FFFF&\b1\fscx110\fscy110}Durchblutung{\c&H00FFFFFF&\b1\fscx100\fscy100} kühlt Hände und
+Dialogue: 0,0:00:12.12,0:00:13.86,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Füße {\c&H0000FFFF&\b1\fscx110\fscy110}schnell{\c&H00FFFFFF&\b1\fscx100\fscy100} aus.
+Dialogue: 0,0:00:13.86,0:00:15.59,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Hormone – {\c&H0000FFFF&\b1\fscx110\fscy110}Schilddrüse{\c&H00FFFFFF&\b1\fscx100\fscy100} oder Östrogen
+Dialogue: 0,0:00:15.59,0:00:17.32,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}– verändern das {\c&H0000FFFF&\b1\fscx110\fscy110}Kälteempfinden.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:17.32,0:00:19.05,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Auch {\c&H0000FFFF&\b1\fscx110\fscy110}Alter,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:19.05,0:00:20.78,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Stress und {\c&H0000FFFF&\b1\fscx110\fscy110}Medikamente{\c&H00FFFFFF&\b1\fscx100\fscy100} spielen mit.
+Dialogue: 0,0:00:20.78,0:00:22.52,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Kleidung{\c&H00FFFFFF&\b1\fscx100\fscy100} erklärt nicht immer alles.
+Dialogue: 0,0:00:22.52,0:00:24.25,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Aha: Schon kleine {\c&H0000FFFF&\b1\fscx110\fscy110}Änderungen{\c&H00FFFFFF&\b1\fscx100\fscy100} im
+Dialogue: 0,0:00:24.25,0:00:25.98,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Alltag{\c&H00FFFFFF&\b1\fscx100\fscy100} können wärmer machen.
+Dialogue: 0,0:00:25.98,0:00:27.71,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Welcher{\c&H00FFFFFF&\b1\fscx100\fscy100} Grund trifft bei dir
+Dialogue: 0,0:00:27.71,0:00:29.44,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}zu? Schau {\c&H0000FFFF&\b1\fscx110\fscy110}nochmal{\c&H00FFFFFF&\b1\fscx100\fscy100} und
+Dialogue: 0,0:00:29.44,0:00:31.18,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}teste{\c&H00FFFFFF&\b1\fscx100\fscy100} es!

@@ -1,0 +1,32 @@
+[
+  {
+    "scene_number": 1,
+    "text": "Nahaufnahme eines Zebras auf der Savanne, einige Stechfliegen sind im Anflug zu sehen. Ein eingeblendeter kurzer Text fragt: \"Können Streifen Insekten vertreiben?\"",
+    "image_prompt": "Photorealistic close-up of a zebra standing in golden savanna grass at warm sunset light, several horseflies visible mid-air approaching the zebra; shallow depth of field, soft background, slight dust in air, cinematic framing, high detail on zebra stripes and fly silhouettes, warm color grading.",
+    "duration": 5
+  },
+  {
+    "scene_number": 2,
+    "text": "Forscher beobachten Zebras und Zeitlupenaufnahmen zeigen, wie Streifen Stechfliegen verwirren. Ergebnis-Einblendung: weniger Landungen, weniger Blutverlust.",
+    "image_prompt": "Split-screen: left side scientists with binoculars and camera equipment near zebras, right side slow-motion close-up of horseflies attempting to land and missing; laboratory notes overlay, subtle motion lines showing confused flight paths, neutral daylight, high realism, documentary style.",
+    "duration": 5
+  },
+  {
+    "scene_number": 3,
+    "text": "Andere Theorien werden kurz visualisiert: Tarnung im Gras, \"Motion Dazzle\" bei Bewegung und soziale Erkennung im Herdenverband. Jede Theorie erscheint als kurze Bildsequenz nebeneinander.",
+    "image_prompt": "Three-panel montage: (1) zebra partially hidden in tall grass blending into surroundings, (2) herd of zebras running with motion blur creating dazzling stripe patterns, (3) two zebras nuzzling indicating social recognition; consistent lighting, realistic textures, dynamic composition, labeled captions in clean font.",
+    "duration": 5
+  },
+  {
+    "scene_number": 4,
+    "text": "Thermoregulation wird gezeigt mit einer Wärmebild-Einblendung, die kaum klare Muster zeigt. Kurze Text-Einblendung: \"Kaum Beweise.\"",
+    "image_prompt": "Zebra viewed with thermal imaging overlay showing temperature map with subtle gradients and no distinct cooling stripes; side-by-side comparison with visible-light photo, clinical look, cool blue and red thermal colors, infographic-style caption 'Thermoregulation? Kaum Beweise.'",
+    "duration": 5
+  },
+  {
+    "scene_number": 5,
+    "text": "Die stärkste Idee wird hervorgehoben: Streifen sind eine clevere Fliegenabwehr. Abschlussbild mit Call-to-Action: \"Noch Fragen? Schau es dir nochmal!\"",
+    "image_prompt": "Hero shot of a zebra in bright daylight with a subtle glow and a bold checkmark graphic, overlay text 'Streifen = Fliegenabwehr'; friendly researcher in background nodding, upbeat cinematic lighting, high contrast, encouraging mood, poster-like composition.",
+    "duration": 5
+  }
+]

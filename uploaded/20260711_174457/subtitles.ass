@@ -1,0 +1,28 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,58,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,1,2,40,40,260,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.87,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Bis zu sechs {\c&H0000FFFF&\b1\fscx110\fscy110}Träume{\c&H00FFFFFF&\b1\fscx100\fscy100} jede
+Dialogue: 0,0:00:01.87,0:00:03.74,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Nacht — und {\c&H0000FFFF&\b1\fscx110\fscy110}keiner{\c&H00FFFFFF&\b1\fscx100\fscy100} ist
+Dialogue: 0,0:00:03.74,0:00:05.61,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}zufällig. Träume sind kein {\c&H0000FFFF&\b1\fscx110\fscy110}Hirnflackern.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:05.61,0:00:07.48,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Sie ordnen {\c&H0000FFFF&\b1\fscx110\fscy110}Erinnerungen.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:07.48,0:00:09.35,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Im REM {\c&H0000FFFF&\b1\fscx110\fscy110}verschmilzt{\c&H00FFFFFF&\b1\fscx100\fscy100} Gefühl mit
+Dialogue: 0,0:00:09.35,0:00:11.22,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Gedächtnis.{\c&H00FFFFFF&\b1\fscx100\fscy100} Manche Träume proben Gefahr.
+Dialogue: 0,0:00:11.22,0:00:13.09,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Andere fördern {\c&H0000FFFF&\b1\fscx110\fscy110}Kreativität.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:13.09,0:00:14.96,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Forscher{\c&H00FFFFFF&\b1\fscx100\fscy100} sehen drei Rollen:
+Dialogue: 0,0:00:14.96,0:00:16.83,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Verarbeitung, {\c&H0000FFFF&\b1\fscx110\fscy110}Problemlösung,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:16.83,0:00:18.71,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Simulation.{\c&H00FFFFFF&\b1\fscx100\fscy100} Noch keine endgültige Antwort.
+Dialogue: 0,0:00:18.71,0:00:20.58,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Unser Gehirn testet {\c&H0000FFFF&\b1\fscx110\fscy110}Szenarien{\c&H00FFFFFF&\b1\fscx100\fscy100} im
+Dialogue: 0,0:00:20.58,0:00:22.45,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Schlaf.{\c&H00FFFFFF&\b1\fscx100\fscy100} Dein Traum kann eine
+Dialogue: 0,0:00:22.45,0:00:24.32,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Probe für echte {\c&H0000FFFF&\b1\fscx110\fscy110}Entscheidungen{\c&H00FFFFFF&\b1\fscx100\fscy100} sein.
+Dialogue: 0,0:00:24.32,0:00:26.19,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Also: War dein {\c&H0000FFFF&\b1\fscx110\fscy110}letzter{\c&H00FFFFFF&\b1\fscx100\fscy100} Traum
+Dialogue: 0,0:00:26.19,0:00:28.06,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}nur {\c&H0000FFFF&\b1\fscx110\fscy110}Zufall{\c&H00FFFFFF&\b1\fscx100\fscy100} — oder ein
+Dialogue: 0,0:00:28.06,0:00:29.93,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}mentales{\c&H00FFFFFF&\b1\fscx100\fscy100} Training?

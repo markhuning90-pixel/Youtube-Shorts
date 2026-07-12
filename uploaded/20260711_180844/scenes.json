@@ -1,0 +1,32 @@
+[
+  {
+    "scene_number": 1,
+    "text": "Nur wenige erinnern sich an ihr erstes Lebensjahr. Warum? Zeige eine Montage aus Babyfotos und einem fragenden Symbol.",
+    "image_prompt": "Nostalgische Montage mit unscharfen Babyfotos (erste Monate), überlagert von einem dezenten Fragezeichen; warmes Licht, weiche Vignette, ruhige Farben, leicht filmisches Körnchen, Atmosphäre von Erinnerung und Staunen.",
+    "duration": 5
+  },
+  {
+    "scene_number": 2,
+    "text": "Weil unser Gehirn damals noch anders tickt: der Hippocampus ist noch nicht voll entwickelt. Visualisiere das Gehirn als wachsenden Organismus mit Fokus auf dem Hippocampus.",
+    "image_prompt": "Anatomische, aber stilisierte Seitenansicht eines Säuglingskopfs mit animierter Gehirn-Animation; der Hippocampus leuchtet und wächst langsam, Beschriftung 'Hippocampus', kühle Blau- und Violetttöne, klare Kontraste, wissenschaftlich-informatives Design.",
+    "duration": 6
+  },
+  {
+    "scene_number": 3,
+    "text": "Sprache fehlt; ohne Worte gibt es keine autobiografischen Erinnerungen. Außerdem räumt frühe Neurogenese alte Spuren weg.",
+    "image_prompt": "Splitscreen: links ein Baby, das gurrt und keine klaren Worte bildet; rechts ein schematisches neuronales Netz, in dem neue Neuronen wachsen und ältere Verbindungen verschwimmen; dynamische Partikeleffekte, erklärende, verständliche Visualisierung.",
+    "duration": 6
+  },
+  {
+    "scene_number": 4,
+    "text": "Eltern erzählen später Geschichten und formen so unsere Erinnerungen neu. Jede Szene prägt uns, aber nicht als festes Bild.",
+    "image_prompt": "Gemütliche Wohnzimmer-Szene: Eltern blättern in Fotoalben und erzählen, während Geistesschatten (Memory-Overlays) der Kindheit langsam umgestaltet werden; warme Farben, intime Perspektive, leichte Animationen von Bildern, die sich verändern.",
+    "duration": 6
+  },
+  {
+    "scene_number": 5,
+    "text": "Aha‑Moment: Viele 'frühe Erinnerungen' sind eigentlich Erzählungen. Welche deiner ersten Bilder ist wirklich deins?",
+    "image_prompt": "Nachdenkliche Nahaufnahme eines Erwachsenen, über ihm schweben unscharfe Kindheitsbilder, einige mit dem Label 'Erzählung', ein Bild mit einem Fragezeichen; kontrastreicher Hintergrund, emotionales, eindringliches Licht, direkte Ansprache an Zuschauer.",
+    "duration": 5
+  }
+]

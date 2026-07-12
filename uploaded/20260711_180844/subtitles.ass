@@ -1,0 +1,32 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,58,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,1,2,40,40,260,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.64,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Nur wenige {\c&H0000FFFF&\b1\fscx110\fscy110}erinnern{\c&H00FFFFFF&\b1\fscx100\fscy100} sich an
+Dialogue: 0,0:00:01.64,0:00:03.28,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}ihr erstes {\c&H0000FFFF&\b1\fscx110\fscy110}Lebensjahr{\c&H00FFFFFF&\b1\fscx100\fscy100} — warum?
+Dialogue: 0,0:00:03.28,0:00:04.91,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Weil unser {\c&H0000FFFF&\b1\fscx110\fscy110}Gehirn{\c&H00FFFFFF&\b1\fscx100\fscy100} damals noch
+Dialogue: 0,0:00:04.91,0:00:06.55,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}anders{\c&H00FFFFFF&\b1\fscx100\fscy100} tickt.
+Dialogue: 0,0:00:06.55,0:00:08.19,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Der {\c&H0000FFFF&\b1\fscx110\fscy110}Hippocampus,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:08.19,0:00:09.83,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}unser {\c&H0000FFFF&\b1\fscx110\fscy110}Speicherzentrum,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:09.83,0:00:11.47,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}ist noch nicht voll {\c&H0000FFFF&\b1\fscx110\fscy110}entwickelt.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:11.47,0:00:13.10,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Sprache{\c&H00FFFFFF&\b1\fscx100\fscy100} fehlt.
+Dialogue: 0,0:00:13.10,0:00:14.74,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Ohne {\c&H0000FFFF&\b1\fscx110\fscy110}Worte{\c&H00FFFFFF&\b1\fscx100\fscy100} gibt es keine
+Dialogue: 0,0:00:14.74,0:00:16.38,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}autobiografischen{\c&H00FFFFFF&\b1\fscx100\fscy100} Erinnerungen.
+Dialogue: 0,0:00:16.38,0:00:18.02,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Außerdem räumt frühe {\c&H0000FFFF&\b1\fscx110\fscy110}Neurogenese{\c&H00FFFFFF&\b1\fscx100\fscy100} alte
+Dialogue: 0,0:00:18.02,0:00:19.66,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Spuren{\c&H00FFFFFF&\b1\fscx100\fscy100} weg.
+Dialogue: 0,0:00:19.66,0:00:21.29,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Eltern erzählen später {\c&H0000FFFF&\b1\fscx110\fscy110}Geschichten.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:21.29,0:00:22.93,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}So formen wir {\c&H0000FFFF&\b1\fscx110\fscy110}Erinnerungen{\c&H00FFFFFF&\b1\fscx100\fscy100} neu.
+Dialogue: 0,0:00:22.93,0:00:24.57,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Jede {\c&H0000FFFF&\b1\fscx110\fscy110}Szene{\c&H00FFFFFF&\b1\fscx100\fscy100} prägt uns,
+Dialogue: 0,0:00:24.57,0:00:26.21,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}aber nicht als {\c&H0000FFFF&\b1\fscx110\fscy110}festes{\c&H00FFFFFF&\b1\fscx100\fscy100} Bild.
+Dialogue: 0,0:00:26.21,0:00:27.85,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Aha-Moment: Viele "frühe {\c&H0000FFFF&\b1\fscx110\fscy110}Erinnerungen"{\c&H00FFFFFF&\b1\fscx100\fscy100} sind
+Dialogue: 0,0:00:27.85,0:00:29.48,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}eigentlich {\c&H0000FFFF&\b1\fscx110\fscy110}Erzählungen.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:29.48,0:00:31.12,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Welche{\c&H00FFFFFF&\b1\fscx100\fscy100} deiner ersten Bilder ist
+Dialogue: 0,0:00:31.12,0:00:32.76,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}wirklich{\c&H00FFFFFF&\b1\fscx100\fscy100} deins?

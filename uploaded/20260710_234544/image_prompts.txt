@@ -1,0 +1,56 @@
+PROMPT 1:
+MAIN CHARACTER — weibliche Hauskatze, 4 Jahre, kurzes silbergraues Fell mit dunklen Tigerstreifen, große bernsteinfarbene Augen (geschlossen im Schlaf), rosa Nase, träumerische Ausstrahlung; trägt einen nachtblauen Oversize-Strickpulli, weiche Hausschuhe, eine Schlafmaske locker um den Hals; Nahaufnahme einer tief schlafenden, gemütlich zusammengerollten Katze auf einer weichen Decke, Kopf seitlich auf den Pfoten, ruhiger Atem, feinste Fell- und Stofftexturen sichtbar, einzelne Schnurrhaare im Fokus; ultra realistic, cinematic, DSLR photography, natural lighting, highly detailed; sanftes golden-hour-Fensterlicht von der Seite, warme Töne, zarter Schattenverlauf, cremiges Bokeh, geringe Tiefenschärfe mit Fokus auf Nase und Schnurrhaare; 9:16 vertical composition; ruhiger, kuscheliger Innenraum, minimaler Hintergrund ohne Ablenkung; single subject, same character across images; no text, no watermark, no humans, no logos
+
+SZENE:
+Was zu sehen ist: Nahaufnahme einer tief schlafenden Katze, gemütlich zusammengerollt.
+Mehr als 16 Stunden Schlaf? Katzen machen das täglich.
+
+PROMPT 2:
+Ultra realistic, cinematic, DSLR photography of the same main character: a 4-year-old female domestic cat with short silver-gray fur and dark tabby stripes, large amber eyes, pink nose, dreamy gaze; wearing a midnight-blue oversized knit sweater, soft house slippers, and a sleep mask hanging loosely around the neck. She moves in a low, stealthy stalk, one paw lifted mid-step, whiskers forward, tail low and gently twitching, intensely focused on a small feathered toy mouse on the wooden living-room floor. Setting: cozy apartment interior at blue hour (dawn/dusk) to reflect a crepuscular huntress; natural window light casts soft, directional illumination with gentle rim light and long shadows; subtle dust motes in the beam. Background softly blurred (sofa, rug, potted plant), shallow depth of field; rule of thirds with the cat foreground right and the toy mid-ground left; leading lines from floorboards guiding the eye. Camera: full-frame DSLR, 85mm prime lens, f/1.8, ISO 400, 1/250s. Highly detailed fur texture and knit fabric, lifelike eyes with catchlights; cool blue and neutral palette with warm amber highlights; mood of quiet tension and energy conservation before the pounce. 9:16 vertical composition, natural lighting, highly detailed, no text, no watermark.
+
+SZENE:
+Eine dämmerungsaktive Jägerin: Die Katze schleicht und pirscht sich energiesparend an ein Spielzeug heran.
+
+PROMPT 3:
+Ultra realistic, cinematic, DSLR photography, natural lighting, highly detailed, 9:16 vertical composition. The same female 4-year-old domestic cat main character: short silvery-gray fur with dark tabby stripes, large amber eyes, pink nose, dreamy gaze; wearing a night-blue oversized knit sweater, soft house slippers, and a sleep mask hanging around her neck; crepuscular huntress mood—calm by day, focused and swift at dawn/dusk. Two-shot vertical sequence in one cohesive cozy living-room setting to ensure continuity: Shot 1 (top) — the cat resting curled on a soft wool blanket on a window seat/sofa edge, eyes half-closed, whiskers relaxed, paws tucked, warm golden-blue twilight filtering through a window, gentle dust motes in the beam; shallow depth of field, Canon 5D Mark IV, 50mm, f/1.8, ISO 200, soft cinematic bokeh. Shot 2 (bottom) — immediately after, the same cat launches in a short, powerful pounce toward a feather wand toy mid-air; body elongated, hind legs pushing off, ears forward, claws slightly extended; action frozen at the peak with subtle background motion blur to convey speed; 85mm, f/2.0, 1/2000s, ISO 400; dynamic leading lines, realistic floor texture; no hands visible, only the toy. Emphasize lifelike fur detail, knit fabric texture, glints in amber eyes, believable physics in mid-leap, rich color grading (deep night-blue textiles vs warm window light). No text, no watermark, 9:16 vertical composition.
+
+SZENE:
+Use exactly the same main character in every image.
+
+CHARACTER:
+MAIN CHARACTER
+
+Gender: Weiblich
+Age: 4 Jahre
+Hair: Kurzes silbergraues Fell mit dunklen Tigerstreifen
+Face: Große bernsteinfarbene Augen, rosa Nase, träumerischer Blick
+Clothes: Nachtblauer Oversize-Strickpulli, weiche Hausschuhe, Schlafmaske um den Hals
+Style: Dämmerungsaktive Jägerin; tagsüber gelassen, morgens/abends fokussiert und flink
+
+PROMPT 4:
+Ultra realistic, cinematic, DSLR photography, natural lighting, highly detailed, 9:16 vertical composition, no text, no watermark. Zweigeteilter vertikaler Frame (Diptychon-Zeitraffer in einem Bild): oben Morgendämmerung in kühlen Pastelltönen, unten Abendrot in warmen Magenta- und Bernsteinfarben. Identische Hauptfigur in beiden Hälften (charakterkonsistent): weibliche 4‑jährige Hauskatze mit kurzem silbergrauem Fell und dunklen Tigerstreifen, große bernsteinfarbene Augen, rosa Nase, träumerischer Blick; trägt einen nachtblauen Oversize-Strickpulli, weiche Hausschuhe, Schlafmaske locker um den Hals. Szene auf einer breiten hölzernen Fensterbank einer gemütlich-modernen Wohnung mit Blick auf die Stadt; draußen sichtbar als Zeitraffer: ziehende Wolken, Lichtspuren des Verkehrs, sich verlängernde/verkürzende Schatten; drinnen bleibt die Katze gestochen scharf, wach, fokussiert und flink (dämmerungsaktive Jägerin), Ohren nach vorn, Schnurrhaare im Rimlight, Schweif locker gerollt. Feine Fellstruktur, klar gezeichnete Tigerstreifen, lebendige Catchlights in den Augen; realistische Texturen von Holz und Strick. Natürliches Fensterlicht: kühles Blau-Lavendel im Morgenpanel, warmes Gold-Karmesin im Abendpanel; sanftes Gegenlicht und dezentes Bokeh der Stadtkulisse. Aufgenommen mit Vollformat-DSLR, 50mm Festbrennweite, f/1.8, ISO 200; Langzeitbelichtungs-Composite für den Hintergrund, Hauptfigur eingefroren und knackscharf. Keine Schrift, kein Wasserzeichen.
+
+SZENE:
+Zeitraffer-Montage bei Morgendämmerung und Abendrot mit wacher Katze. Katzen sind dämmerungsaktiv – morgens und abends wach.
+
+PROMPT 5:
+Ultra realistic, cinematic, DSLR photography, natural lighting, highly detailed, 9:16 vertical composition, no text, no watermark. Verwende in jeder Bildvariante exakt dieselbe Hauptfigur.
+Hauptfigur (MAIN CHARACTER): weibliches Kätzchen, 4 Jahre, kurzes silbergraues Fell mit dunklen Tigerstreifen, große bernsteinfarbene Augen, rosa Nase, verträumte Ausstrahlung; trägt einen nachtblauen Oversize-Strickpulli, weiche Hausschuhe an den Pfoten, eine Schlafmaske locker um den Hals. Markante Fellzeichnung an Stirn und Wangen, feine Schnurrhaare, zarte Pfotenballen.
+Motiv: Die Hauptfigur und eine ältere Samtpfote schlafen eng aneinandergeschmiegt auf einem weichen Fensterplatz mit Decken und Kissen; die ältere Katze größer, mit leicht ergrautem Fell und sanft geneigtem Kopf, beschützend an der Seite der Kleinen. Golden-blaues Dämmerlicht (Morgen- oder Abendstimmung) fällt durch das Fenster, zeichnet weiche Highlights auf Fell und Strick; feiner Staub im Gegenlicht. Fokus auf die ruhigen Gesichtszüge, geschlossene Lider, entspannte Pfotenhaltung.
+Kamera/Look: 50mm Prime, f/1.8, ISO 200, 1/125s, seichte Tiefenschärfe, zartes Bokeh (unscharfe Fensterkulisse, Zimmerpflanzen, diffuse Lichter), taktile Texturen von Fell und Strick, natürliche Farbpalette aus Nachtblau, warmem Gold und sanften Grautönen, dezentes Filmkorn, hohe Dynamik. Keine Menschen, keine Logos, kein Text, kein Wasserzeichen.
+
+SZENE:
+Kätzchen und eine ältere Samtpfote, beide friedlich schlafend.
+Kätzchen und alte Samtpfoten brauchen noch mehr Ruhe.
+
+PROMPT 6:
+Ultra realistische, filmische DSLR-Fotografie des MAIN CHARACTER: eine 4-jährige weibliche Hauskatze mit kurzem silbergrauem Fell und dunklen Tigerstreifen, großen bernsteinfarbenen Augen, rosa Nase und verträumtem Blick; trägt einen nachtblauen Oversize-Strickpulli, weiche Hausschuhe und eine Schlafmaske locker um den Hals; Ausstrahlung einer dämmerungsaktiven Jägerin – tagsüber gelassen, morgens/abends fokussiert und flink. Sie schläft zusammengerollt auf einer gemütlichen Fensterbank mit Decken; natürliches Golden-Hour-Fensterlicht mit sanftem Rimlight im Fell; geringer Schärfentiefebereich; Nahaufnahme (¾-Körper), 9:16-Hochformat. Pfötchen zucken leicht, Schnurrhaare vibrieren; dezente Bewegungsunschärfe an den Pfotenspitzen. Subtile, ätherische Traum-Visualisierungen: zarte, halbtransparente Licht- und Bokehformen von Wiesenhalmen, flatternden Vögeln, einer kleinen Maus-Silhouette, Mondsicheln und glühenden Glühwürmchen-Partikeln, fein integriert und fotorealistisch wirkend, ohne Comic-Look. Extrem feine Fellstruktur, sichtbare einzelne Haare; realistische Textur des Strickpullovers; weiche Schatten; warme, natürliche Farbgebung; cremiges Bokeh. Aufnahmeparameter: 85mm-Festbrennweite, f/1.8, ISO 200, 1/200s. Highly detailed, natural lighting, ultra realistic, cinematic, DSLR photography, 9:16 vertical composition, no text, no watermark. Verwende exakt denselben MAIN CHARACTER in jeder Bildvariante.
+
+SZENE:
+Schlafende Katze mit zuckenden Pfötchen; subtil integrierte Traum-Visualisierungen; Erholung von Körper und Geist während Leichtschlaf und REM-Phase.
+
+PROMPT 7:
+Hauptcharakter (immer identisch): weibliche Hauskatze, 4 Jahre, kurzes silbergraues Fell mit dunklen Tigerstreifen, große bernsteinfarbene Augen, rosa Nase, träumerischer Blick; trägt nachtblauen Oversize-Strickpulli, weiche Hausschuhe, Schlafmaske locker um den Hals; dämmerungsaktive Jägerin – tagsüber gelassen, morgens/abends fokussiert und flink. Szene: Gemütliches, helles Schlafzimmer bei sanftem Morgenlicht; die Katze erwacht, streckt sich genüsslich auf zerwühlter Bettdecke, Vorderpfoten weit nach vorn, Rücken leicht gewölbt, Schnurrhaare fein sichtbar; entspanntes Augenkontakt direkt zur Kamera. Umgebung: neutrale Bettwäsche, warmer Holzboden, weiches Bokeh, Fensterlicht als natürlicher Rim Light, dezente Staubpartikel im Gegenlicht; keine weiteren Figuren. Look/Kamera: ultra realistic, cinematic, DSLR photography, natural lighting, highly detailed; 50mm Festbrennweite, f/2.0, ISO 200, 1/250s; flache Perspektive auf Matratzenhöhe, zentrierte Komposition mit Rule-of-Thirds, filmische Farbkorrektur, lebensechte Felltextur, sichtbare Stofffasern, feine Fanglichter in den Augen, seichtes Bokeh, hoher Dynamikumfang; 9:16 vertical composition. Negativ: no text, no watermark, no logo, no border, no frame, keine Doppelungen, keine Filter, kein Cartoon, keine Illustration, kein CGI, nicht unscharf, nicht überbelichtet.
+
+SZENE:
+Zufriedene Katze wacht auf, streckt sich und blickt entspannt in die Kamera; Schlaf ist für Katzen Überleben und Wohlbefinden.

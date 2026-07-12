@@ -1,0 +1,32 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,58,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,1,2,40,40,260,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.63,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}16 {\c&H0000FFFF&\b1\fscx110\fscy110}Stunden{\c&H00FFFFFF&\b1\fscx100\fscy100} Schlaf – ist
+Dialogue: 0,0:00:01.63,0:00:03.25,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}deine{\c&H00FFFFFF&\b1\fscx100\fscy100} Katze faul?
+Dialogue: 0,0:00:03.25,0:00:04.88,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Nein. Katzen sind sparsame {\c&H0000FFFF&\b1\fscx110\fscy110}Energieprofis.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:04.88,0:00:06.50,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Sie jagen in {\c&H0000FFFF&\b1\fscx110\fscy110}kurzen,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:06.50,0:00:08.13,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}intensiven{\c&H00FFFFFF&\b1\fscx100\fscy100} Phasen.
+Dialogue: 0,0:00:08.13,0:00:09.76,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Danach folgen {\c&H0000FFFF&\b1\fscx110\fscy110}zahlreiche{\c&H00FFFFFF&\b1\fscx100\fscy100} Nickerchen.
+Dialogue: 0,0:00:09.76,0:00:11.38,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Das nennt man {\c&H0000FFFF&\b1\fscx110\fscy110}polyphasischen{\c&H00FFFFFF&\b1\fscx100\fscy100} Schlaf.
+Dialogue: 0,0:00:11.38,0:00:13.01,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Kurze, tiefe Ruhe {\c&H0000FFFF&\b1\fscx110\fscy110}speichert{\c&H00FFFFFF&\b1\fscx100\fscy100} Kraft
+Dialogue: 0,0:00:13.01,0:00:14.63,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}für die {\c&H0000FFFF&\b1\fscx110\fscy110}Jagd.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:14.63,0:00:16.26,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Kätzchen{\c&H00FFFFFF&\b1\fscx100\fscy100} und Senioren brauchen noch
+Dialogue: 0,0:00:16.26,0:00:17.89,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}mehr {\c&H0000FFFF&\b1\fscx110\fscy110}Schlaf.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:17.89,0:00:19.51,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Im REM {\c&H0000FFFF&\b1\fscx110\fscy110}verarbeiten{\c&H00FFFFFF&\b1\fscx100\fscy100} sie Eindrücke
+Dialogue: 0,0:00:19.51,0:00:21.14,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}und {\c&H0000FFFF&\b1\fscx110\fscy110}spielen{\c&H00FFFFFF&\b1\fscx100\fscy100} im Kopf.
+Dialogue: 0,0:00:21.14,0:00:22.76,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Auch Sicherheit und Komfort {\c&H0000FFFF&\b1\fscx110\fscy110}beeinflussen{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:22.76,0:00:24.39,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}die {\c&H0000FFFF&\b1\fscx110\fscy110}Dauer.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:24.39,0:00:26.02,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Fazit: Nicht {\c&H0000FFFF&\b1\fscx110\fscy110}Faulheit,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:26.02,0:00:27.64,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}sondern perfektes {\c&H0000FFFF&\b1\fscx110\fscy110}Energiemanagement.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:27.64,0:00:29.27,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Wie viele {\c&H0000FFFF&\b1\fscx110\fscy110}Stunden{\c&H00FFFFFF&\b1\fscx100\fscy100} schläft deine
+Dialogue: 0,0:00:29.27,0:00:30.89,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Katze – {\c&H0000FFFF&\b1\fscx110\fscy110}schläfst{\c&H00FFFFFF&\b1\fscx100\fscy100} du mit
+Dialogue: 0,0:00:30.89,0:00:32.52,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}ihr{\c&H00FFFFFF&\b1\fscx100\fscy100} mit?

@@ -1,0 +1,32 @@
+[
+  {
+    "scene_number": 1,
+    "text": "Nahaufnahme einer schnurrenden Katze beim Streicheln. Einführung: Schnurren ist nicht nur ein Zeichen von Zufriedenheit.",
+    "image_prompt": "Fotorealistische Nahaufnahme einer entspannten Hauskatze (kurzhaarig) auf dem Schoß einer Person, halb geschlossene Augen, leicht geöffneter Mund, vibrierende Schnurrhaare, menschliche Hand streichelt sanft; warme, gemütliche Wohnzimmerbeleuchtung, geringe Schärfentiefe, subtile Bewegungsunschärfe um Schnurrvibration zu zeigen, freundliche Stimmung, Cinematic 35mm.",
+    "duration": 5
+  },
+  {
+    "scene_number": 2,
+    "text": "Schnurren entsteht durch schnelle Vibrationen der Stimmbänder. Die Frequenz liegt oft zwischen 25 und 150 Hz.",
+    "image_prompt": "Geteilter Bildschirm: links eine schematic/medizinische Illustration des Katzenkehlkopfes mit vibrierenden Stimmbändern (Animiert-Look), rechts ein klarer Frequenz-Graph mit hervorgehobenen Markern 25 Hz bis 150 Hz; saubere Labels in deutscher Sprache, moderne Infografik-Farben (Blau/Orange), klare, leicht verständliche Darstellung, hoher Kontrast.",
+    "duration": 6
+  },
+  {
+    "scene_number": 3,
+    "text": "Diese Töne können Stress senken und wirken beruhigend. Sie könnten außerdem Heilung von Knochen und Gewebe fördern.",
+    "image_prompt": "Fotorealistische Szene: Katze liegt ruhig auf dem Schoß einer entspannten Person, darüber transparente medizinische Overlays (Herzsymbol mit Abnahme-Pfeil für Stress, Knochen-Icon mit Puls-Linien für Heilung), weiche Beleuchtung, harmonische Farben, leichte Animationseffekte auf Overlays, beruhigende Atmosphäre.",
+    "duration": 6
+  },
+  {
+    "scene_number": 4,
+    "text": "Katzen nutzen Schnurren zur Kommunikation und zur Selbstberuhigung. Verletzte Katzen schnurren oft besonders laut, manchmal um Hilfe zu signalisieren.",
+    "image_prompt": "Szenenmix: verletzte oder verunsicherte Katze in einer Tierarztpraxis, nahe Tonwellen-Grafik, Lautstärke-Indikator hoch, besorgte Person streichelt die Katze; realistische, mitfühlende Darstellung, klinischer Hintergrund leicht unscharf, Tonwellen in leuchtenden Farben visualisiert, emotionale, aber respektvolle Stimmung.",
+    "duration": 6
+  },
+  {
+    "scene_number": 5,
+    "text": "Also: Wenn sie schnurrt, tröstet sie sich — und vielleicht heilt sie dabei. Hast du das gewusst?",
+    "image_prompt": "Abschlussszene: Montage der vorherigen Motive in schnellen Schnitten, endet mit einer direkten Aufnahme der Katze, die in die Kamera schaut; Text-Overlay auf Deutsch mit Fragezeichen, helles, einladendes Licht, freundlicher Call-to-Action-Stil, hohe Bildqualität, mobile-optimiertes Format (vertikal).",
+    "duration": 4
+  }
+]

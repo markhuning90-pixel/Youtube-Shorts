@@ -1,0 +1,32 @@
+[
+  {
+    "scene_number": 1,
+    "text": "Nahaufnahme einer Fingerspitze, die langsam auf die Kamera zugeht. Ein eingeblendeter Text fragt: \"Warum haben deine Fingerspitzen Rillen? Das ist kein Zufall.\"",
+    "image_prompt": "Makroaufnahme einer menschlichen Fingerspitze, sehr hohe Detailauflösung, warme weiche Beleuchtung, geringe Tiefenschärfe, leichte Bewegung auf die Kamera zu, neutraler unscharfer Hintergrund, overlaid deutscher Text: 'Warum haben deine Fingerspitzen Rillen? Das ist kein Zufall.' Cinematic, realistisch.",
+    "duration": 4
+  },
+  {
+    "scene_number": 2,
+    "text": "Extremer Makro-Blick auf die Fingerkuppen-Rillen, die eine Glasoberfläche berühren. Kurzer erklärender Text: \"Die Rillen erhöhen die Reibung — du greifst sicherer.\"",
+    "image_prompt": "Extremes Makro der Fingerkuppen-Rillen beim Halten eines Glases, feine Hautstrukturen und Ridge-Details sichtbar, scharfe Textur, Studiobeleuchtung mit weichen Schatten, subtile Reflexionen auf dem Glas, eingeblendeter kurzer Text in Deutsch über Reibung und sicheren Griff, fotorealistisch.",
+    "duration": 5
+  },
+  {
+    "scene_number": 3,
+    "text": "Wasserperlen laufen entlang der Rillen und werden weggeleitet, sodass nichts rutscht. Eine schematische Einblendung zeigt, wie Vibrationen zu Nervenenden geleitet werden und die Empfindung verstärken.",
+    "image_prompt": "Nahaufnahme der Fingerspitze mit kleinen Wasser- oder Schweißperlen, Tropfen gleiten entlang der Rillen, animierte Pfeile zeigen Abflussrichtung; darüber halbtransparente schematische Grafiken von Vibrationen, die zu vereinfachten Nervenenden führen, edukativer Stil kombiniert mit realistischer Fotografie, klare Farben und Labels auf Deutsch möglich.",
+    "duration": 5
+  },
+  {
+    "scene_number": 4,
+    "text": "Jemand fährt mit der Fingerspitze über feine Strukturen an Stoff und Papier und erkennt Details. Einblender erklärt: \"Das Muster bildet sich im Mutterleib und bleibt ein Leben lang einzigartig.\"",
+    "image_prompt": "Hand berührt verschiedene feine Oberflächen (Stoff, Papier, Holz) in Nahaufnahme, Fokus auf sensibiler Fingerspitze die Texturen ertastet; weiche natürliche Beleuchtung, dezenter Hintergrund; zusätzlich ein kleiner, subtiler Umriss eines Fötus als Hinweis auf pränatale Entstehung, fotorealistisch mit informativem Ton.",
+    "duration": 5
+  },
+  {
+    "scene_number": 5,
+    "text": "Mehrere Daumenabdrücke werden nacheinander eingeblendet und ein moderner Scan zeigt Einzigartigkeit. Abschließende Frage: \"Kleine Rillen. Große Wirkung. Was erzählt dein Abdruck?\"",
+    "image_prompt": "Montage aus unterschiedlichen Fingerabdruck-Ansichten: tintenbasierte Abdrücke, digitale 3D-Scans und animiertes Overlay, hoher Kontrast, dramatische Beleuchtung; deutsche Textoverlays 'Kleine Rillen. Große Wirkung.' und 'Was erzählt dein Abdruck?' zentral platziert, eindrucksvolles finales Bild für Call-to-Action, stylisiert und modern.",
+    "duration": 4
+  }
+]

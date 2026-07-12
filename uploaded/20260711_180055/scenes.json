@@ -1,0 +1,32 @@
+[
+  {
+    "scene_number": 1,
+    "text": "Nahaufnahme eines Spechts, der schnell auf einen Baumstamm klopft. Die Szene zeigt die enormen, wiederholten Schläge pro Tag.",
+    "image_prompt": "Vertikales 9:16-Frame, fotorealistische Nahaufnahme eines Spechts beim schnellen Hacken an einem Baumstamm, hohe Bildrate/Superzeitlupen-Anmutung, morgendliche Waldbeleuchtung, leichte Holzspäne fliegen, dynamische Kameraperspektive leicht seitlich, dezente Beschriftung oben: 'Hunderte Kopfschläge am Tag' in deutscher Serifenschrift.",
+    "duration": 4
+  },
+  {
+    "scene_number": 2,
+    "text": "Der Schnabel und ein sehr steifer Schädel leiten die Aufprallenergie ab. Ein schematisches Overlay zeigt Energiepfeile entlang von Schnabel und Schädel.",
+    "image_prompt": "Vertikales 9:16-Hybridbild: Vordergrund fotorealistischer Specht in Profil, darüber ein halbtransparentes, medizinisch-anmutendes Cutaway des Schädels mit klaren Energiepfeilen (rot/orange) die vom Schnabel in den Schädel geleitet werden, neutrale Laborbeleuchtung, klare deutsche Labels: 'Schnabel' und 'steifer Schädel', moderner wissenschaftlicher Stil.",
+    "duration": 5
+  },
+  {
+    "scene_number": 3,
+    "text": "Das Gehirn sitzt extrem eng und kann kaum hin und her rutschen. Zwischen Schädelinnenwand und Hirn federt schwammiges Knochengewebe.",
+    "image_prompt": "Vertikales 9:16-Anatomie-Cutaway, makro-detailiertes Inneres des Vogelkopfes, Gehirn eng eingebettet, dazwischen deutlich sichtbares schwammiges (bienenwabenartiges) Knochengewebe hervorgehoben in hellgrün, kurze animierte Wackeltests zeigen kaum Bewegung des Gehirns, deutsche Labels: 'enger Sitz' und 'schwammiges Knochengewebe', klarer medizinischer Illustrationsstil.",
+    "duration": 5
+  },
+  {
+    "scene_number": 4,
+    "text": "Die Zunge und ihr Knochenband umschlingen den Kopf wie ein Sicherheitsgurt. Die Stöße sind kurz und nicht rotierend, sodass keine drehende Kraft entsteht.",
+    "image_prompt": "Vertikales 9:16-Illustrationsbild: seitlicher Schnitt durch den Kopf mit hervorgehobener, um den Schädel geschlungenen Zunge und knöchernem Band (als Gurt visualisiert), nebenan zwei Mini-Diagramme: kurzer linearer Schlag (grün, OK) und rotierender Schlag (rot, X), deutsche Beschriftungen 'Zungenband als Gurt' und 'keine Rotationskraft', klare kontrastreiche Farben, edukativer Stil.",
+    "duration": 5
+  },
+  {
+    "scene_number": 5,
+    "text": "Deshalb sind Spechte extrem stoßresistent — aber nicht immun. Kurzer Teaser in Zeitlupe zeigt den Effekt und lädt zum Video in Zeitlupe ein.",
+    "image_prompt": "Vertikales 9:16-Montagebild: links ein normaler Clip des Spechts, rechts dieselbe Aufnahme in extremer Zeitlupe mit farbigen Overlays der beschriebenen Schutzmechanismen (Schnabel, schaumiges Knochengewebe, Zungenband), dramatische Betonung mit Spotlight, eingeblendeter deutscher Call-to-Action-Text: 'Zeitlupe ansehen?', kinoreifer Look, hochwertiges Post-Processing.",
+    "duration": 6
+  }
+]

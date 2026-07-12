@@ -1,0 +1,32 @@
+[
+  {
+    "scene_number": 1,
+    "text": "Die Sonne sendet alle Farben, trotzdem sehen wir den Himmel blau. Warum ist das so?",
+    "image_prompt": "Fotorealistische Ansicht der Sonne oben links, weiße Sonnenstrahlen brechen in ein feines Farbspektrum (von Violett bis Rot) auf dem Weg zur Erde; weiter unten ein klarer blauer Himmel als Hintergrund, leichte Infografik-Pfeile, die die Frage ‚Warum blau?‘ hervorheben, weiche, helle Farben, klares Tageslicht.",
+    "duration": 6
+  },
+  {
+    "scene_number": 2,
+    "text": "Luftmoleküle streuen kurzes Licht viel stärker. Blau hat kürzere Wellenlängen als Rot.",
+    "image_prompt": "Mikroskopische Nahaufnahme von Luftmolekülen als kleine Partikel in einer transparenten Atmosphäre; animierte Pfeile in Blau werden stark in viele Richtungen gestreut, rote Pfeile verlaufen größtenteils gerade durch; Beschriftungen ‚kurze Wellenlänge‘ bei Blau und ‚lange Wellenlänge‘ bei Rot, klarer schematischer Stil mit wissenschaftlichem Look.",
+    "duration": 6
+  },
+  {
+    "scene_number": 3,
+    "text": "Die Streuung verteilt das Blau über den ganzen Himmel. Violett wird zwar noch stärker gestreut.",
+    "image_prompt": "Weite Panoramaaufnahme des Himmels, gleichmäßig blau, mit eingeblendeten winzigen Kurven und Pfeilen die zeigen, wie blaues Licht in alle Richtungen verteilt wird; zusätzlich ein kleines Einblendfenster mit violetten Wellen, die noch stärker gestreut werden, aber gedämpft dargestellt sind, sanfte Farbverläufe, realistische Wolkenakzente.",
+    "duration": 6
+  },
+  {
+    "scene_number": 4,
+    "text": "Unser Auge ist weniger empfindlich für Violett. Außerdem liefert die Sonne weniger Violett.",
+    "image_prompt": "Nahaufnahme eines menschlichen Auges, daneben eine einfache Empfindlichkeitskurve des Auges mit niedrigem Peak im Violettbereich; darunter ein kleines Sonnenspektrum-Chart, das weniger Intensität im Violett zeigt; kombinierter Infografik-Stil, klare Labels in Deutsch, kontrastreiche, gut lesbare Farben.",
+    "duration": 6
+  },
+  {
+    "scene_number": 5,
+    "text": "Bei Sonnenauf- und -untergang durchläuft Licht mehr Luft, dann wird Blau weggefiltert und Rot dominiert. Aha: Nicht nur das Licht, auch unsere Augen machen Blau zur Siegerfarbe — welches Blau siehst du heute?",
+    "image_prompt": "Dramatische Aufnahme eines Sonnenuntergangs am Horizont mit intensiven Rot- und Orangetönen; animierte Strahlen legen einen langen Weg durch die Atmosphäre zurück, blaue Komponenten werden entlang des Weges ausgeblendet, Silhouette einer Person, die in den Himmel blickt, stimmungsvolle, warme Beleuchtung und einladende Komposition für Zuschauerinteraktion.",
+    "duration": 6
+  }
+]

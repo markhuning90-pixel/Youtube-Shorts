@@ -1,0 +1,31 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,58,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,1,2,40,40,260,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.51,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Können Streifen Insekten {\c&H0000FFFF&\b1\fscx110\fscy110}vertreiben?{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:01.51,0:00:03.02,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Bei Zebras {\c&H0000FFFF&\b1\fscx110\fscy110}scheint{\c&H00FFFFFF&\b1\fscx100\fscy100} das so.
+Dialogue: 0,0:00:03.02,0:00:04.53,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Forscher{\c&H00FFFFFF&\b1\fscx100\fscy100} fanden:
+Dialogue: 0,0:00:04.53,0:00:06.04,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}gestreiftes Fell verwirrt {\c&H0000FFFF&\b1\fscx110\fscy110}Stechfliegen.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:06.04,0:00:07.55,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Weniger {\c&H0000FFFF&\b1\fscx110\fscy110}Landungen,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:07.55,0:00:09.06,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}weniger {\c&H0000FFFF&\b1\fscx110\fscy110}Blutverlust.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:09.06,0:00:10.58,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Andere {\c&H0000FFFF&\b1\fscx110\fscy110}Theorien{\c&H00FFFFFF&\b1\fscx100\fscy100} gibt es auch:
+Dialogue: 0,0:00:10.58,0:00:12.09,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Tarnung{\c&H00FFFFFF&\b1\fscx100\fscy100} im Gras,
+Dialogue: 0,0:00:12.09,0:00:13.60,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}oder "Motion Dazzle" – {\c&H0000FFFF&\b1\fscx110\fscy110}Bewegungs‑Täuschung,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:13.60,0:00:15.11,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}die Jäger {\c&H0000FFFF&\b1\fscx110\fscy110}irritiert.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:15.11,0:00:16.62,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Auch soziale {\c&H0000FFFF&\b1\fscx110\fscy110}Erkennung{\c&H00FFFFFF&\b1\fscx100\fscy100} spielt eine
+Dialogue: 0,0:00:16.62,0:00:18.13,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Rolle. {\c&H0000FFFF&\b1\fscx110\fscy110}Thermoregulation?{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:18.13,0:00:19.64,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Kaum {\c&H0000FFFF&\b1\fscx110\fscy110}Beweise.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:19.64,0:00:21.15,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Die {\c&H0000FFFF&\b1\fscx110\fscy110}stärkste{\c&H00FFFFFF&\b1\fscx100\fscy100} Idee:
+Dialogue: 0,0:00:21.15,0:00:22.66,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Streifen sind eine clevere {\c&H0000FFFF&\b1\fscx110\fscy110}Fliegenabwehr.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:22.66,0:00:24.17,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Klingt{\c&H00FFFFFF&\b1\fscx100\fscy100} simpel,
+Dialogue: 0,0:00:24.17,0:00:25.68,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}aber {\c&H0000FFFF&\b1\fscx110\fscy110}genial.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:25.68,0:00:27.19,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Noch {\c&H0000FFFF&\b1\fscx110\fscy110}Fragen?{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:27.19,0:00:28.70,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Schau es dir {\c&H0000FFFF&\b1\fscx110\fscy110}nochmal!{\c&H00FFFFFF&\b1\fscx100\fscy100}

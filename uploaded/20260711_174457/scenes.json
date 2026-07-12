@@ -1,0 +1,32 @@
+[
+  {
+    "scene_number": 1,
+    "text": "Eine schlafende Person in einem dunklen Schlafzimmer, über ihrem Kopf schweben sechs nummerierte Traumblasen. Jede Blase zeigt eine andere Szene und wirkt gezielt komponiert, nicht zufällig.",
+    "image_prompt": "Fotorealistische Nachtaufnahme eines schlafenden jungen Erwachsenen in einem dunklen, ruhigen Schlafzimmer; über dem Kopf sechs halbtransparente, nummerierte Traumblasen in unterschiedlicher Farbe, jede Blase enthält eine kleine, klare Szene (Stadt, Wald, Gespräch, Absturz, Bühne, Laborszene); sanftes Mondlicht, ruhige Stimmung, leichte Unschärfe im Hintergrund, Fokus auf den Traumblasen, cinematic lighting, 16:9",
+    "duration": 4
+  },
+  {
+    "scene_number": 2,
+    "text": "Nahaufnahme eines stilisierten Gehirns, in dem Erinnerungen als Karten oder Fotos sortiert werden. Ein REM-Indikator zeigt, wie emotionale Farbflächen mit diesen Erinnerungen verschmelzen.",
+    "image_prompt": "Illustrative Nahaufnahme eines halbtransparenten Gehirns mit schwebenden Foto- und Karten-Elementen, die in Regalfächer sortiert werden; überlagerte rote und blaue Farbflüsse symbolisieren Gefühle, ein kleines 'REM'-Label leuchtet; moderne Infografik-Ästhetik, klare Linien, hohe Detailtiefe, kontrastreiche Farben, 16:9",
+    "duration": 5
+  },
+  {
+    "scene_number": 3,
+    "text": "Geteilte Bildfläche: links ein Traum, der Gefahr probt (Verfolgung, Alarmlicht), rechts ein Traum, der Kreativität fördert (Malen, schwebende Ideen). Beide Seiten zeigen aktive, unterschiedliche Funktionen des Träumens.",
+    "image_prompt": "Diptychon-Bild: linke Hälfte dynamische Szene mit einer Person, die vor einer bedrohlichen Gestalt wegrennt, dramatische Beleuchtung, rote Alarmlichter; rechte Hälfte farbenfrohe, surreale Szene mit einer Person, die malt und von leuchtenden Ideenblasen umgeben ist; gleiche Personenpose, kontrastierende Farbpaletten, filmische Komposition, 16:9",
+    "duration": 5
+  },
+  {
+    "scene_number": 4,
+    "text": "Forscher im Labor betrachten eine Monitorwand, darüber die drei Rollen 'Verarbeitung', 'Problemlösung', 'Simulation' als Labels. Eine schematische Animation zeigt, wie das Gehirn nachts verschiedene Szenarien testet, ohne endgültige Antwort.",
+    "image_prompt": "Modernes Labor mit Forschern (divers) vor großen Monitorwänden, auf den Bildschirmen schematische Gehirnscans und animierte Stichworte 'Verarbeitung', 'Problemlösung', 'Simulation'; im Vordergrund Notizen und Diagramme, kühle Laborbeleuchtung, professionelle Dokumentationsästhetik, 16:9",
+    "duration": 5
+  },
+  {
+    "scene_number": 5,
+    "text": "Die gleiche Person wacht auf; ihr Traum transformiert sich in eine reale Entscheidungs-Szene (Weggabelung oder Gespräch). Ein Text fragt: War das nur Zufall oder mentales Training?",
+    "image_prompt": "Kontrastreiche Szene beim Aufwachen: Person sitzt im Bett, über ihr verschmilzt eine Traumblase mit einer realen Alltagssituation (Weggabelung auf einer Straße, ein wichtiges Gespräch mit einer anderen Person); dramatische, nachdenkliche Beleuchtung, eingeblendete Textfrage 'Zufall oder mentales Training?', emotionaler Fokus, 16:9",
+    "duration": 6
+  }
+]

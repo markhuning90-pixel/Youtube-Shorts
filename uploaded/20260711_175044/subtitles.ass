@@ -1,0 +1,31 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,58,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,1,2,40,40,260,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.79,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Warum{\c&H00FFFFFF&\b1\fscx100\fscy100} sehen wir Blau,
+Dialogue: 0,0:00:01.79,0:00:03.58,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}obwohl{\c&H00FFFFFF&\b1\fscx100\fscy100} die Sonne alle Farben
+Dialogue: 0,0:00:03.58,0:00:05.37,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}sendet? {\c&H0000FFFF&\b1\fscx110\fscy110}Luftmoleküle{\c&H00FFFFFF&\b1\fscx100\fscy100} streuen kurzes Licht
+Dialogue: 0,0:00:05.37,0:00:07.15,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}viel {\c&H0000FFFF&\b1\fscx110\fscy110}stärker.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:07.15,0:00:08.94,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Blau hat kürzere {\c&H0000FFFF&\b1\fscx110\fscy110}Wellenlängen{\c&H00FFFFFF&\b1\fscx100\fscy100} als
+Dialogue: 0,0:00:08.94,0:00:10.73,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Rot. Diese {\c&H0000FFFF&\b1\fscx110\fscy110}Streuung{\c&H00FFFFFF&\b1\fscx100\fscy100} verteilt Blau
+Dialogue: 0,0:00:10.73,0:00:12.52,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}über den {\c&H0000FFFF&\b1\fscx110\fscy110}ganzen{\c&H00FFFFFF&\b1\fscx100\fscy100} Himmel.
+Dialogue: 0,0:00:12.52,0:00:14.31,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Violett{\c&H00FFFFFF&\b1\fscx100\fscy100} wird zwar noch stärker
+Dialogue: 0,0:00:14.31,0:00:16.10,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}gestreut,{\c&H00FFFFFF&\b1\fscx100\fscy100} aber unser Auge ist
+Dialogue: 0,0:00:16.10,0:00:17.89,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}weniger {\c&H0000FFFF&\b1\fscx110\fscy110}empfindlich{\c&H00FFFFFF&\b1\fscx100\fscy100} dafür und die
+Dialogue: 0,0:00:17.89,0:00:19.67,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Sonne {\c&H0000FFFF&\b1\fscx110\fscy110}liefert{\c&H00FFFFFF&\b1\fscx100\fscy100} weniger Violett.
+Dialogue: 0,0:00:19.67,0:00:21.46,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Bei {\c&H0000FFFF&\b1\fscx110\fscy110}Sonnenauf-{\c&H00FFFFFF&\b1\fscx100\fscy100} und -untergang durchläuft
+Dialogue: 0,0:00:21.46,0:00:23.25,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Licht{\c&H00FFFFFF&\b1\fscx100\fscy100} mehr Luft.
+Dialogue: 0,0:00:23.25,0:00:25.04,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Dann wird Blau {\c&H0000FFFF&\b1\fscx110\fscy110}weggefiltert{\c&H00FFFFFF&\b1\fscx100\fscy100} und
+Dialogue: 0,0:00:25.04,0:00:26.83,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Rot {\c&H0000FFFF&\b1\fscx110\fscy110}dominiert.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:26.83,0:00:28.62,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Aha: Nicht nur Licht {\c&H0000FFFF&\b1\fscx110\fscy110}entscheidet{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:28.62,0:00:30.41,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}— auch {\c&H0000FFFF&\b1\fscx110\fscy110}unsere{\c&H00FFFFFF&\b1\fscx100\fscy100} Augen machen
+Dialogue: 0,0:00:30.41,0:00:32.20,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Blau zur {\c&H0000FFFF&\b1\fscx110\fscy110}Siegerfarbe.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:32.20,0:00:33.98,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Welches{\c&H00FFFFFF&\b1\fscx100\fscy100} Blau siehst du heute?

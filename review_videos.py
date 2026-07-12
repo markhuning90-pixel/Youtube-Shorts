@@ -3,7 +3,7 @@ from shutil import move
 
 
 def review_videos():
-    videos = sorted(Path("completed").glob("*/final_video.mp4"))
+    videos = sorted(Path("approval").glob("*/final_video.mp4"))
 
     if not videos:
         print("Keine fertigen Videos zur Prüfung gefunden.")

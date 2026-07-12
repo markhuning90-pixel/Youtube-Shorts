@@ -1,0 +1,75 @@
+1
+00:00:00,000 --> 00:00:01,789
+Warum sehen wir Blau,
+
+2
+00:00:01,789 --> 00:00:03,577
+obwohl die Sonne alle Farben
+
+3
+00:00:03,577 --> 00:00:05,366
+sendet? Luftmoleküle streuen kurzes Licht
+
+4
+00:00:05,366 --> 00:00:07,155
+viel stärker.
+
+5
+00:00:07,155 --> 00:00:08,943
+Blau hat kürzere Wellenlängen als
+
+6
+00:00:08,943 --> 00:00:10,732
+Rot. Diese Streuung verteilt Blau
+
+7
+00:00:10,732 --> 00:00:12,520
+über den ganzen Himmel.
+
+8
+00:00:12,520 --> 00:00:14,309
+Violett wird zwar noch stärker
+
+9
+00:00:14,309 --> 00:00:16,098
+gestreut, aber unser Auge ist
+
+10
+00:00:16,098 --> 00:00:17,886
+weniger empfindlich dafür und die
+
+11
+00:00:17,886 --> 00:00:19,675
+Sonne liefert weniger Violett.
+
+12
+00:00:19,675 --> 00:00:21,464
+Bei Sonnenauf- und -untergang durchläuft
+
+13
+00:00:21,464 --> 00:00:23,252
+Licht mehr Luft.
+
+14
+00:00:23,252 --> 00:00:25,041
+Dann wird Blau weggefiltert und
+
+15
+00:00:25,041 --> 00:00:26,829
+Rot dominiert.
+
+16
+00:00:26,829 --> 00:00:28,618
+Aha: Nicht nur Licht entscheidet
+
+17
+00:00:28,618 --> 00:00:30,407
+— auch unsere Augen machen
+
+18
+00:00:30,407 --> 00:00:32,195
+Blau zur Siegerfarbe.
+
+19
+00:00:32,195 --> 00:00:33,984
+Welches Blau siehst du heute?

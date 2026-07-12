@@ -1,8 +1,0 @@
-MAIN CHARACTER
-
-Gender: Weiblich
-Age: 4 Jahre
-Hair: Kurzes silbergraues Fell mit dunklen Tigerstreifen
-Face: Große bernsteinfarbene Augen, rosa Nase, träumerischer Blick
-Clothes: Nachtblauer Oversize-Strickpulli, weiche Hausschuhe, Schlafmaske um den Hals
-Style: Dämmerungsaktive Jägerin; tagsüber gelassen, morgens/abends fokussiert und flink

@@ -1,0 +1,32 @@
+[
+  {
+    "scene_number": 1,
+    "text": "Frierst du schneller als andere? Drei überraschende Gründe, die dahinterstecken.",
+    "image_prompt": "Nahaufnahme einer jungen Frau in einem hellen Café, die sichtbar fröstelt und sich die Arme um den Oberkörper legt; im Hintergrund sitzt eine andere Person entspannt ohne Jacke. Leichte Kältesymbol-Overlays (Schneeflocke, Fragezeichen) und stimmungsvolle kühle Farbpalette mit warmem Akzent auf der frierenden Person; sanfter Kameraschwenk auf das Gesicht, freundlicher, neugieriger Ton.",
+    "duration": 5
+  },
+  {
+    "scene_number": 2,
+    "text": "Erstens: Ein langsamer Stoffwechsel produziert weniger Wärme. Das zeigt ein einfaches Messgerät oder Symbol für 'niedrig'.",
+    "image_prompt": "Stilisierte Infografik: Silhouette eines Körpers mit einem Thermometer und einem Mitochondrien-Icon; daneben ein Rundmeter/Skala mit dem Pointer bei 'niedrig' und einer kleinen flackernden Flamme. Klare Beschriftung 'Stoffwechsel' in Deutsch, kontrastreiche Farben (kühle Blautöne, kleines warmes Rot bei der Flamme), ruhige Animation eines langsamen Pulses.",
+    "duration": 7
+  },
+  {
+    "scene_number": 3,
+    "text": "Zweitens: Weniger Körperfett heißt weniger Isolierung gegen Kälte. Eine Vergleichsaufnahme zeigt zwei Figuren mit unterschiedlicher Fettverteilung.",
+    "image_prompt": "Side-by-side Vergleich zweier vereinfachter Körper-Silhouetten: links schlanker Körper mit dünner Isolationsschicht, rechts Körper mit mehr Fett und einer sichtbaren Isolierschicht; thermografische Farbüberlagerung (blau=kalt, rot=warm) zeigt deutlich mehr Wärme beim rechten Modell. Klare Labels 'wenig Fett' und 'mehr Fett', minimalistische, leicht erklärende Visuals, frontale Ansicht.",
+    "duration": 6
+  },
+  {
+    "scene_number": 4,
+    "text": "Drittens: Schlechte Durchblutung kühlt Hände und Füße schnell aus. Hormone, Alter, Stress oder Medikamente können das Kälteempfinden zusätzlich verändern; Kleidung erklärt nicht immer alles.",
+    "image_prompt": "Hand- und Fußnahaufnahme mit Hervorhebung blasser, kühler Finger und Zehen; daneben kleine Icons für Blutgefäßverengung, Schilddrüse, Uhr (Alter), Gedankenblase (Stress) und Tablette (Medikamente). Dazu ein durchgestrichenes Jacken-Icon mit Text 'Kleidung nicht alles'. Gedämpfte, erklärende Farben, legible Symbole, leichte animierte Puls- oder Flusslinie, informative Infografik-Ästhetik.",
+    "duration": 6
+  },
+  {
+    "scene_number": 5,
+    "text": "Aha: Schon kleine Änderungen im Alltag können wärmer machen. Welcher Grund trifft bei dir zu? Schau nochmal und teste es!",
+    "image_prompt": "Freundliche Szene mit der gleichen Person vom Anfang, die jetzt eine Wärmelampe, warme Socken und leichte Bewegung zeigt; kurze Icons für Alltagstipps (warmes Getränk, Bewegung, Schichtenprinzip). Schluss-Overlay mit Call-to-Action auf Deutsch 'Welcher Grund trifft auf dich zu? Nochmals ansehen und testen!' energische, motivierende Farbgebung, dynamischer Abschluss mit lächelnder Mimik.",
+    "duration": 6
+  }
+]

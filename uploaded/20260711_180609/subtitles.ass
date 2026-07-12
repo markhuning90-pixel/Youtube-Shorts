@@ -1,0 +1,27 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,58,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,1,2,40,40,260,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.59,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Warum haben deine {\c&H0000FFFF&\b1\fscx110\fscy110}Fingerspitzen{\c&H00FFFFFF&\b1\fscx100\fscy100} Rillen?
+Dialogue: 0,0:00:01.59,0:00:03.18,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Das ist kein {\c&H0000FFFF&\b1\fscx110\fscy110}Zufall.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:03.18,0:00:04.77,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Die Rillen {\c&H0000FFFF&\b1\fscx110\fscy110}erhöhen{\c&H00FFFFFF&\b1\fscx100\fscy100} die Reibung.
+Dialogue: 0,0:00:04.77,0:00:06.36,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Du greifst {\c&H0000FFFF&\b1\fscx110\fscy110}sicherer.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:06.36,0:00:07.95,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Sie leiten {\c&H0000FFFF&\b1\fscx110\fscy110}Schweiß{\c&H00FFFFFF&\b1\fscx100\fscy100} weg,
+Dialogue: 0,0:00:07.95,0:00:09.54,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}damit nichts {\c&H0000FFFF&\b1\fscx110\fscy110}rutscht.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:09.54,0:00:11.13,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Außerdem verstärken sie {\c&H0000FFFF&\b1\fscx110\fscy110}Vibrationen{\c&H00FFFFFF&\b1\fscx100\fscy100} für
+Dialogue: 0,0:00:11.13,0:00:12.72,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}deine {\c&H0000FFFF&\b1\fscx110\fscy110}Nerven.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:12.72,0:00:14.31,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}So kannst du feine {\c&H0000FFFF&\b1\fscx110\fscy110}Strukturen{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:14.31,0:00:15.90,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}fühlen.{\c&H00FFFFFF&\b1\fscx100\fscy100} Das Muster bildet sich
+Dialogue: 0,0:00:15.90,0:00:17.49,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}im {\c&H0000FFFF&\b1\fscx110\fscy110}Mutterleib.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:17.49,0:00:19.08,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Und {\c&H0000FFFF&\b1\fscx110\fscy110}bleibt{\c&H00FFFFFF&\b1\fscx100\fscy100} ein Leben lang
+Dialogue: 0,0:00:19.08,0:00:20.68,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}einzigartig.{\c&H00FFFFFF&\b1\fscx100\fscy100} Kleine Rillen.
+Dialogue: 0,0:00:20.68,0:00:22.27,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Große {\c&H0000FFFF&\b1\fscx110\fscy110}Wirkung.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:22.27,0:00:23.86,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Was {\c&H0000FFFF&\b1\fscx110\fscy110}erzählt{\c&H00FFFFFF&\b1\fscx100\fscy100} dein Abdruck?

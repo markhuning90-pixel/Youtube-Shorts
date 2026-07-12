@@ -1,0 +1,32 @@
+[
+  {
+    "scene_number": 1,
+    "text": "Nahaufnahme eines Unterarms mit deutlich sichtbarer Gänsehaut; die Person wirkt überrascht. Die Frage des Shorts wird als kurze Titelzeile eingeblendet.",
+    "image_prompt": "Fotorealistische Close-up-Aufnahme eines menschlichen Unterarms mit deutlich sichtbarer Gänsehaut, weiches Seitenlicht, neutrale Hintergrundunscharfheit, natürliche Hauttöne, leichte Makro-Detaillierung, die Emotion Überraschung dezent im Bild andeutend.",
+    "duration": 4
+  },
+  {
+    "scene_number": 2,
+    "text": "Animierte medizinische Schnittdarstellung zeigt Haarfollikel und den kleinen Muskel Arrector pili, der sich blitzschnell zusammenzieht. Kurze Einblendung: 'Dein Körper reagiert blitzschnell.'",
+    "image_prompt": "Lehrhafte 3D-Animation eines Hautquerschnitts mit Haarfollikel, fokussiert auf den Arrector pili-Muskel, der sich kontrahiert; klare, vereinfachte Beschriftungen, warme Farben, saubere Grafiken und dynamische Bewegung, hohe Lesbarkeit für kurze Clips.",
+    "duration": 5
+  },
+  {
+    "scene_number": 3,
+    "text": "Links Szene: Person draußen im Wind, Haare richten sich auf — Erklärung: Luftpolster sollen wärmen. Rechts Szene: andere Person bekommt Gänsehaut beim Hören von Musik oder vor Angst, derselbe autonome Nerv feuert.",
+    "image_prompt": "Split-Screen: links Realaufnahme einer Person im kalten Wind mit sichtbaren Haaren und Gänsehaut, kühles Farbschema; rechts Close-up einer Person, die bei Musik oder gruseliger Szene Gänsehaut bekommt, emotionaler Ausdruck, warme Künstliche Beleuchtung; beide Seiten konsistent fotografisch-realistisch.",
+    "duration": 6
+  },
+  {
+    "scene_number": 4,
+    "text": "Historische Illustration: behaarte Tiere und frühe Menschen fluffen ihre Felle auf und wirken dadurch größer und furchteinflößender. Kurze Erklärung: Heute kaum isolierend, aber ein evolutionäres Überbleibsel.",
+    "image_prompt": "Stilisierte, aber realistisch wirkende Szene in leichtem Sepia: prähistorische Menschen und Tiere mit aufgeplusterten Fellen machen sich groß; dramatische Perspektive, betonte Körperhaltung, texturreiche Fell-Details; informationsorientierter, leicht dokumentarischer Stil.",
+    "duration": 5
+  },
+  {
+    "scene_number": 5,
+    "text": "Moderner Host blickt in die Kamera, mit einem Lächeln und nahen Gänsehaut-Details am Arm. Abschließende Einblendung stellt die Frage: 'Wann hattest du zuletzt Gänsehaut?'",
+    "image_prompt": "Fotorealistisches Porträt eines Hosts, halbnah, freundliche Mimik, Hand oder Arm mit erkennbarer Gänsehaut im Vordergrund, heller Hintergrund, klare Komposition für Call-to-Action, warme Farben und einladende Atmosphäre.",
+    "duration": 4
+  }
+]

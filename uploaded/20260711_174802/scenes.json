@@ -1,0 +1,32 @@
+[
+  {
+    "scene_number": 1,
+    "text": "Frontalaufnahme einer Person, die gähnt, mit eingeblendetem Frage-Text: 'Kühlt Gähnen wirklich dein Gehirn?'. Nahaufnahme, deutliches Einatmen und weiter Kiefer, neutraler Hintergrund.",
+    "image_prompt": "Close-up of a person yawning widely, gender-neutral appearance, natural soft lighting, neutral studio background, visible deep inhale and wide jaw, shallow depth of field, overlay text in German 'Kühlt Gähnen wirklich dein Gehirn?' in bold sans-serif, cinematic look, realistic skin tones.",
+    "duration": 4
+  },
+  {
+    "scene_number": 2,
+    "text": "Grafische Illustration eines Gehirns, das durch Gähnen abkühlt; daneben kurze Skizze von Forschern und einer Abkühlungsanzeige. Eine Einblendung zeigt tiefes Einatmen, breiten Kiefer und veränderten Blutfluss.",
+    "image_prompt": "Informational split graphic: left side shows a realistic person yawning with emphasis on open mouth and inhalation, right side a semi-realistic 3D brain with blue cooling gradient, thermometer icon and downward temperature arrows, animated arrows indicating altered blood flow, small scientist silhouettes in lab coats with clipboards, clean infographic style, bright contrasting colors.",
+    "duration": 4
+  },
+  {
+    "scene_number": 3,
+    "text": "Szene zeigt eine Person, die vom müden Zustand durch ein Gähnen zu wachsamem, fokussiertem Zustand wechselt. Symbole wie Uhr und Aufladebalken verdeutlichen den kurzen 'Neustart' für die Aufmerksamkeit.",
+    "image_prompt": "Before-and-after sequence image: left half tired person with droopy eyes, right half same person alert and focused after yawning; include icons: small clock, battery/refresh symbol indicating restart, color shift from warm/tired tones to cooler/alert tones, expressive facial transition, cinematic lighting.",
+    "duration": 4
+  },
+  {
+    "scene_number": 4,
+    "text": "Kurze Entkräftung des Sauerstoff-Mythos: rotes Kreuz über Sauerstoff- und Lungen-Symbol. Daneben mehrere Menschen, die ansteckend gähnen; Verbindungs- und Empathie-Symbole zeigen den sozialen Aspekt.",
+    "image_prompt": "Left panel stylized oxygen molecule and lung icon with a red X and caption in German 'Nicht nur mehr Sauerstoff', right panel diverse group of people yawning in sequence to show contagious yawning, connecting curved lines and heart icons between them to illustrate social bonding and empathy, warm friendly color palette, modern flat-illustration style.",
+    "duration": 4
+  },
+  {
+    "scene_number": 5,
+    "text": "Abschließende Gegenüberstellung: Gehirn-Abkühlung versus soziale Verbindung, mit der Frage 'Kühlung oder Verbindung?'. Call-to-Action: 'Schau nochmal und achte drauf.'",
+    "image_prompt": "Split-screen infographic: left side cooling-brain motif with blue tones, snowflake and downward arrows; right side warm-toned group connection with heart and handshake icons; central overlay text in German 'Gähnst du zur Kühlung oder zur Verbindung?' and a clear call-to-action button 'Schau nochmal und achte drauf', bold clean typography, high-contrast composition.",
+    "duration": 4
+  }
+]

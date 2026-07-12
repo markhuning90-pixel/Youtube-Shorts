@@ -1,0 +1,31 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,58,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,1,2,40,40,260,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.73,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Warum {\c&H0000FFFF&\b1\fscx110\fscy110}schnurrt{\c&H00FFFFFF&\b1\fscx100\fscy100} deine Katze wirklich?
+Dialogue: 0,0:00:01.73,0:00:03.46,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Nicht nur aus {\c&H0000FFFF&\b1\fscx110\fscy110}Zufriedenheit.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:03.46,0:00:05.20,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Schnurren entsteht durch schnelle {\c&H0000FFFF&\b1\fscx110\fscy110}Vibrationen{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:05.20,0:00:06.93,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}der {\c&H0000FFFF&\b1\fscx110\fscy110}Stimmbänder.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:06.93,0:00:08.66,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Die {\c&H0000FFFF&\b1\fscx110\fscy110}Frequenz{\c&H00FFFFFF&\b1\fscx100\fscy100} liegt oft zwischen
+Dialogue: 0,0:00:08.66,0:00:10.39,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}25 {\c&H0000FFFF&\b1\fscx110\fscy110}und{\c&H00FFFFFF&\b1\fscx100\fscy100} 150 Hz.
+Dialogue: 0,0:00:10.39,0:00:12.12,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Diese Töne {\c&H0000FFFF&\b1\fscx110\fscy110}können{\c&H00FFFFFF&\b1\fscx100\fscy100} Stress senken.
+Dialogue: 0,0:00:12.12,0:00:13.85,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Und sie {\c&H0000FFFF&\b1\fscx110\fscy110}könnten{\c&H00FFFFFF&\b1\fscx100\fscy100} die Heilung
+Dialogue: 0,0:00:13.85,0:00:15.59,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}von {\c&H0000FFFF&\b1\fscx110\fscy110}Knochen{\c&H00FFFFFF&\b1\fscx100\fscy100} und Gewebe fördern.
+Dialogue: 0,0:00:15.59,0:00:17.32,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Katzen nutzen Schnurren zur {\c&H0000FFFF&\b1\fscx110\fscy110}Kommunikation.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:17.32,0:00:19.05,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Zur {\c&H0000FFFF&\b1\fscx110\fscy110}Selbstberuhigung.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:19.05,0:00:20.78,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Und {\c&H0000FFFF&\b1\fscx110\fscy110}manchmal,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:20.78,0:00:22.51,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}um Hilfe zu {\c&H0000FFFF&\b1\fscx110\fscy110}signalisieren.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:22.51,0:00:24.25,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Verletzte{\c&H00FFFFFF&\b1\fscx100\fscy100} Katzen schnurren oft besonders
+Dialogue: 0,0:00:24.25,0:00:25.98,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}laut.{\c&H00FFFFFF&\b1\fscx100\fscy100} Also:
+Dialogue: 0,0:00:25.98,0:00:27.71,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Wenn sie {\c&H0000FFFF&\b1\fscx110\fscy110}schnurrt,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:27.71,0:00:29.44,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}tröstet{\c&H00FFFFFF&\b1\fscx100\fscy100} sie sich — und
+Dialogue: 0,0:00:29.44,0:00:31.17,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}vielleicht{\c&H00FFFFFF&\b1\fscx100\fscy100} heilt sie dabei.
+Dialogue: 0,0:00:31.17,0:00:32.90,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Hast du das {\c&H0000FFFF&\b1\fscx110\fscy110}gewusst?{\c&H00FFFFFF&\b1\fscx100\fscy100}
