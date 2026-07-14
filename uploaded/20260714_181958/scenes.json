@@ -1,0 +1,42 @@
+[
+  {
+    "scene_number": 1,
+    "text": "Die Erde bleibt plötzlich stehen. Alles behält seine Bewegungsenergie — am Äquator bis zu rund 1.600 km/h.",
+    "media_type": "stock",
+    "stock_keyword": "earth from space",
+    "image_prompt": "",
+    "duration": 5
+  },
+  {
+    "scene_number": 2,
+    "text": "Häuser, Bäume und Menschen werden von der Luftbewegung hinweggefegt und durch die Luft geschleudert. Chaotische Trümmer und Staub füllen die Szene.",
+    "media_type": "ai_image",
+    "stock_keyword": "destructive wind",
+    "image_prompt": "Dramatic hyper-realistic scene of a city devastated by extreme horizontal winds: houses, trees, cars and people swept up and airborne amid flying debris and dust, cinematic lighting, high detail",
+    "duration": 6
+  },
+  {
+    "scene_number": 3,
+    "text": "Die Ozeane schlagen als riesige Flutwellen über Kontinente — Mega-Tsunamis. Städte werden von monströsen Wasserwänden überrollt.",
+    "media_type": "ai_image",
+    "stock_keyword": "tsunami wave",
+    "image_prompt": "Hyper-realistic image of a colossal tsunami wave inundating a coastal city, towering water wall, buildings collapsing, dark stormy sky, intense motion and scale, cinematic detail",
+    "duration": 6
+  },
+  {
+    "scene_number": 4,
+    "text": "Ein 'Tag' dauert fortan ein Jahr; eine Hemisphäre verbrennt, die andere gefriert. Wetter und Meeresströmungen kollabieren ohne Coriolis-Kraft.",
+    "media_type": "stock",
+    "stock_keyword": "wildfire and ice",
+    "image_prompt": "",
+    "duration": 6
+  },
+  {
+    "scene_number": 5,
+    "text": "Langfristig könnte der Geodynamo schwächer werden und das Magnetfeld abnehmen, wodurch mehr kosmische Strahlung die Erde erreicht. Nur ein schmaler Dämmerungsstreifen bliebe relativ mild — würdest du dort leben?",
+    "media_type": "stock",
+    "stock_keyword": "magnetic field aurora",
+    "image_prompt": "",
+    "duration": 7
+  }
+]

@@ -1,6 +1,24 @@
 import json
+import re
 from datetime import datetime
 from pathlib import Path
+
+
+def create_generation_folder_name(timestamp, title):
+    replacements = str.maketrans(
+        {
+            "ä": "ae",
+            "ö": "oe",
+            "ü": "ue",
+            "ß": "ss",
+        }
+    )
+    title_part = str(title or "").lower().translate(replacements).replace(" ", "-")
+    title_part = re.sub(r"[^a-z0-9-]", "", title_part)
+    title_part = re.sub(r"-{2,}", "-", title_part).strip("-")
+    title_part = title_part[:60].rstrip("-")
+
+    return f"{timestamp}_{title_part}" if title_part else timestamp
 
 
 def save_script(generation):
@@ -8,7 +26,10 @@ def save_script(generation):
     output_folder.mkdir(exist_ok=True)
 
     created_at = datetime.now()
-    folder_name = created_at.strftime("%Y%m%d_%H%M%S")
+    folder_name = create_generation_folder_name(
+        created_at.strftime("%Y%m%d_%H%M%S"),
+        generation.title,
+    )
     generation_folder = output_folder / folder_name
     generation_folder.mkdir(exist_ok=True)
     generation.output_folder = str(generation_folder)

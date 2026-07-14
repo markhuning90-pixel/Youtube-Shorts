@@ -7,7 +7,7 @@ from urllib.request import Request, urlopen
 from config import load_pexels_api_key
 
 
-PEXELS_VIDEO_SEARCH_URL = "https://api.pexels.com/videos/search"
+PEXELS_VIDEO_SEARCH_URL = "https://api.pexels.com/v1/videos/search"
 
 
 def load_stock_settings():
@@ -68,13 +68,37 @@ def search_pexels_videos(keyword, api_key, settings):
     )
     request = Request(
         f"{PEXELS_VIDEO_SEARCH_URL}?{params}",
-        headers={"Authorization": api_key},
+        headers={
+            "Authorization": api_key,
+            "User-Agent": "FaktenBlitz-VideoGenerator/1.0",
+            "Accept": "application/json",
+        },
     )
 
     try:
         with urlopen(request, timeout=settings["stock_download_timeout"]) as response:
             return json.loads(response.read().decode("utf-8"))
-    except (HTTPError, URLError, OSError, json.JSONDecodeError) as error:
+    except HTTPError as error:
+        try:
+            response_text = error.read().decode("utf-8", errors="replace")
+        except OSError:
+            response_text = "Kein Antworttext verfügbar."
+
+        print(f"Pexels-Suche für '{keyword}' fehlgeschlagen: HTTP {error.code}")
+
+        if error.code == 401:
+            print("Pexels-API-Key ist ungültig oder fehlt.")
+        elif error.code == 403:
+            print(
+                "Pexels hat den Zugriff abgelehnt. Prüfe, ob der API-Key aktiv ist "
+                "und der richtige Endpunkt verwendet wird."
+            )
+
+        if response_text:
+            print(f"Pexels-Antwort: {response_text}")
+
+        return None
+    except (URLError, OSError, json.JSONDecodeError) as error:
         print(f"Pexels-Suche für '{keyword}' fehlgeschlagen: {error}")
         return None
 
@@ -111,8 +135,16 @@ def simplified_keyword(keyword):
 
 
 def download_video(media_url, destination, timeout):
+    request = Request(
+        media_url,
+        headers={
+            "User-Agent": "FaktenBlitz-VideoGenerator/1.0",
+            "Accept": "video/mp4,*/*",
+        },
+    )
+
     try:
-        with urlopen(media_url, timeout=timeout) as response:
+        with urlopen(request, timeout=timeout) as response:
             with destination.open("wb") as output_file:
                 while chunk := response.read(1024 * 1024):
                     output_file.write(chunk)

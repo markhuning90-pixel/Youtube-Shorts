@@ -1,0 +1,31 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,58,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,1,2,40,40,500,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:02.48,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Was, wenn die Erde {\c&H0000FFFF&\b1\fscx110\fscy110}plötzlich{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:02.48,0:00:04.97,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}stehen{\c&H00FFFFFF&\b1\fscx100\fscy100} bleibt?
+Dialogue: 0,0:00:04.97,0:00:07.45,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Alles behält seine {\c&H0000FFFF&\b1\fscx110\fscy110}Bewegungsenergie.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:07.45,0:00:09.94,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Am {\c&H0000FFFF&\b1\fscx110\fscy110}Äquator{\c&H00FFFFFF&\b1\fscx100\fscy100} sind das bis
+Dialogue: 0,0:00:09.94,0:00:12.42,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}zu rund {\c&H0000FFFF&\b1\fscx110\fscy110}1.600{\c&H00FFFFFF&\b1\fscx100\fscy100} km/h.
+Dialogue: 0,0:00:12.42,0:00:14.91,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Häuser,{\c&H00FFFFFF&\b1\fscx100\fscy100} Bäume,
+Dialogue: 0,0:00:14.91,0:00:17.39,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Menschen — alles wird {\c&H0000FFFF&\b1\fscx110\fscy110}weggefegt.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:17.39,0:00:19.88,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Die Ozeane {\c&H0000FFFF&\b1\fscx110\fscy110}schlagen{\c&H00FFFFFF&\b1\fscx100\fscy100} als riesige
+Dialogue: 0,0:00:19.88,0:00:22.36,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Flutwellen über Kontinente — {\c&H0000FFFF&\b1\fscx110\fscy110}Mega-Tsunamis.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:22.36,0:00:24.85,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Dann: Ein „Tag“ {\c&H0000FFFF&\b1\fscx110\fscy110}dauert{\c&H00FFFFFF&\b1\fscx100\fscy100} ein
+Dialogue: 0,0:00:24.85,0:00:27.33,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Jahr. Eine {\c&H0000FFFF&\b1\fscx110\fscy110}Hemisphäre{\c&H00FFFFFF&\b1\fscx100\fscy100} brennt,
+Dialogue: 0,0:00:27.33,0:00:29.82,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}die {\c&H0000FFFF&\b1\fscx110\fscy110}andere{\c&H00FFFFFF&\b1\fscx100\fscy100} friert.
+Dialogue: 0,0:00:29.82,0:00:32.30,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Wetter und Strömungen {\c&H0000FFFF&\b1\fscx110\fscy110}kollabieren{\c&H00FFFFFF&\b1\fscx100\fscy100} ohne
+Dialogue: 0,0:00:32.30,0:00:34.78,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Coriolis. {\c&H0000FFFF&\b1\fscx110\fscy110}Langfristig{\c&H00FFFFFF&\b1\fscx100\fscy100} könnte der Geodynamo
+Dialogue: 0,0:00:34.78,0:00:37.27,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}schwächer werden — weniger {\c&H0000FFFF&\b1\fscx110\fscy110}Magnetfeld,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:37.27,0:00:39.75,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}mehr {\c&H0000FFFF&\b1\fscx110\fscy110}kosmische{\c&H00FFFFFF&\b1\fscx100\fscy100} Strahlung.
+Dialogue: 0,0:00:39.75,0:00:42.24,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Nur ein schmaler {\c&H0000FFFF&\b1\fscx110\fscy110}Dämmerungsstreifen{\c&H00FFFFFF&\b1\fscx100\fscy100} bleibt
+Dialogue: 0,0:00:42.24,0:00:44.72,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}relativ{\c&H00FFFFFF&\b1\fscx100\fscy100} mild.
+Dialogue: 0,0:00:44.72,0:00:47.21,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Würdest{\c&H00FFFFFF&\b1\fscx100\fscy100} du dort leben?
