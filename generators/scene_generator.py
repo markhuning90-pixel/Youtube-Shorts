@@ -1,11 +1,9 @@
 import json
-from dataclasses import asdict
 from pathlib import Path
 
 from openai import OpenAI
 
 from config import load_api_key
-from models.scene import Scene
 
 
 QUALITY_LIMITS = {
@@ -26,10 +24,10 @@ def get_max_scenes():
     except json.JSONDecodeError:
         return QUALITY_LIMITS["normal"]
 
-    return QUALITY_LIMITS.get(
-        settings.get("quality_mode"),
-        QUALITY_LIMITS["normal"],
-    )
+    if settings.get("production_mode") == "low_cost_pro":
+        return 5
+
+    return QUALITY_LIMITS.get(settings.get("quality_mode"), QUALITY_LIMITS["normal"])
 
 
 def parse_scenes(response_text):
@@ -44,21 +42,41 @@ def parse_scenes(response_text):
         return None
 
     try:
-        scenes = [
-            Scene(
-                scene_number=int(scene["scene_number"]),
-                text=str(scene["text"]).strip(),
-                image_prompt=str(scene["image_prompt"]).strip(),
-                duration=int(scene["duration"]),
+        scenes = []
+
+        for scene in scene_data:
+            media_type = str(scene["media_type"]).strip()
+
+            if media_type not in {"ai_image", "stock"}:
+                raise ValueError
+
+            scenes.append(
+                {
+                    "scene_number": int(scene["scene_number"]),
+                    "text": str(scene["text"]).strip(),
+                    "media_type": media_type,
+                    "stock_keyword": str(scene["stock_keyword"]).strip(),
+                    "image_prompt": str(scene["image_prompt"]).strip(),
+                    "duration": int(scene["duration"]),
+                }
             )
-            for scene in scene_data
-        ]
     except (KeyError, TypeError, ValueError):
         print("Die AI-Antwort enthält unvollständige Szenendaten.")
         return None
 
-    if not scenes or any(
-        not scene.text or not scene.image_prompt or scene.duration <= 0
+    if not 4 <= len(scenes) <= 5:
+        print("Die AI-Antwort enthält nicht 4 bis 5 Szenen.")
+        return None
+
+    if sum(scene["media_type"] == "ai_image" for scene in scenes) > 2:
+        print("Die AI-Antwort enthält zu viele KI-Bildszenen.")
+        return None
+
+    if any(
+        not scene["text"]
+        or not scene["stock_keyword"]
+        or not scene["image_prompt"]
+        or scene["duration"] <= 0
         for scene in scenes
     ):
         print("Die AI-Antwort enthält ungültige Szenendaten.")
@@ -89,8 +107,12 @@ def generate_scenes(generation):
     max_scenes = get_max_scenes()
     prompt += f"""
 
-Wichtig: Erstelle maximal {max_scenes} Szenen. Behalte alle wichtigen Informationen
-bei und beschreibe jede Szene inhaltlich ausreichend ausführlich.
+Wichtig: Erstelle 4 bis 5 Szenen und höchstens {max_scenes} Szenen. Behalte alle
+wichtigen Informationen bei und beschreibe jede Szene inhaltlich ausreichend.
+Verwende höchstens 2 Szenen mit \"media_type\": \"ai_image\" für die wichtigsten
+visuellen Momente. Alle übrigen Szenen müssen \"media_type\": \"stock\" verwenden.
+Gib für jede Szene einen passenden englischen \"stock_keyword\" und einen englischen
+\"image_prompt\" an.
 
 Antworte ausschließlich mit gültigem JSON. Verwende keine Markdown-Codeblöcke und
 keine Erklärungen außerhalb des JSON.
@@ -98,10 +120,12 @@ keine Erklärungen außerhalb des JSON.
 Das JSON muss eine Liste in diesem Format sein:
 [
   {{
-    "scene_number": 1,
-    "text": "Beschreibung dessen, was in der Szene zu sehen ist.",
-    "image_prompt": "Detaillierter Bildprompt für diese Szene.",
-    "duration": 5
+    \"scene_number\": 1,
+    \"text\": \"Beschreibung dessen, was in der Szene zu sehen ist.\",
+    \"media_type\": \"stock\",
+    \"stock_keyword\": \"relevanter Suchbegriff für Stock-Medien\",
+    \"image_prompt\": \"Detaillierter Bildprompt für diese Szene.\",
+    \"duration\": 5
   }}
 ]
 """
@@ -118,7 +142,7 @@ Das JSON muss eine Liste in diesem Format sein:
 
     output_file = Path(generation.output_folder) / "scenes.json"
     output_file.write_text(
-        json.dumps([asdict(scene) for scene in scenes], ensure_ascii=False, indent=2),
+        json.dumps(scenes, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 

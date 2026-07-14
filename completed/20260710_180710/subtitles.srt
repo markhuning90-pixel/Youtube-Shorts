@@ -1,3 +1,67 @@
 1
-00:00:00,000 --> 00:00:10,000
-Wusstest du, dass Katzen bis zu 16 Stunden am Tag schlafen? Das liegt an ihrer Evolution. Als Jäger sparen sie Energie für kurze, intensive Einsätze. Viele Katzen sind dämmerungsaktiv. Sie sind morgens und abends am aktivsten. Kätzchen und ältere Katzen brauchen noch mehr Ruhe. Kurzschlafphasen halten sie wachsam. Wenn eine Katze plötzlich deutlich mehr schläft, kann das ein Krankheitszeichen sein. Bei Zweifeln zum Tierarzt gehen.
+00:00:00,000 --> 00:00:01,607
+Wusstest du,
+
+2
+00:00:01,607 --> 00:00:03,213
+dass Katzen bis zu 16
+
+3
+00:00:03,213 --> 00:00:04,820
+Stunden am Tag schlafen?
+
+4
+00:00:04,820 --> 00:00:06,426
+Das liegt an ihrer Evolution.
+
+5
+00:00:06,426 --> 00:00:08,033
+Als Jäger sparen sie Energie
+
+6
+00:00:08,033 --> 00:00:09,640
+für kurze,
+
+7
+00:00:09,640 --> 00:00:11,246
+intensive Einsätze.
+
+8
+00:00:11,246 --> 00:00:12,853
+Viele Katzen sind dämmerungsaktiv.
+
+9
+00:00:12,853 --> 00:00:14,459
+Sie sind morgens und abends
+
+10
+00:00:14,459 --> 00:00:16,066
+am aktivsten.
+
+11
+00:00:16,066 --> 00:00:17,672
+Kätzchen und ältere Katzen brauchen
+
+12
+00:00:17,672 --> 00:00:19,279
+noch mehr Ruhe.
+
+13
+00:00:19,279 --> 00:00:20,886
+Kurzschlafphasen halten sie wachsam.
+
+14
+00:00:20,886 --> 00:00:22,492
+Wenn eine Katze plötzlich deutlich
+
+15
+00:00:22,492 --> 00:00:24,099
+mehr schläft,
+
+16
+00:00:24,099 --> 00:00:25,705
+kann das ein Krankheitszeichen sein.
+
+17
+00:00:25,705 --> 00:00:27,312
+Bei Zweifeln zum Tierarzt gehen.

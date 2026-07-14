@@ -1,0 +1,29 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Shorts,Arial,58,&H00FFFFFF,&H00000000,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,4,1,2,40,40,500,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.61,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Wusstest{\c&H00FFFFFF&\b1\fscx100\fscy100} du,
+Dialogue: 0,0:00:01.61,0:00:03.21,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}dass {\c&H0000FFFF&\b1\fscx110\fscy110}Katzen{\c&H00FFFFFF&\b1\fscx100\fscy100} bis zu 16
+Dialogue: 0,0:00:03.21,0:00:04.82,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Stunden am Tag {\c&H0000FFFF&\b1\fscx110\fscy110}schlafen?{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:04.82,0:00:06.43,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Das liegt an ihrer {\c&H0000FFFF&\b1\fscx110\fscy110}Evolution.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:06.43,0:00:08.03,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Als Jäger sparen sie {\c&H0000FFFF&\b1\fscx110\fscy110}Energie{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:08.03,0:00:09.64,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}für {\c&H0000FFFF&\b1\fscx110\fscy110}kurze,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:09.64,0:00:11.25,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}intensive{\c&H00FFFFFF&\b1\fscx100\fscy100} Einsätze.
+Dialogue: 0,0:00:11.25,0:00:12.85,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Viele Katzen sind {\c&H0000FFFF&\b1\fscx110\fscy110}dämmerungsaktiv.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:12.85,0:00:14.46,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Sie sind {\c&H0000FFFF&\b1\fscx110\fscy110}morgens{\c&H00FFFFFF&\b1\fscx100\fscy100} und abends
+Dialogue: 0,0:00:14.46,0:00:16.07,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}am {\c&H0000FFFF&\b1\fscx110\fscy110}aktivsten.{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:16.07,0:00:17.67,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Kätzchen{\c&H00FFFFFF&\b1\fscx100\fscy100} und ältere Katzen brauchen
+Dialogue: 0,0:00:17.67,0:00:19.28,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}noch{\c&H00FFFFFF&\b1\fscx100\fscy100} mehr Ruhe.
+Dialogue: 0,0:00:19.28,0:00:20.89,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}{\c&H0000FFFF&\b1\fscx110\fscy110}Kurzschlafphasen{\c&H00FFFFFF&\b1\fscx100\fscy100} halten sie wachsam.
+Dialogue: 0,0:00:20.89,0:00:22.49,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Wenn eine Katze {\c&H0000FFFF&\b1\fscx110\fscy110}plötzlich{\c&H00FFFFFF&\b1\fscx100\fscy100} deutlich
+Dialogue: 0,0:00:22.49,0:00:24.10,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}mehr {\c&H0000FFFF&\b1\fscx110\fscy110}schläft,{\c&H00FFFFFF&\b1\fscx100\fscy100}
+Dialogue: 0,0:00:24.10,0:00:25.71,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}kann das ein {\c&H0000FFFF&\b1\fscx110\fscy110}Krankheitszeichen{\c&H00FFFFFF&\b1\fscx100\fscy100} sein.
+Dialogue: 0,0:00:25.71,0:00:27.31,Shorts,,0,0,0,,{\fad(100,120)\fscx92\fscy92\t(0,120,\fscx100\fscy100)}Bei {\c&H0000FFFF&\b1\fscx110\fscy110}Zweifeln{\c&H00FFFFFF&\b1\fscx100\fscy100} zum Tierarzt gehen.
