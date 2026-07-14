@@ -20,7 +20,6 @@ def load_image_settings():
     default_settings = {
         "image_model": "gpt-image-1",
         "image_size": "1024x1536",
-        "use_stock_media": False,
     }
     settings_file = Path("config/settings.json")
 
@@ -32,19 +31,9 @@ def load_image_settings():
     except json.JSONDecodeError:
         return default_settings
 
-    image_model = settings.get("image_model")
-    image_size = settings.get("image_size")
-
-    if not isinstance(image_model, str) or not image_model.strip():
-        image_model = default_settings["image_model"]
-
-    if not isinstance(image_size, str) or not image_size.strip():
-        image_size = default_settings["image_size"]
-
     return {
-        "image_model": image_model,
-        "image_size": image_size,
-        "use_stock_media": settings.get("use_stock_media") is True,
+        "image_model": settings.get("image_model") or default_settings["image_model"],
+        "image_size": settings.get("image_size") or default_settings["image_size"],
     }
 
 
@@ -67,7 +56,7 @@ def get_max_images():
     return QUALITY_LIMITS.get(settings.get("quality_mode"), QUALITY_LIMITS["normal"])
 
 
-def load_scene_image_prompts(scenes_file, use_stock_media):
+def load_scene_image_prompts(scenes_file):
     try:
         scenes = json.loads(scenes_file.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
@@ -79,22 +68,16 @@ def load_scene_image_prompts(scenes_file, use_stock_media):
         return None
 
     try:
-        if use_stock_media:
-            image_prompts = [
-                str(scene["image_prompt"]).strip()
-                for scene in scenes
-                if scene["media_type"] == "ai_image"
-            ]
-        else:
-            image_prompts = [
-                str(scene["image_prompt"]).strip()
-                for scene in scenes
-            ]
-    except (KeyError, TypeError):
+        image_prompts = [
+            (int(scene["scene_number"]), str(scene["image_prompt"]).strip())
+            for scene in scenes
+            if scene["media_type"] == "ai_image"
+        ]
+    except (KeyError, TypeError, ValueError):
         print("Die Datei scenes.json enthält ungültige Szenendaten.")
         return None
 
-    if any(not image_prompt for image_prompt in image_prompts):
+    if any(not image_prompt for _, image_prompt in image_prompts):
         print("Die Datei scenes.json enthält ungültige KI-Bildprompts.")
         return None
 
@@ -124,17 +107,12 @@ def generate_images(generation):
         print("Die Datei scenes.json wurde nicht gefunden.")
         return None
 
-    image_settings = load_image_settings()
-    scene_image_prompts = load_scene_image_prompts(
-        scenes_file,
-        image_settings["use_stock_media"],
-    )
+    scene_image_prompts = load_scene_image_prompts(scenes_file)
 
     if scene_image_prompts is None:
         return None
 
     image_prompts = scene_image_prompts[:get_max_images()]
-
     images_folder = output_folder / "images"
     images_folder.mkdir(exist_ok=True)
 
@@ -147,6 +125,7 @@ def generate_images(generation):
     if not api_key:
         raise RuntimeError("Kein API-Key gefunden.")
 
+    image_settings = load_image_settings()
     client = OpenAI(api_key=api_key)
 
     with ThreadPoolExecutor(max_workers=3) as executor:
@@ -155,22 +134,22 @@ def generate_images(generation):
                 generate_single_image,
                 client,
                 image_prompt,
-                images_folder / f"scene_{number:02d}.png",
+                images_folder / f"scene_{scene_number:02d}.png",
                 image_settings["image_model"],
                 image_settings["image_size"],
-            ): number
-            for number, image_prompt in enumerate(image_prompts, start=1)
+            ): scene_number
+            for scene_number, image_prompt in image_prompts
         }
 
         failed = False
 
         for future in as_completed(futures):
-            number = futures[future]
+            scene_number = futures[future]
 
             try:
                 future.result()
             except Exception as error:
-                print(f"Bild {number} konnte nicht erstellt werden: {error}")
+                print(f"Bild für Szene {scene_number} konnte nicht erstellt werden: {error}")
                 failed = True
 
     record_image_cost(output_folder, len(image_prompts))

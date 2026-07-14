@@ -17,6 +17,12 @@
   "force_regenerate_images": false,
   "force_regenerate_video": false,
   "production_mode": "low_cost_pro",
-  "max_ai_images": 5,
-  "use_stock_media": false
+  "max_ai_images": 2,
+  "use_stock_media": true,
+  "stock_provider": "pexels",
+  "stock_media_type": "video",
+  "stock_orientation": "portrait",
+  "stock_results_per_query": 10,
+  "stock_download_timeout": 60,
+  "reuse_existing_stock": true
 }

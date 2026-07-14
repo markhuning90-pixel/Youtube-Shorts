@@ -1,7 +1,6 @@
 .env
-client_secret.json
-token.json
-__pycache__/
-*.pyc
+**pycache**/
 output/
 logs/
+client_secret.json
+token.json

@@ -64,18 +64,25 @@ def parse_scenes(response_text):
         print("Die AI-Antwort enthält unvollständige Szenendaten.")
         return None
 
-    if not 4 <= len(scenes) <= 5:
-        print("Die AI-Antwort enthält nicht 4 bis 5 Szenen.")
+    if len(scenes) != 5:
+        print("Die AI-Antwort enthält nicht genau 5 Szenen.")
         return None
 
-    if sum(scene["media_type"] == "ai_image" for scene in scenes) > 2:
+    ai_image_count = sum(scene["media_type"] == "ai_image" for scene in scenes)
+    stock_count = sum(scene["media_type"] == "stock" for scene in scenes)
+
+    if ai_image_count > 2:
         print("Die AI-Antwort enthält zu viele KI-Bildszenen.")
+        return None
+
+    if stock_count < 3:
+        print("Die AI-Antwort enthält zu wenige Stock-Szenen.")
         return None
 
     if any(
         not scene["text"]
         or not scene["stock_keyword"]
-        or not scene["image_prompt"]
+        or (scene["media_type"] == "ai_image" and not scene["image_prompt"])
         or scene["duration"] <= 0
         for scene in scenes
     ):
@@ -107,12 +114,13 @@ def generate_scenes(generation):
     max_scenes = get_max_scenes()
     prompt += f"""
 
-Wichtig: Erstelle 4 bis 5 Szenen und höchstens {max_scenes} Szenen. Behalte alle
-wichtigen Informationen bei und beschreibe jede Szene inhaltlich ausreichend.
-Verwende höchstens 2 Szenen mit \"media_type\": \"ai_image\" für die wichtigsten
-visuellen Momente. Alle übrigen Szenen müssen \"media_type\": \"stock\" verwenden.
-Gib für jede Szene einen passenden englischen \"stock_keyword\" und einen englischen
-\"image_prompt\" an.
+Wichtig: Erstelle genau 5 Szenen. Behalte alle wichtigen Informationen bei und
+beschreibe jede Szene inhaltlich ausreichend. Verwende höchstens 2 Szenen mit
+\"media_type\": \"ai_image\" für die wichtigsten visuellen Momente. Mindestens
+3 Szenen müssen \"media_type\": \"stock\" verwenden. Gib für jede Szene einen
+passenden englischen \"stock_keyword\" an. Ein englischer \"image_prompt\" ist nur
+für Szenen mit \"media_type\": \"ai_image\" erforderlich; bei Stock-Szenen darf
+dieses Feld leer sein.
 
 Antworte ausschließlich mit gültigem JSON. Verwende keine Markdown-Codeblöcke und
 keine Erklärungen außerhalb des JSON.
@@ -124,7 +132,7 @@ Das JSON muss eine Liste in diesem Format sein:
     \"text\": \"Beschreibung dessen, was in der Szene zu sehen ist.\",
     \"media_type\": \"stock\",
     \"stock_keyword\": \"relevanter Suchbegriff für Stock-Medien\",
-    \"image_prompt\": \"Detaillierter Bildprompt für diese Szene.\",
+    \"image_prompt\": \"\",
     \"duration\": 5
   }}
 ]

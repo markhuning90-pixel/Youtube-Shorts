@@ -7,6 +7,7 @@ from generators.content_generator import generate_content, validate_content
 from generators.file_writer import save_script
 from generators.image_generator import generate_images
 from generators.scene_generator import generate_scenes
+from generators.stock_media_generator import generate_stock_media
 from generators.status_manager import update_status
 from generators.subtitle_generator import generate_subtitles
 from generators.topic_picker import get_all_topics
@@ -54,10 +55,17 @@ def continue_approved_generation(generation):
         return
     update_status(metadata_file, "scenes_created")
 
+    stock_folder = generate_stock_media(generation)
+    if stock_folder is None:
+        return
+    update_status(metadata_file, "stock_media_created")
+    print("Stock-Medien erstellt.")
+
     images_folder = generate_images(generation)
     if images_folder is None:
         return
     update_status(metadata_file, "images_created")
+    print("Bilder erstellt.")
 
     video_file = generate_video(generation)
     if video_file is None:
@@ -66,7 +74,8 @@ def continue_approved_generation(generation):
     update_status(metadata_file, "video_created")
     generation.status = "video_created"
     show_generation(generation)
-    print("Video erstellt. Nutze review_videos.py und upload_ready.py.")
+    print("Video erstellt.")
+    print("Nutze review_videos.py und upload_ready.py.")
     print(video_file.resolve())
 
     if remove_topic(generation.topic):

@@ -5,19 +5,21 @@ import subprocess
 from pathlib import Path
 
 
-
 def get_audio_duration(voice_file):
-    command = [
-        "ffprobe",
-        "-v",
-        "error",
-        "-show_entries",
-        "format=duration",
-        "-of",
-        "default=noprint_wrappers=1:nokey=1",
-        str(voice_file),
-    ]
-    result = subprocess.run(command, capture_output=True, text=True)
+    result = subprocess.run(
+        [
+            "ffprobe",
+            "-v",
+            "error",
+            "-show_entries",
+            "format=duration",
+            "-of",
+            "default=noprint_wrappers=1:nokey=1",
+            str(voice_file),
+        ],
+        capture_output=True,
+        text=True,
+    )
 
     if result.returncode != 0:
         print("Die Länge der Sprachdatei konnte nicht ermittelt werden.")
@@ -39,17 +41,9 @@ def has_nvenc():
     return "h264_nvenc" in f"{result.stdout}\n{result.stderr}"
 
 
-def get_scene_durations(
-    scenes_file,
-    legacy_scenes_file,
-    audio_duration,
-    image_count,
-):
+def load_scenes(scenes_file):
     if not scenes_file.exists():
-        if legacy_scenes_file.exists():
-            return [audio_duration / image_count] * image_count
-
-        print("Weder scenes.json noch scenes.txt wurden gefunden.")
+        print("Die Datei scenes.json wurde nicht gefunden.")
         return None
 
     try:
@@ -58,61 +52,91 @@ def get_scene_durations(
         print("Die Datei scenes.json enthält kein gültiges JSON.")
         return None
 
-    if not isinstance(scenes, list) or len(scenes) < image_count:
-        print("Szenendauern fehlen. Automatische Bilddauer wird verwendet.")
-        return [audio_duration / image_count] * image_count
+    if not isinstance(scenes, list) or not scenes:
+        print("Die Datei scenes.json enthält keine Szenenliste.")
+        return None
 
     try:
-        durations = [float(scene["duration"]) for scene in scenes[:image_count]]
+        parsed_scenes = [
+            {
+                "scene_number": int(scene["scene_number"]),
+                "media_type": str(scene["media_type"]),
+                "duration": float(scene["duration"]),
+            }
+            for scene in scenes
+        ]
     except (KeyError, TypeError, ValueError):
-        print("Szenendauern fehlen. Automatische Bilddauer wird verwendet.")
-        return [audio_duration / image_count] * image_count
+        print("Die Datei scenes.json enthält unvollständige Szenendaten.")
+        return None
 
-    if any(duration <= 0 for duration in durations):
-        print("Szenendauern fehlen. Automatische Bilddauer wird verwendet.")
-        return [audio_duration / image_count] * image_count
+    if any(
+        scene["media_type"] not in {"ai_image", "stock"}
+        or scene["duration"] <= 0
+        for scene in parsed_scenes
+    ):
+        print("Die Datei scenes.json enthält ungültige Szenendaten.")
+        return None
 
-    total_duration = sum(durations)
-    return [duration / total_duration * audio_duration for duration in durations]
+    return sorted(parsed_scenes, key=lambda scene: scene["scene_number"])
 
 
-def get_motion_filter(motion, frames_per_image, zoom_increment):
+def get_motion_filter(frames_per_scene, zoom_increment):
+    movements = ["zoom_in", "zoom_out", "pan_left", "pan_right", "pan_up", "pan_down"]
+    motion = random.choice(movements)
     center_x = "iw/2-(iw/zoom/2)"
     center_y = "ih/2-(ih/zoom/2)"
-    frame_range = max(1, frames_per_image - 1)
+    frame_range = max(1, frames_per_scene - 1)
     progress = f"(1-cos(PI*on/{frame_range}))/2"
 
     if motion == "zoom_in":
         zoom = f"min(zoom+{zoom_increment},1.1)"
-        x_position = center_x
-        y_position = center_y
+        x_position, y_position = center_x, center_y
     elif motion == "zoom_out":
         zoom = f"if(eq(on,0),1.1,max(zoom-{zoom_increment},1))"
-        x_position = center_x
-        y_position = center_y
+        x_position, y_position = center_x, center_y
     elif motion == "pan_left":
         zoom = "1.05"
-        x_position = f"(iw-iw/zoom)*(1-{progress})"
-        y_position = center_y
+        x_position, y_position = f"(iw-iw/zoom)*(1-{progress})", center_y
     elif motion == "pan_right":
         zoom = "1.05"
-        x_position = f"(iw-iw/zoom)*{progress}"
-        y_position = center_y
+        x_position, y_position = f"(iw-iw/zoom)*{progress}", center_y
     elif motion == "pan_up":
         zoom = "1.05"
-        x_position = center_x
-        y_position = f"(ih-ih/zoom)*(1-{progress})"
+        x_position, y_position = center_x, f"(ih-ih/zoom)*(1-{progress})"
     else:
         zoom = "1.05"
-        x_position = center_x
-        y_position = f"(ih-ih/zoom)*{progress}"
+        x_position, y_position = center_x, f"(ih-ih/zoom)*{progress}"
 
     return (
         "scale=2160:3840:force_original_aspect_ratio=increase,"
         "crop=2160:3840,"
         f"zoompan=z='{zoom}':x='{x_position}':y='{y_position}':"
-        f"d={frames_per_image}:s=1080x1920:fps=30"
+        f"d={frames_per_scene}:s=1080x1920:fps=30,setsar=1"
     )
+
+
+def build_scene_inputs(scenes, output_folder):
+    command = []
+    media_files = []
+
+    for scene in scenes:
+        scene_number = scene["scene_number"]
+
+        if scene["media_type"] == "ai_image":
+            media_file = output_folder / "images" / f"scene_{scene_number:02d}.png"
+            input_options = ["-loop", "1", "-t", str(scene["duration"])]
+        else:
+            media_file = output_folder / "stock" / f"scene_{scene_number:02d}.mp4"
+            input_options = ["-stream_loop", "-1"]
+
+        if not media_file.exists():
+            print(f"Mediendatei für Szene {scene_number} fehlt: {media_file}")
+            return None, None
+
+        command.extend(input_options + ["-i", str(media_file)])
+        media_files.append(media_file)
+
+    return command, media_files
 
 
 def generate_video(generation):
@@ -125,12 +149,9 @@ def generate_video(generation):
         return None
 
     output_folder = Path(generation.output_folder)
-    images_folder = output_folder / "images"
-    image_files = sorted(images_folder.glob("*.png"))
     voice_file = output_folder / "voice.mp3"
     subtitles_file = output_folder / "subtitles.ass"
-    scenes_file = output_folder / "scenes.json"
-    legacy_scenes_file = output_folder / "scenes.txt"
+    scenes = load_scenes(output_folder / "scenes.json")
     video_file = output_folder / "final_video.mp4"
     music_file = Path("assets/music/background.mp3")
 
@@ -138,8 +159,7 @@ def generate_video(generation):
         print("Voice-Datei oder ASS-Untertitel wurden nicht gefunden.")
         return None
 
-    if not image_files:
-        print("Im Bilder-Ordner wurde keine PNG-Datei gefunden.")
+    if scenes is None:
         return None
 
     audio_duration = get_audio_duration(voice_file)
@@ -147,37 +167,14 @@ def generate_video(generation):
     if audio_duration is None:
         return None
 
-    scene_durations = get_scene_durations(
-        scenes_file,
-        legacy_scenes_file,
-        audio_duration,
-        len(image_files),
-    )
+    scene_input_command, _ = build_scene_inputs(scenes, output_folder)
 
-    if scene_durations is None:
+    if scene_input_command is None:
         return None
 
-    frames_per_image = [
-        max(1, round(duration * 30)) for duration in scene_durations
-    ]
-    subtitles_path = subtitles_file.resolve().as_posix().replace(":", "\\:")
-    movements = [
-        "zoom_in",
-        "zoom_out",
-        "pan_left",
-        "pan_right",
-        "pan_up",
-        "pan_down",
-    ]
-
-    command = ["ffmpeg", "-y"]
-
-    for image_file in image_files:
-        command.extend(["-i", str(image_file)])
-
+    command = ["ffmpeg", "-y"] + scene_input_command
+    voice_input_index = len(scenes)
     command.extend(["-i", str(voice_file)])
-
-    voice_input_index = len(image_files)
     music_input_index = None
 
     if music_file.exists():
@@ -188,16 +185,28 @@ def generate_video(generation):
 
     filter_parts = []
 
-    for index, frame_count in enumerate(frames_per_image):
-        motion = random.choice(movements)
-        zoom_increment = 0.1 / frame_count
-        motion_filter = get_motion_filter(motion, frame_count, zoom_increment)
-        filter_parts.append(f"[{index}:v]{motion_filter}[video_{index}]")
+    for input_index, scene in enumerate(scenes):
+        duration = scene["duration"]
 
-    video_inputs = "".join(f"[video_{index}]" for index in range(len(image_files)))
+        if scene["media_type"] == "ai_image":
+            frame_count = max(1, round(duration * 30))
+            filter = get_motion_filter(frame_count, 0.1 / frame_count)
+        else:
+            filter = (
+                f"trim=duration={duration},setpts=PTS-STARTPTS,"
+                "scale=1080:1920:force_original_aspect_ratio=increase,"
+                "crop=1080:1920,fps=30,setsar=1"
+            )
+
+        filter_parts.append(f"[{input_index}:v]{filter}[scene_{input_index}]")
+
+    scene_streams = "".join(f"[scene_{index}]" for index in range(len(scenes)))
+    subtitles_path = subtitles_file.resolve().as_posix().replace(":", "\\:")
     filter_parts.append(
-        f"{video_inputs}concat=n={len(image_files)}:v=1:a=0,"
-        f"setsar=1,ass='{subtitles_path}'[video_out]"
+        f"{scene_streams}concat=n={len(scenes)}:v=1:a=0,"
+        f"tpad=stop_mode=clone:stop_duration={audio_duration},"
+        f"trim=duration={audio_duration},setpts=PTS-STARTPTS,"
+        f"ass='{subtitles_path}'[video_out]"
     )
 
     if music_input_index is not None:
@@ -229,16 +238,8 @@ def generate_video(generation):
     if has_nvenc():
         print("NVIDIA GPU-Encoding wird verwendet.")
         gpu_options = [
-            "-c:v",
-            "h264_nvenc",
-            "-preset",
-            "p4",
-            "-rc",
-            "vbr",
-            "-cq",
-            "23",
-            "-b:v",
-            "0",
+            "-c:v", "h264_nvenc", "-preset", "p4", "-rc", "vbr",
+            "-cq", "23", "-b:v", "0",
         ]
         result = subprocess.run(
             command + gpu_options + [str(video_file)],
