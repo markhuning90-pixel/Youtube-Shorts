@@ -1,5 +1,6 @@
 import json
 import random
+import re
 import shutil
 import subprocess
 from pathlib import Path
@@ -39,6 +40,51 @@ def has_nvenc():
         text=True,
     )
     return "h264_nvenc" in f"{result.stdout}\n{result.stderr}"
+
+
+def print_ffmpeg_error(error_output):
+    lines = [line for line in error_output.splitlines() if line.strip()]
+
+    for line in lines[-20:]:
+        print(line, flush=True)
+
+
+def run_ffmpeg(command):
+    process = subprocess.Popen(
+        command,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.PIPE,
+        text=True,
+    )
+
+    while True:
+        try:
+            _, error_output = process.communicate(timeout=20)
+            return process.returncode, error_output
+        except subprocess.TimeoutExpired:
+            print("Video wird noch gerendert...", flush=True)
+
+
+def create_video_filename(title):
+    if not title:
+        return "final_video.mp4"
+
+    replacements = str.maketrans(
+        {
+            "ä": "ae",
+            "ö": "oe",
+            "ü": "ue",
+            "ß": "ss",
+        }
+    )
+    filename = title.lower().translate(replacements).replace(" ", "-")
+    filename = re.sub(r"[^a-z0-9-]", "", filename)
+    filename = re.sub(r"-{2,}", "-", filename).strip("-")
+
+    if not filename:
+        return "final_video.mp4"
+
+    return f"{filename[:76].rstrip('-')}.mp4"
 
 
 def load_scenes(scenes_file):
@@ -152,7 +198,7 @@ def generate_video(generation):
     voice_file = output_folder / "voice.mp3"
     subtitles_file = output_folder / "subtitles.ass"
     scenes = load_scenes(output_folder / "scenes.json")
-    video_file = output_folder / "final_video.mp4"
+    video_file = output_folder / create_video_filename(generation.title)
     music_file = Path("assets/music/background.mp3")
 
     if not voice_file.exists() or not subtitles_file.exists():
@@ -236,36 +282,37 @@ def generate_video(generation):
     cpu_options = ["-c:v", "libx264", "-preset", "veryfast", "-crf", "23"]
 
     if has_nvenc():
-        print("NVIDIA GPU-Encoding wird verwendet.")
+        print("Video wird mit NVIDIA GPU gerendert...", flush=True)
         gpu_options = [
             "-c:v", "h264_nvenc", "-preset", "p4", "-rc", "vbr",
             "-cq", "23", "-b:v", "0",
         ]
-        result = subprocess.run(
-            command + gpu_options + [str(video_file)],
-            capture_output=True,
-            text=True,
-        )
+        returncode, error_output = run_ffmpeg(command + gpu_options + [str(video_file)])
 
-        if result.returncode != 0:
+        if returncode != 0:
             print("GPU-Encoding fehlgeschlagen. Neuer Versuch mit CPU-Encoding.")
-            print(result.stderr)
-            result = subprocess.run(
-                command + cpu_options + [str(video_file)],
-                capture_output=True,
-                text=True,
-            )
+            print_ffmpeg_error(error_output)
+            print("Video wird mit CPU gerendert...", flush=True)
+            returncode, error_output = run_ffmpeg(command + cpu_options + [str(video_file)])
     else:
-        print("NVIDIA-Encoding nicht verfügbar. CPU-Encoding wird verwendet.")
-        result = subprocess.run(
-            command + cpu_options + [str(video_file)],
-            capture_output=True,
-            text=True,
-        )
+        print("Video wird mit CPU gerendert...", flush=True)
+        returncode, error_output = run_ffmpeg(command + cpu_options + [str(video_file)])
 
-    if result.returncode != 0:
+    if returncode != 0:
         print("Das Video konnte nicht erstellt werden.")
-        print(result.stderr)
+        print_ffmpeg_error(error_output)
         return None
+
+    compatibility_file = output_folder / "final_video.mp4"
+
+    if video_file != compatibility_file:
+        shutil.copy2(video_file, compatibility_file)
+
+    print("Benanntes Video gespeichert unter:", flush=True)
+    print(video_file.resolve(), flush=True)
+
+    if video_file != compatibility_file:
+        print("Kompatibilitätsdatei gespeichert unter:", flush=True)
+        print(compatibility_file.resolve(), flush=True)
 
     return video_file
