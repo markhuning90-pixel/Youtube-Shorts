@@ -4,90 +4,94 @@ from pathlib import Path
 from openai import OpenAI
 
 from config import load_api_key
+from utils.cost_tracker import record_gpt_cost
 
 
-QUALITY_LIMITS = {
-    "low": 4,
-    "normal": 5,
-    "high": 8,
-}
-
-
-def get_max_scenes():
+def load_scene_settings():
+    defaults = {
+        "target_scene_count_min": 8,
+        "target_scene_count_max": 12,
+        "openai_model": "gpt-5-mini",
+    }
     settings_file = Path("config/settings.json")
 
     if not settings_file.exists():
-        return QUALITY_LIMITS["normal"]
+        return defaults
 
     try:
         settings = json.loads(settings_file.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
-        return QUALITY_LIMITS["normal"]
+        print("Die Datei config/settings.json enthält kein gültiges JSON.")
+        return defaults
 
-    if settings.get("production_mode") == "low_cost_pro":
-        return 5
-
-    return QUALITY_LIMITS.get(settings.get("quality_mode"), QUALITY_LIMITS["normal"])
+    return {key: settings.get(key, value) for key, value in defaults.items()}
 
 
-def parse_scenes(response_text):
+def get_scene_count(audio_duration, settings):
+    minimum = int(settings["target_scene_count_min"])
+    maximum = int(settings["target_scene_count_max"])
+    return max(minimum, min(maximum, round(audio_duration / 5)))
+
+
+def parse_scenes(response_text, expected_count):
     try:
-        scene_data = json.loads(response_text)
+        scenes = json.loads(response_text)
     except json.JSONDecodeError:
         print("Die AI-Antwort enthält kein gültiges Szenen-JSON.")
         return None
 
-    if not isinstance(scene_data, list):
-        print("Die AI-Antwort enthält keine Szenenliste.")
+    if not isinstance(scenes, list) or len(scenes) != expected_count:
+        print(f"Die AI-Antwort enthält nicht genau {expected_count} Szenen.")
         return None
 
+    parsed_scenes = []
     try:
-        scenes = []
+        for number, scene in enumerate(scenes, start=1):
+            spoken_text = str(scene["spoken_text"]).strip()
+            query_de = str(scene["stock_search_query_de"]).strip()
+            query_en = str(scene["stock_search_query_en"]).strip()
 
-        for scene in scene_data:
-            media_type = str(scene["media_type"]).strip()
-
-            if media_type not in {"ai_image", "stock"}:
+            if (
+                not spoken_text
+                or not query_de
+                or not query_en
+                or scene.get("media_type") != "stock_video"
+            ):
                 raise ValueError
 
-            scenes.append(
+            parsed_scenes.append(
                 {
-                    "scene_number": int(scene["scene_number"]),
-                    "text": str(scene["text"]).strip(),
-                    "media_type": media_type,
-                    "stock_keyword": str(scene["stock_keyword"]).strip(),
-                    "image_prompt": str(scene["image_prompt"]).strip(),
-                    "duration": int(scene["duration"]),
+                    "scene_number": number,
+                    "spoken_text": spoken_text,
+                    "stock_search_query_de": query_de,
+                    "stock_search_query_en": query_en,
+                    "selected_provider": "",
+                    "selected_video_path": "",
+                    "media_type": "stock_video",
                 }
             )
     except (KeyError, TypeError, ValueError):
         print("Die AI-Antwort enthält unvollständige Szenendaten.")
         return None
 
-    if len(scenes) != 5:
-        print("Die AI-Antwort enthält nicht genau 5 Szenen.")
-        return None
+    return parsed_scenes
 
-    ai_image_count = sum(scene["media_type"] == "ai_image" for scene in scenes)
-    stock_count = sum(scene["media_type"] == "stock" for scene in scenes)
 
-    if ai_image_count > 2:
-        print("Die AI-Antwort enthält zu viele KI-Bildszenen.")
-        return None
+def assign_timings(scenes, audio_duration):
+    weights = [max(1, len(scene["spoken_text"].split())) for scene in scenes]
+    total_weight = sum(weights)
+    current_time = 0.0
 
-    if stock_count < 3:
-        print("Die AI-Antwort enthält zu wenige Stock-Szenen.")
-        return None
+    for index, (scene, weight) in enumerate(zip(scenes, weights)):
+        if index == len(scenes) - 1:
+            end_time = audio_duration
+        else:
+            end_time = current_time + audio_duration * weight / total_weight
 
-    if any(
-        not scene["text"]
-        or not scene["stock_keyword"]
-        or (scene["media_type"] == "ai_image" and not scene["image_prompt"])
-        or scene["duration"] <= 0
-        for scene in scenes
-    ):
-        print("Die AI-Antwort enthält ungültige Szenendaten.")
-        return None
+        scene["start_time"] = round(current_time, 3)
+        scene["end_time"] = round(end_time, 3)
+        scene["duration"] = round(end_time - current_time, 3)
+        current_time = end_time
 
     return scenes
 
@@ -97,61 +101,58 @@ def generate_scenes(generation):
         print("Kein Output-Ordner für die Generierung gefunden.")
         return None
 
-    prompt_file = Path("prompts/scene_prompt.txt")
+    if generation.audio_duration <= 0:
+        print("Die echte Sprachlänge fehlt für den Szenenplan.")
+        return None
 
+    prompt_file = Path("prompts/scene_prompt.txt")
     if not prompt_file.exists():
         print("Die Prompt-Datei prompts/scene_prompt.txt wurde nicht gefunden.")
         return None
 
     api_key = load_api_key()
-
     if not api_key:
         raise RuntimeError("Kein API-Key gefunden.")
 
-    prompt = prompt_file.read_text(encoding="utf-8").format(
-        script=generation.script
-    )
-    max_scenes = get_max_scenes()
+    settings = load_scene_settings()
+    scene_count = get_scene_count(generation.audio_duration, settings)
+    prompt = prompt_file.read_text(encoding="utf-8").format(script=generation.script)
     prompt += f"""
 
-Wichtig: Erstelle genau 5 Szenen. Behalte alle wichtigen Informationen bei und
-beschreibe jede Szene inhaltlich ausreichend. Verwende höchstens 2 Szenen mit
-\"media_type\": \"ai_image\" für die wichtigsten visuellen Momente. Mindestens
-3 Szenen müssen \"media_type\": \"stock\" verwenden. Gib für jede Szene einen
-passenden englischen \"stock_keyword\" an. Ein englischer \"image_prompt\" ist nur
-für Szenen mit \"media_type\": \"ai_image\" erforderlich; bei Stock-Szenen darf
-dieses Feld leer sein.
+Erstelle genau {scene_count} Szenen für {generation.audio_duration:.3f} Sekunden Sprache.
+Die ersten zwei Sekunden müssen den stärksten visuellen Moment enthalten. Teile das
+gesprochene Skript sinnvoll auf; jede Szene zeigt einen neuen Sinnabschnitt.
 
-Antworte ausschließlich mit gültigem JSON. Verwende keine Markdown-Codeblöcke und
-keine Erklärungen außerhalb des JSON.
+Neue Videos verwenden ausschließlich echte Stockvideos. Jede Szene muss daher
+"media_type": "stock_video" enthalten. Keine Bilder, keine KI-Bilder und keine
+Bildprompts. Gib präzise, kurze Suchbegriffe auf Deutsch und Englisch an.
 
-Das JSON muss eine Liste in diesem Format sein:
+Format:
 [
   {{
-    \"scene_number\": 1,
-    \"text\": \"Beschreibung dessen, was in der Szene zu sehen ist.\",
-    \"media_type\": \"stock\",
-    \"stock_keyword\": \"relevanter Suchbegriff für Stock-Medien\",
-    \"image_prompt\": \"\",
-    \"duration\": 5
+    "spoken_text": "Der gesprochene Abschnitt dieser Szene.",
+    "stock_search_query_de": "deutscher Suchbegriff",
+    "stock_search_query_en": "englischer Suchbegriff",
+    "media_type": "stock_video"
   }}
 ]
 """
 
-    client = OpenAI(api_key=api_key)
-    response = client.responses.create(
-        model="gpt-5-mini",
+    response = OpenAI(api_key=api_key).responses.create(
+        model=settings["openai_model"],
         input=prompt,
     )
-    scenes = parse_scenes(response.output_text)
+    record_gpt_cost()
+    scenes = parse_scenes(response.output_text, scene_count)
 
     if scenes is None:
         return None
 
+    scenes = assign_timings(scenes, generation.audio_duration)
     output_file = Path(generation.output_folder) / "scenes.json"
     output_file.write_text(
         json.dumps(scenes, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-
+    print(f"{len(scenes)} Stockvideo-Szenen geplant.")
     return output_file

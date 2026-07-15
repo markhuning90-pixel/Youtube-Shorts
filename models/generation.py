@@ -10,3 +10,4 @@ class Generation:
     script: str = ""
     status: str = "pending"
     output_folder: str = "output"
+    audio_duration: float = 0.0

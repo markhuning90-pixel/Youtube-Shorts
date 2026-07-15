@@ -1,63 +1,35 @@
-Erstelle Content für ein kurzes YouTube-Shorts-Video zum Thema:
+Erstelle Content für ein kurzes deutsches YouTube-Shorts-Video zum Thema:
 
 {topic}
 
 Gib die Antwort exakt in diesem Format aus:
 
 TITLE:
-<YouTube-Shorts-Titel, maximal 60 Zeichen>
+<spannender, wahrheitsgemäßer YouTube-Shorts-Titel, maximal 70 Zeichen>
 
 DESCRIPTION:
-<kurze SEO-freundliche YouTube-Shorts-Beschreibung>
+<kurze SEO-freundliche Beschreibung mit passendem Call-to-Action>
 
 HASHTAGS:
-<3 bis 5 passende Hashtags in einer Zeile>
+<3 bis 5 relevante Hashtags in einer Zeile>
 
 SCRIPT:
-<spannendes Sprecher-Skript, maximal 120 Wörter>
+<natürliches Sprecher-Skript mit 115 bis 160 deutschen Wörtern>
 
 Regeln für den Titel:
-- Erzeuge Neugier und verwende starke Wörter.
-- Wiederhole nicht einfach nur das Thema.
-- Keine falschen Behauptungen oder Clickbait-Lügen.
+- Die wichtigste, neugierig machende Aussage steht möglichst früh.
+- Keine unnötigen Großbuchstaben, keine Emojis und keine falschen Versprechen.
+- Wiederhole nicht einfach nur das Thema und verrate nicht die ganze Antwort.
 
 Regeln für die Beschreibung:
-- Kurz, SEO-freundlich und für YouTube Shorts geeignet.
-- Enthält die wichtigsten Keywords zum Thema.
-
-Regeln für Hashtags:
-- Verwende 3 bis 5 passende Hashtags.
-- Mische große und spezifische Hashtags.
+- Kurz, verständlich und SEO-freundlich für YouTube Shorts.
+- Nenne die wichtigsten Keywords und schließe mit einer kurzen, passenden Frage oder Einladung zu folgen.
 
 Regeln für das Script:
-- Die ersten 3 Sekunden müssen einen starken Hook enthalten.
-- Starte mit einer überraschenden Frage, Zahl oder Aussage.
-- Der Zuschauer soll sofort wissen, warum er weiterschauen soll.
-- Das Script muss maximal 120 Wörter haben.
-- Kurze, abwechslungsreiche Sätze.
-- Einfach verständlich.
-
-Struktur des Scripts:
-
-1. Hook (erste 3 Sekunden):
-- Starte mit einer überraschenden Aussage, Frage oder Zahl.
-- Der Zuschauer muss sofort einen Grund haben weiterzuschauen.
-
-2. Hauptteil:
-- Baue Spannung auf.
-- Erkläre Informationen schrittweise.
-- Verrate nicht sofort die komplette Antwort.
-- Nutze kurze, abwechslungsreiche Sätze.
-
-3. Ende:
-- Beende mit einer überraschenden Erkenntnis, einem Aha-Moment oder einer offenen Frage.
-- Das Ende soll den Zuschauer motivieren, das Video erneut anzusehen.
-
-Zusätzliche Regeln:
-- Vermeide langweilige Einleitungen wie "Heute erklären wir..." oder "Wusstest du schon...".
-- Jede Szene soll einen neuen Informationspunkt liefern.
-- Schreibe so, dass das Video bis zum Ende interessant bleibt.
-
-Allgemeine Regeln:
-- Kein Emoji.
-- Gib keine Erklärungen außerhalb des Formats aus.
+- Beginne im allerersten Satz mit der spannendsten konkreten Aussage, Folge oder Zahl.
+- Die ersten 1 bis 2 Sätze müssen sofort Neugier erzeugen; keine Begrüßung, kein Kanalname, kein „Heute sprechen wir über“ und kein „Wusstest du“.
+- Der Hook muss sachlich korrekt bleiben und darf keine Clickbait-Lüge sein.
+- Verwende mehrere konkrete, plausible Fakten oder Folgen und erkläre sie schrittweise.
+- Kurze, abwechslungsreiche und natürlich sprechbare Sätze; keine Wiederholungen oder Füllsätze.
+- Beende mit einem Aha-Moment oder einer passenden kurzen Frage, die nicht immer gleich formuliert ist.
+- Kein Emoji und keine Erklärungen außerhalb des geforderten Formats.

@@ -5,6 +5,8 @@ import shutil
 import subprocess
 from pathlib import Path
 
+from generators.video_validator import validate_video_assets
+
 
 def get_audio_duration(voice_file):
     result = subprocess.run(
@@ -87,6 +89,14 @@ def create_video_filename(title):
     return f"{filename[:76].rstrip('-')}.mp4"
 
 
+def get_branding_filter():
+    return (
+        "drawtext=text='⚡ FaktenBlitz':x=48:y=48:fontsize=28:"
+        "fontcolor=white@0.92:box=1:boxcolor=black@0.35:boxborderw=10:"
+        "shadowcolor=black@0.8:shadowx=1:shadowy=1"
+    )
+
+
 def load_scenes(scenes_file):
     if not scenes_file.exists():
         print("Die Datei scenes.json wurde nicht gefunden.")
@@ -116,7 +126,7 @@ def load_scenes(scenes_file):
         return None
 
     if any(
-        scene["media_type"] not in {"ai_image", "stock"}
+        scene["media_type"] != "stock_video"
         or scene["duration"] <= 0
         for scene in parsed_scenes
     ):
@@ -168,12 +178,8 @@ def build_scene_inputs(scenes, output_folder):
     for scene in scenes:
         scene_number = scene["scene_number"]
 
-        if scene["media_type"] == "ai_image":
-            media_file = output_folder / "images" / f"scene_{scene_number:02d}.png"
-            input_options = ["-loop", "1", "-t", str(scene["duration"])]
-        else:
-            media_file = output_folder / "stock" / f"scene_{scene_number:02d}.mp4"
-            input_options = ["-stream_loop", "-1"]
+        media_file = output_folder / "stock" / f"scene_{scene_number:02d}.mp4"
+        input_options = ["-stream_loop", "-1"]
 
         if not media_file.exists():
             print(f"Mediendatei für Szene {scene_number} fehlt: {media_file}")
@@ -199,13 +205,15 @@ def generate_video(generation):
     subtitles_file = output_folder / "subtitles.ass"
     scenes = load_scenes(output_folder / "scenes.json")
     video_file = output_folder / create_video_filename(generation.title)
-    music_file = Path("assets/music/background.mp3")
 
     if not voice_file.exists() or not subtitles_file.exists():
         print("Voice-Datei oder ASS-Untertitel wurden nicht gefunden.")
         return None
 
     if scenes is None:
+        return None
+
+    if not validate_video_assets(generation):
         return None
 
     audio_duration = get_audio_duration(voice_file)
@@ -221,28 +229,22 @@ def generate_video(generation):
     command = ["ffmpeg", "-y"] + scene_input_command
     voice_input_index = len(scenes)
     command.extend(["-i", str(voice_file)])
-    music_input_index = None
-
-    if music_file.exists():
-        music_input_index = voice_input_index + 1
-        command.extend(["-stream_loop", "-1", "-i", str(music_file)])
-    else:
-        print("Keine Hintergrundmusik gefunden. Video wird ohne Musik erstellt.")
 
     filter_parts = []
 
     for input_index, scene in enumerate(scenes):
         duration = scene["duration"]
 
-        if scene["media_type"] == "ai_image":
-            frame_count = max(1, round(duration * 30))
-            filter = get_motion_filter(frame_count, 0.1 / frame_count)
-        else:
-            filter = (
-                f"trim=duration={duration},setpts=PTS-STARTPTS,"
-                "scale=1080:1920:force_original_aspect_ratio=increase,"
-                "crop=1080:1920,fps=30,setsar=1"
-            )
+        fade_start = max(0, duration - 0.15)
+        filter = (
+            f"trim=duration={duration},setpts=PTS-STARTPTS,"
+            "scale=1188:2112:force_original_aspect_ratio=increase,"
+            "crop=1080:1920,"
+            "zoompan=z='min(zoom+0.0005,1.05)':"
+            "x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
+            "d=1:s=1080x1920:fps=30,"
+            f"fade=t=in:st=0:d=0.15,fade=t=out:st={fade_start}:d=0.15,setsar=1"
+        )
 
         filter_parts.append(f"[{input_index}:v]{filter}[scene_{input_index}]")
 
@@ -252,15 +254,8 @@ def generate_video(generation):
         f"{scene_streams}concat=n={len(scenes)}:v=1:a=0,"
         f"tpad=stop_mode=clone:stop_duration={audio_duration},"
         f"trim=duration={audio_duration},setpts=PTS-STARTPTS,"
-        f"ass='{subtitles_path}'[video_out]"
+        f"ass='{subtitles_path}',{get_branding_filter()}[video_out]"
     )
-
-    if music_input_index is not None:
-        filter_parts.append(
-            f"[{music_input_index}:a]volume=0.08[background_music];"
-            f"[{voice_input_index}:a][background_music]"
-            "amix=inputs=2:duration=first:dropout_transition=0[audio_out]"
-        )
 
     command.extend(
         [
@@ -269,7 +264,7 @@ def generate_video(generation):
             "-map",
             "[video_out]",
             "-map",
-            "[audio_out]" if music_input_index is not None else f"{voice_input_index}:a:0",
+            f"{voice_input_index}:a:0",
             "-pix_fmt",
             "yuv420p",
             "-c:a",

@@ -112,7 +112,12 @@ def generate_images(generation):
     if scene_image_prompts is None:
         return None
 
-    image_prompts = scene_image_prompts[:get_max_images()]
+    max_images = get_max_images()
+    image_prompts = (
+        scene_image_prompts
+        if max_images == 0
+        else scene_image_prompts[:max_images]
+    )
     images_folder = output_folder / "images"
     images_folder.mkdir(exist_ok=True)
 

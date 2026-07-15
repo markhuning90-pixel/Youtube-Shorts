@@ -1,21 +1,6 @@
-Teile das folgende YouTube-Shorts-Skript in 5 bis 8 Szenen auf.
-
-Für jede Szene beschreibe:
-
-- was zu sehen ist
-- maximal 2 kurze Sätze
-
-Antworte ausschließlich im Format:
-
-SCENE 1:
-...
-
-SCENE 2:
-...
-
-SCENE 3:
-...
+Erstelle einen Szenenplan für ein deutsches YouTube-Shorts-Video.
 
 SCRIPT:
-
 {script}
+
+Antworte ausschließlich mit gültigem JSON, ohne Markdown oder Erklärungen.

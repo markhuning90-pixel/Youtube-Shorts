@@ -45,5 +45,16 @@ def remove_topic(topic, file_path="topics.txt"):
 def save_used_topic(topic, file_path="used_topics.txt"):
     used_topics_file = Path(file_path)
 
+    if used_topics_file.exists():
+        existing_topics = {
+            line.strip()
+            for line in used_topics_file.read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        }
+        if topic in existing_topics:
+            return False
+
     with used_topics_file.open("a", encoding="utf-8") as file:
         file.write(f"{topic}\n")
+
+    return True

@@ -31,7 +31,13 @@ def save_script(generation):
         generation.title,
     )
     generation_folder = output_folder / folder_name
-    generation_folder.mkdir(exist_ok=True)
+    suffix = 2
+
+    while generation_folder.exists():
+        generation_folder = output_folder / f"{folder_name}_{suffix}"
+        suffix += 1
+
+    generation_folder.mkdir()
     generation.output_folder = str(generation_folder)
 
     output_file = generation_folder / "script.txt"
@@ -57,3 +63,36 @@ def save_script(generation):
     )
 
     return output_file
+
+
+def update_saved_generation(generation):
+    """Aktualisiert Script und Metadaten nach einer automatischen Verbesserung."""
+    if not generation.output_folder:
+        return False
+
+    generation_folder = Path(generation.output_folder)
+    metadata_file = generation_folder / "metadata.json"
+
+    if not metadata_file.exists():
+        return False
+
+    (generation_folder / "script.txt").write_text(
+        f"Thema:\n{generation.topic}\n\nScript:\n{generation.script}",
+        encoding="utf-8",
+    )
+    metadata = json.loads(metadata_file.read_text(encoding="utf-8"))
+    metadata.update(
+        {
+            "topic": generation.topic,
+            "title": generation.title,
+            "description": generation.description,
+            "hashtags": generation.hashtags,
+            "script": generation.script,
+            "status": generation.status,
+        }
+    )
+    metadata_file.write_text(
+        json.dumps(metadata, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    return True
